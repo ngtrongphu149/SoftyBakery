@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <title>Product Detail - Softy Bakery</title>
+    <th:block th:insert="~{layout :: css-link}"></th:block>
+  </head>
+  <body style="background-color: #FDF5EB;" ng-app="app" ng-controller="CartController">
+    <div th:insert="~{layout :: spinner}"></div>
+    <div th:insert="~{layout :: topbar}"></div>
+    <div th:insert="~{layout :: navbar}"></div>
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container text-center pt-5 pb-3">
+        <h1 class="display-4 text-white animated slideInDown mb-3">Product Detail</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Products</a>
+            </li>
+            <li class="breadcrumb-item text-primary active" aria-current="page">ProductDetail</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+    <!-- Product Start -->
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-md-1" style="margin-top: 45px;">
+          <div class="images">
+            <a th:each="s : ${piList}" data-image="${s}">
+              <img id="img1" class="img-thumbnail m-1 custom-link" th:src="@{'/images/'+${s}}">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="nav nav-tabs border-0">
+            <li class="nav-item nav-info mt-2 ms-2">
+              <a class="nav-link" data-bs-toggle="tab" href="#mota"> Mô Tả Sản Phẩm </a>
+            </li>
+            <li class="nav-item nav-info mt-2 ms-2">
+              <a class="nav-link active" data-bs-toggle="tab" href="#thongtin">Thành phần</a>
+            </li>
+            <li class="nav-item nav-info mt-2 ms-2">
+              <a class="nav-link" data-bs-toggle="tab" href="#baoquan">Hướng dẫn bảo quản</a>
+            </li>
+          </ul>
+          <div class="large-image">
+            <img class="d-block w-100" th:src="@{'/images/'+${piList.get(0)}}">
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane" id="mota">
+              <div class="product-description">
+                <div id="showmore" class="container position-relative">
+                  <div class="d-flex flex-column align-items-center">
+                    <img src="/images/mousse.webp" style="width: 40%; border-radius: 20px;">
+                  </div>
+                </div>
+                <div class="row border-0 g-0 rounded shadow-sm">
+                  <div class="col p-4">
+                    <h4 class=" text-secondary">Tiêu đề</h4>
+                    <small>Định nghĩa</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane active" id="thongtin">
+              <div class="row border-0 g-0 rounded shadow-sm">
+                <div class="col p-4">
+                  <p>Thành phần</p>
+                  <ul>
+                    <li>Bột mì số 8</li>
+                    <li>Kem béo</li>
+                    <li>Whisping Cream</li>
+                    <li>Chocolate nguyên chất</li>
+                    <li>Nước lọc</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="baoquan">
+              <div class="row border-0 g-0 rounded shadow-sm">
+                <div class="col p-4">
+                  <h3 class=" text-secondary">Hướng dẫn bảo quản</h3>
+                  <h5 class="fw-bold fs-6 text-capitalize">Tiêu đề</h5>
+                  <small>Định nghĩa</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ms-5">
+          <h4 class="fw-bold fs-3 text-success" th:text="${product.productName} + ' - ' + ${product.productId}"></h4>
+          <span class="fw-light">Mã Sản Phẩm: <span class="fs-5 ms-3 fw-bold" th:text="${product.getCategory().getCategoryName() + ' ' + product.getProductId()}"></span>
+          </span>
+          <br>
+          <span class="fw-light">Giá: <span class="fs-4 ms-3 fw-normal">
+              <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3" th:text="${#numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT')+' ₫'}"></div>
+											</span>
+										</span>
+										<br>
+					<span class="fw-light">Mô tả: 
+						<span th:text="${product.description}"></span>
+					</span>
+					<br>
+						<div class="product-hotline mt-2">
+							<p class="text-uppercase fs-6 text-success fw-bold">Gọi để mua hàng nhanh hơn</p>
+							<a class="text-decoration-none text-black fs-5 fw-bold" href="">(+84) 869945854</a>
+							<span class="small">(9h00 : 22h00) </span>
+							<p class="mt-2 fs-6 text-success fw-bold">Giao hàng trong ngày(1h - 3h sau khi đặt)</p>
+							<span class="fw-bold">
+								<i class="bi bi-cart-check pe-2"></i>Giao hàng miễn phí
+							</span>
+							<span>(Đơn hàng trên 500k hoặc khoảng cách dưới 3km)</span>
+							<br />
+							<span class="fw-bold">
+								<i class="bi bi-clock-history pe-2"></i>Miễn đổi trả
+
+
+
+							</span>
+							<br />
+							<span class="fw-bold">
+								<i class="bi bi-wallet2 pe-2"></i>Thanh toán
+							</span> (Cash / Credit) 
+
+							<br />
+						</div>
+						<div class="mt-5 pt-5">
+							<div class="col-12 text-center">
+								<button class="btn btn-success rounded-pill py-3 px-5" ng-click="add()">Add to Cart</button>
+								<a class="btn btn-primary rounded-pill py-3 px-5" href="">Order Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Comment Start -->
+		<div class="container mt-3">
+		
+			<div class="comment-container">
+				<div class="comment-avatar"></div>
+				<div class="comment-content">
+					<div class="comment-name">John Doe</div>
+					<p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+			</div>
+			
+		</div>
+		<!-- Product End -->
+		<div th:insert="~{layout :: footer}"></div>
+		<div th:insert="~{layout :: copyright}"></div>
+		<div th:insert="~{layout :: backtotop}"></div>
+		<div th:insert="~{layout :: js-link}"></div>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Products - Softy Bakery</title>
+<th:block th:insert="~{layout :: css-link}"></th:block>
+</head>
+<body ng-app="app" ng-controller="AdminOrderController">
+	<div th:insert="~{layout :: spinner}"></div>
+	<div th:insert="~{layout :: topbar}"></div>
+	<div th:insert="~{layout :: adminNavbar}"></div>
+	<!-- Page Header Start -->
+	<div class="container-fluid page-header py-6 wow fadeIn"
+		data-wow-delay="0.1s">
+		<div class="container text-center pt-5 pb-3">
+			<h1 class="display-4 text-white animated slideInDown mb-3">Products</h1>
+			<nav aria-label="breadcrumb animated slideInDown">
+				<ol class="breadcrumb justify-content-center mb-0">
+					<li class="breadcrumb-item"><a class="text-white" href="#">Home</a>
+					</li>
+					<li class="breadcrumb-item"><a class="text-white" href="#">Pages</a>
+					</li>
+					<li class="breadcrumb-item text-primary active" aria-current="page">Products</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
+	<!-- Page Header End -->
+	<!-- Admin Product Start -->
+	<div class="container">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="bg-primary text-white">
+                        <th>Order Id</th>
+                        <th>Customer</th>
+                        <th>Order Date</th>
+                        <th>Total Amount</th>
+                        <th>Address</th>
+                        <th>Detail</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="o in orders">
+                        <td>{{o.orderId}}</td>
+                        <td>{{o.account.fullName}}</td>
+                        <td>{{o.orderDate | dateFilter}}</td>
+                        <td>{{o.totalAmount | vndCurrency}}</td>
+                        <td>{{o.address}}</td>
+                        <td>
+							<button type="button" class="btn btn-lg-square btn-outline-light rounded-circle"
+							data-bs-toggle="modal" data-bs-target="#exampleModal" ng-click="getOrderItemByOrderId(o.orderId)">
+								<i class="fa fa-eye text-primary"></i>
+							</button>
+							
+							<!-- Modal -->
+							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h1 class="modal-title fs-5" id="exampleModalLabel">Order Detail</h1>
+							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							      </div>
+							      <div class="modal-body">
+							      	<span>
+							      		<p>Địa chỉ nhận hàng:</p>
+							      		<p>
+							      	</span>
+							        <table class="table table-hover">
+								        <tr class="bg-primary text-white">
+					                        <th>Product Name</th>
+					                        <th>Image</th>
+					                        <th>Price</th>
+					                        <th>Quantity</th>
+					                    </tr>
+							        	<tr ng-repeat="oi in oiList">
+							        		<td>{{oi.product.productName}}</td>
+							        		<td><img  style="height:60px;" src="/images/{{oi.product.imageUrl}}"></td>
+							        		<td>{{oi.product.price | vndCurrency}}</td>
+							        		<td>{{oi.quantity}}</td>
+							        		
+							        	</tr>
+							        
+							        </table>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+                        </td>
+                        <td>
+                        	<button ng-class="getStatusClass(o.status)" ng-click="updateStatus(o.orderId)">{{o.status}}</button>
+                       	</td>
+                    </tr>
+                </tbody>
+            </table>
+
+    </div>
+	<!-- Admin Product End -->
+	<div th:insert="~{layout :: footer}"></div>
+	<div th:insert="~{layout :: copyright}"></div>
+	<div th:insert="~{layout :: backtotop}"></div>
+	<div th:insert="~{layout :: js-link}"></div>
+	
+</body>
+</html>

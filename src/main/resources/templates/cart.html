@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+<title>Giỏ hàng</title>
+<th:block th:insert="~{layout :: css-link}"></th:block>
+<style>
+.a-amount {
+	font-size: 24px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-decoration: none;
+}
+</style>
+</head>
+<body ng-app="app" ng-controller="ProductController">
+	<div th:insert="~{layout :: spinner}"></div>
+    <div th:insert="~{layout :: topbar}"></div>
+	<div th:insert="~{layout :: navbar}"></div>
+	<!-- Page Header Start -->
+	<div class="container-fluid page-header py-6 wow fadeIn"
+		data-wow-delay="0.1s">
+		<div class="container text-center pt-5 pb-3">
+			<h1 class="display-4 text-white animated slideInDown mb-3">Shopping
+				Cart</h1>
+			<nav aria-label="breadcrumb animated slideInDown">
+				<ol class="breadcrumb justify-content-center mb-0">
+					<li class="breadcrumb-item"><a class="text-white" href="#">Home</a>
+					</li>
+					<li class="breadcrumb-item text-primary active" aria-current="page">Carts</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
+	<!-- Page Header End -->
+	<div class="d-flex flex-column min-vh-100">
+    <div class="container" data-wow-delay="0.1s">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" style="max-width: 500px;">
+            <p class="text-primary text-uppercase mb-2">// Shopping cart</p>
+            <h1 class="display-6 mb-4">Giỏ hàng</h1>
+        </div>
+        
+        <!-- title -->
+        <br/>
+		<div class="btn-group float-end" style="text-align: right;">
+				<button class="btn btn-danger" ng-click="clear()">
+					Clear
+				</button>
+				<button class="btn btn-primary" ng-click="loadAllCart()">
+					Reset
+				</button>
+         </div>
+         <br/>         
+         <hr />
+        <div class="table-responsive mx-auto mb-5 wow fadeInUp">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th><h5 class="mb-0">Image</h5></th>
+                        <th><h5 class="mb-0">Product</h5></th>
+                        <th><h5 class="mb-0">Price</h5></th>
+                        <th><h5 class="mb-0">Quantity</h5></th>
+                        <th><h5 class="mb-0">Amount</h5></th>
+                        <th><h5 class="mb-0">Actions</h5></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="p in cart">
+                        <td>
+                            <img src="/images/{{p.imageUrl}}" style="width: 100px; object-fit: cover;" class="mr-2">
+                        </td>
+                        <td>
+                        	<span>{{p.productName+' - '+p.productId}}</span>
+                        </td>
+                        <td>
+                            <span>{{p.price | vndCurrency}}</span>
+                        </td>
+                        <td>
+							<div class="input-group">
+							    <button class="btn btn-primary a-amount" ng-click="modifyCart(p.productId, 'dis')"> - </button>
+							    <input class="form-control text-center frm-input" ng-model="p.quantity" min="1" max="20" style="width:40px;">
+							    <button class="btn btn-primary a-amount" ng-click="modifyCart(p.productId, 'plus')"> + </button>
+							</div>
+
+                        </td>
+                        <td>
+                            	<span>{{p.price * p.quantity | vndCurrency}}</span>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                <div class="dropdown-menu m-0">
+                                    <button class="dropdown-item" ng-click="deleteCart(p.productId)">Xóa</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-center">
+                            <h5 style="font-weight: 800;">Tổng đơn giá giỏ hàng:</h5>
+                        </td>
+                        <td>
+                            <span style="font-size: 24px;">{{getAmountCart() | vndCurrency}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-12 text-center">
+            <a class="btn btn-primary rounded-pill py-3 px-5" href="/order">Order Now</a>
+        </div>
+    </div>
+</div>
+
+
+	<div th:insert="~{layout :: footer}"></div>
+	<div th:insert="~{layout :: copyright}"></div>
+	<div th:insert="~{layout :: backtotop}"></div>
+	<div th:insert="~{layout :: js-link}"></div>
+	
+</body>
+</html>
