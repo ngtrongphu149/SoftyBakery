@@ -115,58 +115,107 @@ app.filter('dateFilter', function($filter) {
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 app.controller('ProductController', function ($scope, $http) {
     $scope.products = [];
+    
     $scope.pageNum = 0;
     $scope.totalPages = 0;
     $scope.totalProducts = 0;
+    $scope.selectedProductId = 0;
+    
     $scope.category = [];
-    $scope.selectedCategoryId = null;
+    $scope.selectedCategoryId = 0;
+    
     $scope.cart = [];
     $scope.cartLength = 0;
-
-    function updatecartLength() {
-        $http.get(`${host}/cart`).then(function (resp) {
-            $scope.cartLength = resp.data.length;
-        });
-    }
-
+        
+	$scope.imgData = "";
+	
+	$scope.productImages = [];
     function updateTotalProducts(count) {
         $scope.totalProducts = count;
     }
-
-    $scope.loadAllProducts = function () {
+    
+    function loadAllProducts() {
         return $http.get(`${host}/product`).then(function (resp) {
             return resp.data.length;
         });
     }
 
-    $scope.loadCategory = function () {
+    function loadCategory() {
         return $http.get(`${host}/category`).then(function (resp) {
             $scope.category = resp.data;
         });
     }
 
-    $scope.paginationProducts = function (page) {
+    function paginationProducts(page) {
         var url = `${host}/product/?page=${page}`;
-        if ($scope.selectedCategoryId !== null) {
-            url += `&c=${$scope.selectedCategoryId}`;
-        }
-
+        url += $scope.selectedCategoryId ? `&c=${$scope.selectedCategoryId}` : '';
         return $http.get(url);
     }
 
+    function filterAndPaginateProducts(products, name, minPrice, maxPrice, sort, page, size, categoryId) {
+        let filteredProducts = products;
+
+        if (name && name !== '') {
+            filteredProducts = filterByName(filteredProducts, name);
+        }
+        if (minPrice !== null && maxPrice !== null && minPrice >= 0 && maxPrice >= 0 && maxPrice >= minPrice) {
+            filteredProducts = filterByPriceRange(filteredProducts, minPrice, maxPrice);
+        }
+        if (categoryId && categoryId !== '') {
+            filteredProducts = filterByCategory(filteredProducts, categoryId);
+        }
+        if (sort === 'ASC') {
+            filteredProducts = sort(filteredProducts, true);
+        } else if (sort === 'DESC') {
+            filteredProducts = sort(filteredProducts, false);
+        }
+        const pageable = PageRequest.of(page, size);
+        const totalItems = filteredProducts.length;
+        const startIndex = pageable.getOffset();
+        const endIndex = Math.min(startIndex + size, totalItems);
+        const items = filteredProducts.slice(startIndex, endIndex);
+
+        return new PageImpl(items, pageable, totalItems);
+    }
+
+    function filterByName(products, name) {
+        return products.filter(product => product.productName.toLowerCase().includes(name.toLowerCase()));
+    }
+
+    function filterByPriceRange(products, minPrice, maxPrice) {
+        return products.filter(product => product.price >= minPrice && product.price <= maxPrice);
+    }
+
+    function filterByCategory(products, categoryId) {
+        return products.filter(product => product.category.categoryId === categoryId);
+    }
+
+    function sort(products, ascending) {
+        const priceComparator = (a, b) => a.price - b.price;
+        if (!ascending) {
+            products.sort((a, b) => priceComparator(b, a));
+        } else {
+            products.sort(priceComparator);
+        }
+        return products;
+    }
     $scope.loadPage = function (page) {
         $scope.pageNum = page;
-        $scope.paginationProducts(page).then(function (resp) {
+        paginationProducts(page).then(function (resp) {
             $scope.products = resp.data;
             if ($scope.selectedCategoryId !== null) {
-                let url = `${host}/product/c/${$scope.selectedCategoryId}`;
+                const url = `${host}/product/c/${$scope.selectedCategoryId}`;
                 $http.get(url).then(function (categoryResp) {
                     $scope.totalProducts = categoryResp.data.length;
-                    $scope.totalPages = Math.ceil($scope.totalProducts / 4);
+                    $scope.totalPages = Math.ceil(25 / 4);
                 });
             } else {
                 $scope.totalPages = Math.ceil($scope.totalProducts / 4);
             }
+            console.log('total product: '+$scope.totalProducts)
+            console.log('total page: '+$scope.totalPages)
+            console.log('page: '+page)
+            
         });
     };
 
@@ -179,24 +228,33 @@ app.controller('ProductController', function ($scope, $http) {
     };
 
     $scope.selectCategory = function (categoryId) {
+        $scope.key = '';
         $scope.selectedCategoryId = categoryId;
         $scope.loadPage(0);
     };
-
-    // Cart:
-
-    function initCartFromLocalStorage() {
-        $scope.cart = JSON.parse(localStorage.getItem('cart')) || [];
+    $scope.getSelectedProductId = function() {
+	    const url = `${host}/product/selectedProductId`;
+	    return $http.get(url).then(resp => {
+	        return resp.data;
+	    });
+	}
+	$scope.setSelectedProductId = function() {
+	    $scope.getSelectedProductId().then(function(productId) {
+			$scope.selectedProductId = productId;
+	    });
+	}
+	
+// cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart
+    function updateCartLocalStorage() {
+    	localStorage.setItem('cart', JSON.stringify($scope.cart));
     }
 
-    $scope.getAmountCart = function () {
-        return $scope.cart.reduce(function (total, product) {
-            return total + product.price * product.quantity;
-        }, 0);
-    };
-
-    function updateCartLocalStorage() {
-        localStorage.setItem('cart', JSON.stringify($scope.cart));
+    $scope.loadAllCart = function () {
+        $http.get(`${host}/cart`).then(function (resp) {
+            $scope.cart = resp.data;
+            $scope.cartLength = resp.data.length;
+            updateCartLocalStorage();
+        });
     }
 
     $scope.modifyCart = function (id, method) {
@@ -217,26 +275,44 @@ app.controller('ProductController', function ($scope, $http) {
         });
     };
 
-    $scope.loadAllCart = function () {
-        $http.get(`${host}/cart`).then(function (resp) {
-            $scope.cart = resp.data;
-            $scope.cartLength = resp.data.length;
-            updateCartLocalStorage();
-            console.log($scope.cartLength);
-        });
+    $scope.getAmountCart = function () {
+        return $scope.cart.reduce(function (total, product) {
+            return total + product.price * product.quantity;
+        }, 0);
     };
 
-    $scope.loadAllCart();
-    initCartFromLocalStorage();
-
+    function initCartFromLocalStorage() {
+        $scope.cart = JSON.parse(localStorage.getItem('cart')) || [];
+    }	
+// product images - product images - product images - product images - product images - product images - product images
+	$scope.loadAllProductImages = function () {
+		$scope.getSelectedProductId().then(function(productId) {
+			$scope.selectedProductId = productId;
+			var url = "http://localhost:8080/rest/pi/";
+			url += productId;
+			$http.get(url).then(resp => {
+				$scope.productImages = resp.data;
+			})
+	    })
+	}
+    $scope.setImgData = function (data) {
+		$scope.imgData = data;
+	}
+    
+    $scope.loadAllProductImages();
+    
+    
+    
     // Khởi tạo dữ liệu ban đầu
-    $scope.loadCategory().then(function () {
-        return $scope.loadAllProducts();
+    loadCategory().then(function () {
+        return loadAllProducts();
     }).then(function (totalCount) {
         updateTotalProducts(totalCount);
         $scope.loadPage(0);
     });
-
+    $scope.setSelectedProductId();
+    $scope.loadAllCart();
+    initCartFromLocalStorage();
 });
 
 
@@ -246,7 +322,7 @@ app.controller('AdminProductController', function($scope, $http) {
 	$scope.products = [];
 	$scope.category = [];
 	$scope.form = {};
-
+	
 	$scope.loadAll = function() {
 		const url = `${host}/product`;
 		$http.get(url).then(resp => {
@@ -264,6 +340,7 @@ app.controller('AdminProductController', function($scope, $http) {
 	$scope.reset = function() {
 		$scope.form = {};
 		$scope.form.price = 0.00;
+		$scope.topProductId();
 	}
 
 	$scope.add = function() {
@@ -281,18 +358,19 @@ app.controller('AdminProductController', function($scope, $http) {
 	}
 
 	$scope.update = function(productId) {
-		const url = `${host}/product/${productId}`;
-		if ($scope.form != null) {
-			$http.put(url, $scope.form).then(function(resp) {
-				console.log("Cập nhật sản phẩm thành công!");
-				$scope.loadAll();
-			}).catch(function(error) {
-				console.error("Lỗi khi cập nhật sản phẩm:", error);
-			});
-		} else {
-			console.log('Form rỗng!');
-		}
+	    const url = `${host}/product/${productId}`;
+	    if ($scope.form != null) {
+	        $http.put(url, $scope.form).then(function(resp) {
+	            console.log("Cập nhật sản phẩm thành công!");
+	            $scope.loadAll();
+	        }).catch(function(error) {
+	            console.error("Lỗi khi cập nhật sản phẩm:", error);
+	        });
+	    } else {
+	        console.log('Form rỗng!');
+	    }
 	}
+
 
 	$scope.delete = function(productId) {
 		const url = `${host}/product/${productId}`;
@@ -310,11 +388,29 @@ app.controller('AdminProductController', function($scope, $http) {
 		if (product) {
 			$scope.form = angular.copy(product);
 			$scope.form.price = parseFloat($scope.form.price);
+			$scope.scrollToForm();
 		} else {
 			$scope.form = {};
 		}
 	}
-
+	$scope.topProductId = function() {
+		const url = `${host}/product/top`;
+		$http.get(url).then(resp => {
+			$scope.form.productId = resp.data;
+		});
+	}
+	$scope.scrollToForm = function () {
+        var formElement = document.getElementById('formProduct');
+        if (formElement) {
+            formElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'nearest'
+            });
+            $window.scrollBy(500, -distanceFromTop);
+        }
+    };
+	$scope.topProductId();
 	$scope.loadAll();
 	$scope.loadCategory();
 	$scope.reset();
@@ -384,7 +480,6 @@ app.controller('AdminOrderController', function($scope, $http) {
 			console.log(resp.data);
 		});
 	}
-
 	$scope.loadAll();
 });
 

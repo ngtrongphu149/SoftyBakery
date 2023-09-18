@@ -26,6 +26,6 @@ public class DataSharing {
 //    	pImg.add("mousse.webp");
 //    	pImg.add("thanh-pham-101.jpg");
 //    }
-    
+    public static Integer selectedProductId = 0; 
 
 }

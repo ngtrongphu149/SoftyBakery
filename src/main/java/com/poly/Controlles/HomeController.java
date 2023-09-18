@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.poly.dao.AccountDAO;
+import com.poly.dao.CategoryDAO;
 import com.poly.dao.ProductDAO;
 import com.poly.model.Account;
 
@@ -20,12 +21,15 @@ import com.poly.model.Account;
 public class HomeController {
 	@Autowired ProductDAO pDAO;
 	@Autowired AccountDAO aDAO;
+	@Autowired CategoryDAO cDAO;
     @RequestMapping("/")
     public String index2() {
         return "redirect:/home";
     }
     @RequestMapping("/home")
     public String index(Model model) {
+    	
+    	model.addAttribute("c", cDAO.findAll());
     	model.addAttribute("count", pDAO.count());
     	model.addAttribute("p", pDAO.findAll());
     	printUserInfo();
@@ -37,7 +41,7 @@ public class HomeController {
         if (authentication != null && authentication.getPrincipal() instanceof UserDetails) {
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
             String username = userDetails.getUsername();
-            Account account = aDAO.findByUserName(username).orElse(null);
+            Account account = aDAO.findByUserName(username);
 
             if (account != null) {
                 System.out.println(account.toString());

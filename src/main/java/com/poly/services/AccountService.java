@@ -25,10 +25,10 @@ public class AccountService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<Account> ad = aDAO.findByUserName(username);
+        Account ad = aDAO.findByUserName(username);
         
-        if (ad.isPresent()) {
-            return new AccountToUserDetails(ad.get());
+        if (ad != null) {
+            return new AccountToUserDetails(ad);
         } else {
             throw new UsernameNotFoundException("User not found: " + username);
         }

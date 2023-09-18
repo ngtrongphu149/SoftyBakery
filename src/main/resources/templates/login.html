@@ -10,26 +10,27 @@
 	
     <div th:insert="~{layout :: spinner}"></div>
     <div th:insert="~{layout :: topbar}"></div>
-    <!-- Page Header Start -->
-	<div class="container-fluid page-header py-6 wow fadeIn"
-		data-wow-delay="0.1s">
-		<div class="container text-center pt-5 pb-3">
-			<h1 class="display-4 text-white animated slideInDown mb-3">Login</h1>
-			<nav aria-label="breadcrumb animated slideInDown">
-				<ol class="breadcrumb justify-content-center mb-0">
-					<li class="breadcrumb-item"><a class="text-white" href="#">Home</a>
-					</li>
-					<li class="breadcrumb-item text-primary active" aria-current="page">Login</li>
-				</ol>
-			</nav>
-		</div>
-	</div>
-	<!-- Page Header End -->
-    <form class="container-xxl py-6" action="/login" method="POST">
+    
+    <div class="row page-header ">
+    
+    	<!-- Page Header Start -->
+			<div class="container py-6 wow fadeIn col-4"
+				data-wow-delay="0.1s">
+				<div class="container text-center pt-5 pb-3">
+					<h1 class="display-4 text-white animated slideInDown mb-3">Login</h1>
+					<nav aria-label="breadcrumb animated slideInDown">
+						<ol class="breadcrumb justify-content-center mb-0">
+							<li class="breadcrumb-item"><a class="text-white" href="#">Home</a>
+							</li>
+							<li class="breadcrumb-item text-primary active" aria-current="page">Login</li>
+						</ol>
+					</nav>
+				</div>
+			</div>
+			<!-- Page Header End -->
+			<form class="container py-6 wow fadeIn col-8" action="/login" method="POST">
       <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-          <p class="text-primary text-uppercase mb-2">// Login</p>
-          <h1 class="display-6 mb-4">Login your account</h1>
         </div>
         <div class="row g-0 justify-content-center">
           <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
@@ -37,7 +38,7 @@
               <div class="row g-3">
                 <div class="col-12">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="subject" placeholder="Username" name="username" required>
+                    <input type="text" class="form-control" id="username" placeholder="Username" name="username"required>
                     <label for="">Username</label>
                   </div>
                 </div>
@@ -52,7 +53,7 @@
                 </div>
                 <div class="row">
 	                <div class="col">
-	                	<p class="mb-4">Forgot your password? <a href="/home">Click here</a>. </p>
+	                	<p class="mb-4 text-light">Forgot your password? <a href="/home">Click here</a>. </p>
 	                </div>
 	                <div class="col" style="text-align: right;">
 	                	<p class="mb-4"><a href="/register">Sign up</a></p>
@@ -70,6 +71,13 @@
         </div>
       </div>
     </form>
+    </div>
+    
+    <script>
+	    window.addEventListener('load', function () {
+	        document.getElementById('username').focus();
+	    });
+	</script>
     <div th:insert="~{layout :: footer}"></div>
     <div th:insert="~{layout :: copyright}"></div>
 	<div th:insert="~{layout :: js-link}"></div>

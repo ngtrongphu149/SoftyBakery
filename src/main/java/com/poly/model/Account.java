@@ -100,11 +100,14 @@ public class Account implements UserDetails{
     	return "- - - - - - - - - - - - - - - - - - - - ** User Info ** - - - - - - - - - - - - - - - - - - - -\n"
     			+ "Id: " + getAccountId() + "\n"
 				+ "PhoneNumber: " + getPhoneNumber() + "\n"
-		        + "Username: " + getFullName() + "\n"
-		        + "Fullname: " + getUsername() + "\n"
+		        + "Username: " + getUsername() + "\n"
+		        + "Fullname: " + getFullName() + "\n"
 		        + "Email: " + getEmail() + "\n"
 		        + "Address: " + getAddress() + "\n"
-        		+ "Password: " + getPassword() + "\n"
+		        + "Password: " + getPassword() + "\n"
+        		+ "Admin: " + getAuthorities() + "\n"
+				+ "Photo: " + getPhoto() + "\n"
+		                		
         +      "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -";
     }
     

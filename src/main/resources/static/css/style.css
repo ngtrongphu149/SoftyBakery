@@ -435,9 +435,6 @@ h4, h5, h6, .h4, .h5, .h6 {
 .custom-link {
 	text-decoration: none;
 }
-.avatar {
-	align-items: flex-end;
-}
 
 .custom-link:hover::after {
 	content: "";
@@ -501,13 +498,13 @@ h4, h5, h6, .h4, .h5, .h6 {
 	margin: 10px;
 }
 
-.comment-avatar {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	background-color: #ccc;
-	margin-right: 10px;
-}
+.circle-avatar {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+object-fit: cover;
+object-position: center center;
+} 
 
 .comment-content {
 	flex: 1;
@@ -527,5 +524,16 @@ h4, h5, h6, .h4, .h5, .h6 {
 .frm-input {
 	width: 32px !important;
 }
+
+.square-image {
+	max-height:100%;
+	max-width: 100%; 
+	overflow: hidden;
+	border-radius: 6px;
+	object-fit: cover;
+  	object-position: center center;
+}
+
+
 
 

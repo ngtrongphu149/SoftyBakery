@@ -41,11 +41,7 @@ public class Test {
 	}
 	@GetMapping("/test")
 	public String ngu(Model model) {
-		Account a = getAccountAuth();
-		a.setPhoto("cuong.jpg");
-		aDAO.save(a);
-		System.out.println(a.getPhoto());
-		return "home";
+		return "test";
 	}
 	
 	public void saveAccount(Account a) {
@@ -60,7 +56,7 @@ public class Test {
 		aDAO.save(a);
 	}
 	public Account getAccountAuth() {
-		return aDAO.findByUserName(UserUtils.getUser().getUsername()).get();
+		return aDAO.findByUserName(UserUtils.getUser().getUsername());
 	}
 	public void testAccountInOrder() {
 		Order o = oDAO.findById(10020).get();
@@ -69,5 +65,12 @@ public class Test {
 		} else {
 			System.out.println(o.toString());
 		}
+	}
+	public String saveAccountPhoto(String photo) {
+		Account a = getAccountAuth();
+		a.setPhoto(photo);
+		aDAO.save(a);
+		System.out.println(a.getPhoto());
+		return a.getPhoto();
 	}
 }

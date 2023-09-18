@@ -74,7 +74,7 @@ public class OrderController {
 	    return "order-success";
 	}
 	public Account getAccountAuth() {
-		return aDAO.findByUserName(UserUtils.getUser().getUsername()).get();
+		return aDAO.findByUserName(UserUtils.getUser().getUsername());
 	}
 
 }

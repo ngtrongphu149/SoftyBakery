@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Products - Softy Bakery</title>
+<th:block th:insert="~{layout :: css-link}"></th:block>
+<style type="text/css">
+.form-label {
+	color: gray;
+	font-size: 15px;
+}
+</style>
+</head>
+<body ng-app="app" ng-controller="ProductController">
+	<div th:insert="~{layout :: spinner}"></div>
+	<div th:insert="~{layout :: navbar}"></div>
+	<!-- Page Header Start -->
+	<div class="container-fluid page-header py-6 wow fadeIn"
+		data-wow-delay="0.1s">
+		<div class="container text-center pt-5 pb-3">
+			<h1 class="display-4 text-white animated slideInDown mb-3">Profile</h1>
+			<nav aria-label="breadcrumb animated slideInDown">
+				<ol class="breadcrumb justify-content-center mb-0">
+					<li class="breadcrumb-item"><a class="text-white" href="#">Home</a>
+					</li>
+					<li class="breadcrumb-item"><a class="text-white" href="#">Pages</a>
+					</li>
+					<li class="breadcrumb-item text-primary active" aria-current="page">Profile</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
+	<!-- Page Header End -->
+		
+		<div class="container">
+	        <h1 class="col-8">Edit Profile</h1><hr></br></br>
+	        <form th:action="@{/profile/edit}" th:object="${user}" method="POST" enctype="multipart/form-data">
+	        	<div class="row">
+	        		<div class="col">
+	        			<div class="mb-3">
+			        		<label class="form-label">Tên đăng nhập: </label>
+			        		<span th:text="${user.username}"></span>
+			        	</div>
+			            <div class="mb-3">
+			                <label for="fullName" class="form-label">Full Name:</label>
+			                <input type="text" id="fullName" class="form-control" th:field="*{fullName}" required />
+			            </div>
+			            
+			            <div class="mb-3">
+			                <label for="email" class="form-label">Email:</label>
+			                <input type="email" id="email" class="form-control" th:field="*{email}" required />
+			            </div>
+			            
+			            <div class="mb-3">
+			                <label for="address" class="form-label">Address:</label>
+			                <input type="text" id="address" class="form-control" th:field="*{address}" />
+			            </div>
+			            
+			            <div class="mb-3">
+			                <label for="phoneNumber" class="form-label">Phone Number:</label>
+			                <input type="text" id="phoneNumber" class="form-control" th:field="*{phoneNumber}" />
+			            </div>
+			            <div class="mb-3">
+			            	<div class="row">
+			            		<div class="col">
+			            			<label for="phoneNumber" class="form-label">Password:</label>
+			                		<input type="password" id="phoneNumber" class="form-control" th:field="*{password}" />
+			            		</div>
+			            		<div class="col">
+			            		</div>            		
+			            	</div>
+			            </div>
+			            
+			            
+	        		</div>
+	        		<div class="col-lg-3">
+                    	<img th:src="${'/images/accountPhoto/'+user.photo}" class="square-image">
+	                    <div class="mb-3">
+							<label for="formFileSm" class="form-label">CHỌN ẢNH</label>
+							<input class="form-control form-control-sm" type="file" id="file" name="file">
+						</div>
+			        </div>
+	        	</div>
+	        	
+	            <button type="submit" class="btn btn-primary">Save Changes</button>
+	            
+	            <input type="hidden" th:field="*{photo}">
+	            <input type="hidden" th:field="*{accountId}">
+	            <input type="hidden" th:field="*{username}">
+	            <input type="hidden" th:field="*{admin}">
+	        </form>
+	    </div>
+		
+	
+	
+	<div th:insert="~{layout :: footer}"></div>
+	<div th:insert="~{layout :: copyright}"></div>
+	<div th:insert="~{layout :: backtotop}"></div>
+	<div th:insert="~{layout :: js-link}"></div>
+	
+</body>
+</html>

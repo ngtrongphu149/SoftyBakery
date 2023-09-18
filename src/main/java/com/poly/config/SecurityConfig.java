@@ -20,7 +20,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.logout.LogoutFilter;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 import com.poly.dao.AccountDAO;
 import com.poly.model.Account;
@@ -59,7 +62,16 @@ public class SecurityConfig {
 	    
 	    return http.build();
 	}
-
+//	@Bean
+//    public LogoutFilter logoutFilter() {
+//        LogoutFilter logoutFilter = new LogoutFilter("/logout", new SecurityContextLogoutHandler());
+//        logoutFilter.setFilterProcessesUrl("/register");
+//        return logoutFilter;
+//    }
+	@Bean
+    public RestTemplate	 restTemplate() {
+        return new RestTemplate();
+    }
 	public static UserDetails getUser() {
 		UserDetails uDetail = null;
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();

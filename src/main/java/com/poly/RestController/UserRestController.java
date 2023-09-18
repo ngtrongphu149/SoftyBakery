@@ -42,7 +42,7 @@ public class UserRestController {
     }
 	public Account getAccountAuth() {
 		if(UserUtils.getUser() == null) return null;
-		return aDAO.findByUserName(UserUtils.getUser().getUsername()).get();
+		return aDAO.findByUserName(UserUtils.getUser().getUsername());
 	}
 }
 

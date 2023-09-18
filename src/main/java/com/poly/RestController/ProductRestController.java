@@ -1,5 +1,9 @@
 package com.poly.RestController;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -15,10 +19,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.poly.dao.*;
 import com.poly.entities.*;
 import com.poly.model.Product;
+import com.poly.model.ProductImage;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -27,6 +33,8 @@ public class ProductRestController {
 	@Autowired ProductDAO pDAO;
 	@Autowired CategoryDAO cDAO;
 	@Autowired OrderItemDAO oiDAO;
+	@Autowired ProductImageDAO piDAO;
+	
 	@GetMapping
 	public ResponseEntity<List<ProductDTO>> page() {
 		List<ProductDTO> pDTOs = new ArrayList<>();
@@ -55,6 +63,17 @@ public class ProductRestController {
 		}
 		return ResponseEntity.ok(optional.get());
 	}
+	@GetMapping("/selectedProductId")
+	public ResponseEntity<Integer> getProductSelected() {
+		return ResponseEntity.ok(DB.DataSharing.selectedProductId);
+	}
+	
+	@GetMapping("/top")
+	public ResponseEntity<Integer> findTopProductId() {
+		int num = pDAO.findTopProductId() + 1;
+		return ResponseEntity.ok(num);
+	}
+	
 	@GetMapping("/c/{categoryId}")
 	public ResponseEntity<List <Product>> findByCategory(@PathVariable("categoryId") int categoryId) {
 		List<Product> products = pDAO.getProductByCategory(categoryId);
@@ -64,41 +83,32 @@ public class ProductRestController {
 		return ResponseEntity.ok(products);
 	}
 	@PostMapping()
-	public ResponseEntity<Product> post(@RequestBody ProductDTO product) {
-	    if (product.getProductId() <= 0) {
+	public ResponseEntity<Product> post(@RequestBody ProductDTO pDTO) {
+	    if (pDTO.getProductId() <= 0) {
 	        return ResponseEntity.badRequest().build();
 	    }
-	    Optional<Product> existingProduct = pDAO.findById(product.getProductId());
-	    Product prd = new Product();
-	    prd.setProductId(product.getProductId());
-	    prd.setProductName(product.getProductName());
-	    prd.setDescription(product.getDescription());
-	    prd.setPrice(product.getPrice());
-	    prd.setCategory(product.getCategory());
-	    prd.setOrderDetails(product.getOrderDetails());
+	    Optional<Product> existingProduct = pDAO.findById(pDTO.getProductId());
+	    Product prd = new Product(pDTO);
 	    if (existingProduct.isPresent()) {
 	        return ResponseEntity.badRequest().build();
 	    }
+	    prd.setProductId(pDAO.findTopProductId()+1);
 	    pDAO.save(prd);
-	    return ResponseEntity.ok(product);
+	    return ResponseEntity.ok(pDTO);
 	}
 
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Product> put(@PathVariable("id") String id, @RequestBody Product product) {
-	    int productId = Integer.parseInt(id);
-	    Optional<Product> existingProduct = pDAO.findById(productId);
-	    
-	    if (!existingProduct.isPresent()) {
-	        return ResponseEntity.notFound().build();
-	    }
-
-	    if (product.getProductId() != productId || product.getProductId() <= 0) {
+	public ResponseEntity<Product> put(
+	    @PathVariable("id") String id,
+	@RequestBody ProductDTO productDTO) {
+	    if (productDTO.getProductId() != Integer.parseInt(id) || productDTO.getProductId() <= 0) {
 	        return ResponseEntity.badRequest().build();
 	    }
-
-	    pDAO.save(product);
-	    return ResponseEntity.ok(product);
+	    Product prd = new Product(productDTO);
+	    pDAO.save(prd);
+	
+	return ResponseEntity.ok(productDTO);
 	}
 
 	@DeleteMapping("/{id}")
@@ -113,14 +123,14 @@ public class ProductRestController {
 	    pDAO.deleteById(productId);
 	    return ResponseEntity.ok().build();
 	}
-
-	
 	@GetMapping("/")
-	public ResponseEntity<List<ProductDTO>> pageProduct(Model model, @RequestParam(required = false, name = "c") String categoryId,
+	public ResponseEntity<List<ProductDTO>> pageProduct(Model model, 
+			@RequestParam(required = false, name = "c") String categoryId,
 			@RequestParam(required = false, name = "page", defaultValue = "0") Integer page,
 			@RequestParam(required = false, name = "size", defaultValue = "4") Integer size,
 			@RequestParam(required = false, name = "sort", defaultValue = "ASC") String sort,
-			@RequestParam(required = false, name = "key") String key, @RequestParam(required = false) Double minPrice,
+			@RequestParam(required = false, name = "key") String key, 
+			@RequestParam(required = false) Double minPrice,
 			@RequestParam(required = false) Double maxPrice) {
 		if (size <= 0) {
 	        size = 4;

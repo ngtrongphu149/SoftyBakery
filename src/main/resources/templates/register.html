@@ -10,98 +10,94 @@
     <div th:insert="~{layout :: spinner}"></div>
     <div th:insert="~{layout :: topbar}"></div>
     <!-- Page Header Start -->
-	<div class="container-fluid page-header py-6 wow fadeIn"
-		data-wow-delay="0.1s">
-		<div class="container text-center pt-5 pb-3">
-			<h1 class="display-4 text-white animated slideInDown mb-3">Register</h1>
-			<nav aria-label="breadcrumb animated slideInDown">
-				<ol class="breadcrumb justify-content-center mb-0">
-					<li class="breadcrumb-item"><a class="text-white" href="#">Home</a>
-					</li>
-					<li class="breadcrumb-item text-primary active" aria-current="page">Register</li>
-				</ol>
-			</nav>
+    <div class="row page-header " style="height:600px;">
+	    <div class="col-4 container-fluid py-6 wow fadeIn" data-wow-delay="0.1s">
+			<div class="container text-center pt-5 pb-3">
+				<h1 class="display-4 text-white animated slideInDown mb-3">Register</h1>
+				<nav aria-label="breadcrumb animated slideInDown">
+					<ol class="breadcrumb justify-content-center mb-0">
+						<li class="breadcrumb-item"><a class="text-white" href="#">Home</a>
+						</li>
+						<li class="breadcrumb-item text-primary active" aria-current="page">Register</li>
+					</ol>
+				</nav>
+			</div>
 		</div>
-	</div>
-	<!-- Page Header End -->
-    <div class="container-xxl py-6">
-      <div class="container">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-          <p class="text-primary text-uppercase mb-2">// Register</p>
-          <h1 class="display-6 mb-4">Register account</h1>
-          <small><strong style="font-weight: 800;">Fast and Easy!</strong></small>
-        </div>
-        <div class="row g-0 justify-content-center">
-        
-          <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-          	
-            <!-- start form register -->
-            <form action="/register" method="POST" th:object="${user}">
-              <div class="row g-3">
-                <div class="col-6">
-                  <div class="form-floating">
-                    <input th:field="*{accountId}" class="form-control" id="fullname" placeholder="name" required min="12" max="200" disabled="true">
-                    <label for="name">Your Id</label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="form-floating">
-                    <input th:field="*{phoneNumber}" type="text" class="form-control" id="email" placeholder="email" required max="200">
-                    <label for="subject">Your Phone Number</label>
-                  </div>
-                </div>
-                
-                
-                
-                
-                <div class="col-6">
-                  <div class="form-floating">
-                    <input th:field="*{fullName}" class="form-control" id="fullname" required min="12" max="200">
-                    <label for="fullname">Your Fullname</label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="form-floating">
-                    <input th:field="*{email}" type="email" class="form-control" id="email" placeholder="email" required max="200">
-                    <label for="subject">Your Email</label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="form-floating">
-                    <input th:field="*{username}" class="form-control" id="username" required min="8" max="200">
-                    <label for="username">Your Username</label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="form-floating">
-                    <input th:field="*{address}" class="form-control" id="address" placeholder="address" required min="8" max="200">
-                    <label for="username">Your Address</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input th:field="*{password}" type="password" class="form-control" id="password" placeholder="password" required min="8" max="200">
-                    <label for="password">Your Password</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input th:text="${repeatPassword}" class="form-control" id="" placeholder="password" required min="8" max="200">
-                    <label for="">Repeat Your Password</label>
-                  </div>
-                </div>
-                <input type="hidden" id="admin" name="admin" value="false" th:field="*{admin}">
-                <p class="mb-4">You have an account? <a href="/login">Login</a>. </p>
-                <div class="col-12 text-center">
-                  <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Register</button>
-                </div>
-              </div>
-            </form>
-            <!-- end form login -->
-          </div>
-        </div>
-      </div>
+		
+		<div class="col-8">
+			<div class="row g-0 container-fluid py-6 wow fadeIn">
+	          <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+	            <!-- start form register -->
+	            <form action="/register" method="POST" th:object="${user}">
+	              <div class="row g-3">
+	                <div class="col-6">
+	                  <div class="form-floating">
+	                    <input th:field="*{accountId}" class="form-control" id="fullname" placeholder="name" required min="12" max="200" disabled="true">
+	                    <label for="name">Your Id</label>
+	                  </div>
+	                </div>
+	                <div class="col-6">
+	                  <div class="form-floating">
+	                    <input th:field="*{phoneNumber}" type="text" class="form-control" id="phoneNum" placeholder="phoneNumber" required max="200">
+	                    <label for="subject">Your Phone Number</label>
+	                  </div>
+	                </div>
+	                
+	                <div class="col-6">
+	                  <div class="form-floating">
+	                    <input th:field="*{fullName}" class="form-control" id="fullname" required min="12" max="200">
+	                    <label for="fullname">Your Fullname</label>
+	                  </div>
+	                </div>
+	                <div class="col-6">
+	                  <div class="form-floating">
+	                    <input th:field="*{email}" type="email" class="form-control" id="email" placeholder="email" required max="200">
+	                    <label for="email">Your Email</label>
+	                  </div>
+	                </div>
+	                <div class="col-6">
+	                  <div class="form-floating">
+	                    <input th:field="*{username}" class="form-control" id="username" placeholder="username" required min="8" max="200">
+	                    <label for="username">Your Username</label>
+	                  </div>
+	                </div>
+	                <div class="col-6">
+	                  <div class="form-floating">
+	                    <input th:field="*{address}" class="form-control" id="address" placeholder="address" required min="8" max="200">
+	                    <label for="username">Your Address</label>
+	                  </div>
+	                </div>
+	                <div class="col-md-6">
+	                  <div class="form-floating">
+	                    <input th:field="*{password}" type="password" class="form-control" id="password" placeholder="password" required min="8" max="200">
+	                    <label for="password">Your Password</label>
+	                  </div>
+	                </div>
+	                <div class="col-md-6">
+	                  <div class="form-floating">
+	                    <input type="password" th:text="${repeatPassword}" class="form-control" id="" placeholder="password" required min="8" max="200">
+	                    <label for="">Repeat Your Password</label>
+	                  </div>
+	                </div>
+	                <input type="hidden" id="admin" name="admin" value="false" th:field="*{admin}">
+	                <p class="mb-4 text-light">You have an account? <a href="/login">Login</a>. </p>
+	                <div class="col-12 text-center">
+	                  <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Register</button>
+	                </div>
+	              </div>
+	            </form>
+	            <!-- end form login -->
+	          </div>
+	        </div>
+	    </div>
     </div>
+	
+	<!-- Page Header End -->
+    <script>
+		window.addEventListener('load', function () {
+		    document.getElementById('phoneNum').focus();
+		});
+	</script>
     <div th:insert="~{layout :: footer}"></div>
     <div th:insert="~{layout :: copyright}"></div>
 	<div th:insert="~{layout :: js-link}"></div>

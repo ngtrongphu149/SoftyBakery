@@ -12,7 +12,7 @@ public interface AccountDAO extends JpaRepository<Account, Integer> {
     Integer findTopAccountId();
 	
 	@Query("SELECT a FROM Account a WHERE a.username = ?1")
-	Optional<Account> findByUserName(String username);
+	Account findByUserName(String username);
 	
 	@Query("SELECT a FROM Account a WHERE a.email = ?1")
 	Account findByEmail(String email);

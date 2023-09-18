@@ -4,6 +4,8 @@ import lombok.*;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.poly.entities.ProductDTO;
 
 import jakarta.persistence.*;
 
@@ -35,6 +37,14 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<OrderItem> orderDetails;
     
+    public Product(ProductDTO p) {
+    	productId = p.getProductId();
+    	productName = p.getProductName();
+    	description = p.getDescription();
+    	price = p.getPrice();
+    	category = p.getCategory();
+    	orderDetails = p.getOrderDetails();
+    }
     public String toString() {
     	return productId + " - " + productName + " - " +description+ " - " +price+ " - " +category.getCategoryId();
     }
