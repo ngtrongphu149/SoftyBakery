@@ -41,7 +41,7 @@ public class HomeController {
         if (authentication != null && authentication.getPrincipal() instanceof UserDetails) {
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
             String username = userDetails.getUsername();
-            Account account = aDAO.findByUserName(username);
+            Account account = aDAO.getByUserName(username);
 
             if (account != null) {
                 System.out.println(account.toString());

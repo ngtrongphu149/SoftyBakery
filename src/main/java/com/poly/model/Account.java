@@ -42,6 +42,9 @@ public class Account implements UserDetails{
     @Column(name = "address")
     private String address;
 
+    @Column(name = "addressdetail")
+    private String addressDetail;
+
     @Column(name = "phonenumber")
     private String phoneNumber;
 

@@ -34,7 +34,8 @@
 				<img th:src="${'/images/accountPhoto/'+user.photo}" class="square-image">
 				<h4 th:text="${user.fullName}"></h4>
 				<p>Email: <span th:text="${user.email}"></span></p>
-				<p>Location: <span th:text="${user.address}"></span></p>
+				<p>Location: <span th:text="${user.addressDetail}+', '+ ${user.address}"></span></p>
+				
 	        </div>
 	
 	        <!-- Main Content -->

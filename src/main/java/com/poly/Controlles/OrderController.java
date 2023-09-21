@@ -28,15 +28,14 @@ public class OrderController {
     OrderItemDAO oiDAO;
 	@GetMapping("/order")
     public String index(Model model) {
-        if(getAccountAuth() != null) {
-        	Account acc = getAccountAuth();
-            model.addAttribute("account", acc);
-            model.addAttribute("cart", cart.getItems().values());
-            for(ProductDTO p : cart.getItems().values()) {
-            	System.out.println(p.toString());
-            }
-            model.addAttribute("amount", cart.getAmount());
-        }
+		Account acc = getAccountAuth();
+		for(ProductDTO p : cart.getItems().values()) {
+			System.out.println(p.toString());
+		}
+		model.addAttribute("user", acc);
+		model.addAttribute("cart", cart.getItems().values());
+		
+		model.addAttribute("amount", cart.getAmount());
         return "order";
     }
 	@PostMapping("/order")
@@ -49,7 +48,7 @@ public class OrderController {
 	    o.setOrderId(oDAO.findTopOrderId()+1);
 	    o.setOrderDate(date);
 	    o.setAccount(account);
-	    o.setAddress(account.getAddress());
+	    o.setAddress(account.getAddressDetail()+" ,"+account.getAddress());
 	    o.setTotalAmount(cart.getAmount());
 	    o.setStatus("Đang chờ");
 	    oDAO.save(o);
@@ -72,7 +71,7 @@ public class OrderController {
 	    return "order-success";
 	}
 	public Account getAccountAuth() {
-		return aDAO.findByUserName(UserUtils.getUser().getUsername());
+		return aDAO.getByUserName(UserUtils.getUser().getUsername());
 	}
 
 }

@@ -95,7 +95,7 @@
     </div>
     <div class="navbar-nav p-4 p-lg-0">
 	    <div ng-app="app" ng-controller="UserController" class="avatar">
-	        <span ng-if="!userInfo.fullName" class="nav-item">
+	        <span ng-if="!userInfo" class="nav-item">
 	            <a href="/login">
 	                <i class="fa fa-sign-in-alt" aria-hidden="true"></i>
 	                <span aria-hidden="true">Login</span>
@@ -106,11 +106,13 @@
 	            	<span aria-hidden="true">Register</span>
 	            </a>
 	        </span>
-	        <span ng-if="userInfo.fullName">
+	        <span ng-if="userInfo">
 	            <a href="#" class="dropdown nav-item nav-link" data-bs-toggle="dropdown">
 	            	<div class="dropdown-toggle">
 	             	<span ng-bind="userInfo.fullName" class="nav-item" style="margin-right:10px;"></span>
-	                 <img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar">
+						<img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar" ng-if="!userInfo.admin">
+						<img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar" ng-if="userInfo.admin" style="border:4px solid #74b9ff;">
+	             		
 	                </div>
 	            </a>
 	            <div class="dropdown-menu dropdown-menu-end m-0">
@@ -170,7 +172,8 @@
 	            <a href="#" class="dropdown nav-item nav-link" data-bs-toggle="dropdown">
 	            	<div class="dropdown-toggle">
 	             	<span ng-bind="userInfo.fullName" class="nav-item" style="margin-right:10px;"></span>
-	                 <img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar">
+	                 <img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar" ng-if="!userInfo.admin">
+						<img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar" ng-if="userInfo.admin" style="border:4px solid #74b9ff;">
 	                </div>
 	            </a>
 	            <div class="dropdown-menu dropdown-menu-end m-0">
@@ -214,16 +217,19 @@
     </div>
     <div class="navbar-nav p-4 p-lg-0">
 	    <div ng-app="app" ng-controller="UserController" class="avatar">
-	        <span ng-if="userInfo.fullName">
+	        <span ng-if="userInfo">
 	            <a href="#" class="dropdown nav-item nav-link" data-bs-toggle="dropdown">
 	            	<div class="dropdown-toggle">
 	             	<span ng-bind="userInfo.fullName" class="nav-item" style="margin-right:10px;"></span>
-	                 <img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar">
+					 <img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar" style="border:4px solid #74b9ff;">
 	                </div>
 	            </a>
 	            <div class="dropdown-menu dropdown-menu-end m-0">
 	                <a href="/profile" class="dropdown-item">
 	                    <i class="fa fa-user"></i> Profile
+	                </a>
+	                <a href="/register" class="dropdown-item">
+	                    <i class="fa fa-user-plus"></i> Register
 	                </a>
 	                <a href="/logout" class="dropdown-item">
 	                    <i class="fa fa-sign-out-alt"></i> Logout

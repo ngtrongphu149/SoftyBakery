@@ -30,7 +30,7 @@
 
 	<!-- Order Start -->
 
-		<form class="needs-validation" action="/order" method="POST" th:object="${account}">
+		<form class="needs-validation" action="/order" method="POST" th:object="${user}">
 			<div class="container" data-wow-delay="0.1s">
 				<div class="text-center mx-auto mb-5 wow fadeInUp"
 					style="max-width: 500px;">
@@ -81,7 +81,12 @@
 								<label>Họ tên</label> <input type="text" class="form-control" th:field="*{fullName}">
 							</div>
 							<div class="col-md-12">
-								<label>Địa chỉ</label> <input type="text" class="form-control" th:field="*{address}">
+								<label>Địa chỉ chi tiết</label>
+								<input type="text" class="form-control" th:field="*{addressDetail}"/>
+							</div>
+							<div class="col-md-12">
+								<label>Địa chỉ</label>
+								<input type="text" class="form-control" th:field="*{address}"/>
 							</div>
 							<div class="col-md-12">
 								<label for="kh_dienthoai">Điện thoại</label> <input type="text"

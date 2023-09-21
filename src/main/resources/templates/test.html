@@ -1,66 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	xmlns:th="http://www.thymeleaf.org" lang="vi">
+	xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>Softy Bakery</title>
     <th:block th:insert="~{layout :: css-link}"></th:block>
 </head>
 
-<body>
+<body ng-app="app" ng-controller="ProductController">
+    <div class="container mt-3">
+        <div class="comment-container" ng-repeat="r in reviewList">
+            <div class="comment-avatar">
+                <img ng-src="/images/accountPhoto/{{r.account.photo}}" class="circle-avatar">
+            </div>
+            <div class="comment-content">
+                <div class="comment-name" ng-bind="r.account.fullName"></div>
+                <p class="comment-text" ng-bind="r.comment"></p>
+            </div>
+        </div>
 
-    
-    
-    
-    
-    ngu
-    
-    
-    
-<fb:login-button 
-  scope="public_profile,email"
-  onlogin="checkLoginState();">
-</fb:login-button>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+        
+    </div>
     
 
 
-	<div th:insert="~{layout :: footer}"></div>
-	<div th:insert="~{layout :: copyright}"></div>
-	<div th:insert="~{layout :: backtotop}"></div>
-	<div th:insert="~{layout :: js-link}"></div>
-	
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '{your-app-id}',
-      cookie     : true,
-      xfbml      : true,
-      version    : '{api-version}'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-	
+
+
+
+
+
+
+    
+	<h1 ng-bind="address.path_with_type"></h1>
+    <div th:insert="~{layout :: footer}"></div>
+    <div th:insert="~{layout :: copyright}"></div>
+    <div th:insert="~{layout :: backtotop}"></div>
+    <div th:insert="~{layout :: js-link}"></div>
 </body>
+
+
 
 </html>

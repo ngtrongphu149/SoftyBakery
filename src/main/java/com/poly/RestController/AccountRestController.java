@@ -1,32 +1,34 @@
 package com.poly.RestController;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.poly.dao.AccountDAO;
 import com.poly.model.Account;
-import com.poly.model.Category;
-
 import DB.UserUtils;
 
 
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/rest/user")
-public class UserRestController {
+public class AccountRestController {
     @Autowired 
     AccountDAO aDAO;
     private Account userInfo = null;
-
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
     @GetMapping
     public ResponseEntity<Account> user() {
     	userInfo = null;
@@ -40,9 +42,17 @@ public class UserRestController {
             return ResponseEntity.notFound().build();
         }
     }
+	@PutMapping()
+	public ResponseEntity<Account> editProfile(Model model,@RequestBody Account user) {
+		user.setPassword(passwordEncoder().encode(user.getPassword()));
+		aDAO.save(user);
+		return ResponseEntity.ok(user);
+	}
+
+
 	public Account getAccountAuth() {
 		if(UserUtils.getUser() == null) return null;
-		return aDAO.findByUserName(UserUtils.getUser().getUsername());
+		return aDAO.getByUserName(UserUtils.getUser().getUsername());
 	}
 }
 

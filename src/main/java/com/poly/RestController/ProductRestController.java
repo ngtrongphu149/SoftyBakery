@@ -1,9 +1,5 @@
 package com.poly.RestController;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -16,15 +12,11 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.poly.dao.*;
 import com.poly.entities.*;
 import com.poly.model.Product;
-import com.poly.model.ProductImage;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -55,7 +47,7 @@ public class ProductRestController {
 
 		return ResponseEntity.ok(pDTOs);
 	}
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<Product> findById(@PathVariable("id") String id) {
 		Optional<Product> optional = pDAO.findById(Integer.parseInt(id));
 		if(!optional.isPresent()) {
@@ -77,9 +69,6 @@ public class ProductRestController {
 	@GetMapping("/c/{categoryId}")
 	public ResponseEntity<List <Product>> findByCategory(@PathVariable("categoryId") int categoryId) {
 		List<Product> products = pDAO.getProductByCategory(categoryId);
-//		if(!products.isEmpty()) {
-//			return ResponseEntity.notFound().build();
-//		}
 		return ResponseEntity.ok(products);
 	}
 	@PostMapping()
@@ -203,6 +192,7 @@ public class ProductRestController {
 		} else if (sort.equals("DESC")) {
 			filteredProducts = sort(filteredProducts, false);
 		}
+		
 		Pageable pageable = PageRequest.of(page, size);
 		int totalItems = filteredProducts.size();
 		int startIndex = (int) pageable.getOffset();

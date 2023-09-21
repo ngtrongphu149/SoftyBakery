@@ -131,6 +131,6 @@ public class OrderRestController {
     	return ResponseEntity.ok(oiList);
     }
     public Account getAccountAuth() {
-		return aDAO.findByUserName(UserUtils.getUser().getUsername());
+		return aDAO.getByUserName(UserUtils.getUser().getUsername());
 	}
 }

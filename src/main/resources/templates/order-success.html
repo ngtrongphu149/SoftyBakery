@@ -60,7 +60,7 @@
 						<div class="col">
 							<p th:text="${user.fullName}"></p>
 							<p th:text="${user.phoneNumber}"></p>
-							<p th:text="${user.address}"></p>
+							<p th:text="${user.addressDetail}+' ,'+${user.address}"></p>
 							<p>Thanh toán khi nhận hàng</p>
 						</div>
 					</div>
