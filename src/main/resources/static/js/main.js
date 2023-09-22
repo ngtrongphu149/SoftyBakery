@@ -253,7 +253,7 @@ app.controller('ProductController', function ($scope, $http) {
 			$http.get(url).then(resp => {
 				$scope.productImages = resp.data;
 			})
-			$scope.loadReviews(productId);
+			$scope.loadReviews();
 		})
 		
 	}
@@ -265,9 +265,9 @@ app.controller('ProductController', function ($scope, $http) {
 	// review - review - review - review - review - review - review - review - review - review - review - review - review
 	
 	$scope.loadReviews = function () {
-		const url = `${host}/review/${$scope.selectedProductId}`;
-		$http.get(url).then(resp => {
+		$http.get(`${host}/review/${$scope.selectedProductId}`).then(resp => {
 			$scope.reviewList = resp.data;
+			console.log(resp.data);
 		})
 	}
 	
@@ -289,11 +289,15 @@ app.controller('ProductController', function ($scope, $http) {
 	$scope.postReview = function() {
 		$scope.formReview.rating = $scope.rating;
 		const url = `${host}/review/${$scope.selectedProductId}`;
-		$http.post(url, $scope.formReview).then(() => {
+		$http.post(url, $scope.formReview,{headers:{'Content-Type': 'application/json'}
+		}).then(function(response) {
+			$scope.reviewList += response.data;
 			$scope.loadReviews();
-			$scope.reviewForm = [];
-		})
+			console.log($scope.reviewList);
+		});
+			
 	}
+	
 	
 	$scope.setHovered = function(index, hovered) {
 	  for (var i = 0; i <= index; i++) {
