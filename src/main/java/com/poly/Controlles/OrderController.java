@@ -1,6 +1,8 @@
 package com.poly.Controlles;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,11 +44,13 @@ public class OrderController {
 	public String payment1(Model model, @ModelAttribute("user") Account user) {
 		if(getAccountAuth() != null) {
 	    Account account = getAccountAuth();
-	    LocalDateTime date = LocalDateTime.now();
+	    LocalDateTime localDateTime = LocalDateTime.now();
+		ZoneId zoneId = ZoneId.of("Asia/Ho_Chi_Minh");
+		ZonedDateTime date = localDateTime.atZone(zoneId);
 	    
 	    Order o = new Order();
 	    o.setOrderId(oDAO.findTopOrderId()+1);
-	    o.setOrderDate(date);
+	    o.setOrderDate(date.toLocalDateTime());
 	    o.setAccount(account);
 	    o.setAddress(account.getAddressDetail()+" ,"+account.getAddress());
 	    o.setTotalAmount(cart.getAmount());

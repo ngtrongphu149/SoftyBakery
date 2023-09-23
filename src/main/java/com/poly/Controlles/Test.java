@@ -48,10 +48,10 @@ public class Test {
 	}
 	@GetMapping("/test")
 	public String test(Model model) throws ParseException {
-		Account a = aDAO.getByUserName("bemeonho");
-		a.setPassword(passwordEncoder().encode("123"));
-		aDAO.save(a);
-		
+		for(Account a : aDAO.findAll()) {
+			a.setPassword(passwordEncoder().encode("123"));
+			aDAO.save(a);
+		}
 		System.out.println("nghia ngu");
 		return "test"; 
 	}

@@ -110,9 +110,7 @@
 	            <a href="#" class="dropdown nav-item nav-link" data-bs-toggle="dropdown">
 	            	<div class="dropdown-toggle">
 	             	<span ng-bind="userInfo.fullName" class="nav-item" style="margin-right:10px;"></span>
-						<img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar" ng-if="!userInfo.admin">
-						<img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar" ng-if="userInfo.admin" style="border:4px solid #74b9ff;">
-	             		
+					 <img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar" ng-style="border: {{userInfo.admin ? '4px solid #74b9ff' : 'none'}};">
 	                </div>
 	            </a>
 	            <div class="dropdown-menu dropdown-menu-end m-0">

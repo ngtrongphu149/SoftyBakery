@@ -535,27 +535,29 @@ margin:5px;
 	border: 1px solid #ccc;
 	border-radius: 20px;
 	padding: 10px;
-	width: 400px;
 	font-size: 14px;
 	outline: none;
   }
   .comment-button {
-	background-color: #1877f2; /* Màu nền của Facebook */
-	color: #fff; /* Màu chữ trắng */
+	background-color: #1877f2;
+	color: #fff;
 	border: none;
 	border-radius: 20px;
 	padding: 10px 20px;
-	margin-left: 10px; /* Khoảng cách giữa input và button */
+	margin-left: 10px;
 	cursor: pointer;
 	font-size: 14px;
 	outline: none;
   }
   
-  /* Thiết kế nút gửi bình luận khi hover */
-  .comment-button:hover {
-	background-color: #0e62c7; /* Màu nền khi hover */
-  }
   
+  .comment-button:hover {
+	background-color: #0e62c7;
+  }
+  .comment-separator {
+    margin: 0 5px;
+}
+
 
 .a-amount {
 	width: 32px;

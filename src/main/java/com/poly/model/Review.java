@@ -23,7 +23,7 @@ public class Review {
     @JoinColumn(name = "productid")
     private Product product;
 
-    @Column(nullable = false)
+    @Column(name="rating")
     private int rating;
 
     @Lob

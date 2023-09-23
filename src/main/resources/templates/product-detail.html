@@ -120,7 +120,7 @@
           <span class="fw-bold">
             <i class="bi bi-cart-check pe-2"></i>Giao hàng miễn phí
           </span>
-          <span>(Đơn hàng trên 500k hoặc khoảng cách dưới 3km)</span>
+          <span >(Đơn hàng trên 500k hoặc khoảng cách dưới 3km)</span>
           <br />
           <span class="fw-bold">
             <i class="bi bi-clock-history pe-2"></i>Miễn đổi trả
@@ -164,9 +164,16 @@
         </div>        
         <div class="comment-input-container">
           <input class="comment-input" placeholder="Viết đánh giá..." ng-model="formReview.comment"></input>
-          <label class="form-label">
+          <!-- 
+            <label class="form-label">
             <button class="comment-button" ng-click="postReview()"><i class="fa fa-arrow-right"></i></button>
-          </label>
+            </label>
+          -->
+          <div class="btn-group">
+            <button class="comment-button" ng-click="postReview()"><i class="fas fa-arrow-right"></i></button>
+            <button class="comment-button" ng-click="loadReviews()"><i class="fas fa-sync-alt"></i></button>
+          </div>
+          
         </div>
       </div>
     </form>
@@ -176,7 +183,12 @@
         <img ng-src="/images/accountPhoto/{{r.account.photo}}" class="circle-avatar">
       </div>
       <div class="comment-content">
-        <div class="comment-name" ng-bind="r.account.fullName"></div>
+        <div>
+          <span class="comment-name" ng-bind="r.account.fullName"></span>
+          <span class="comment-separator">·</span>
+          <small><i class="far fa-clock"></i> <span ng-bind="r.reviewDate | dateFilter" style="font-size:12px; align-items: center;"></span></small>
+        </div>
+      
         
         <div class="comment-rating">
           <span ng-repeat="star in [].constructor(r.rating) track by $index" class="fa fa-star text-primary"></span>

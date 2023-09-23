@@ -1,6 +1,8 @@
 package com.poly.RestController;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -30,7 +32,7 @@ public class ReviewRestController {
 	@Autowired ProductDAO pDAO;
 	@Autowired AccountDAO aDAO;
 	@Autowired ReviewDAO rDAO;
-	LocalDateTime date = LocalDateTime.now();
+
 	@GetMapping("/{id}")
 	public ResponseEntity<List <Review>> findById(@PathVariable("id") int id) {
 		List<Review> reviewList = rDAO.getAllReviewsByProductId(id);
@@ -38,17 +40,22 @@ public class ReviewRestController {
 	}
 	
 	@PostMapping("/{id}")
-	public ResponseEntity<String> post(@PathVariable int id,@RequestBody Review review) {
+	public ResponseEntity<Review> post(@PathVariable int id,@RequestBody Review review) {
+		
+		LocalDateTime localDateTime = LocalDateTime.now();
+		ZoneId zoneId = ZoneId.of("Asia/Ho_Chi_Minh");
+		ZonedDateTime date = localDateTime.atZone(zoneId);
+
 	    Product p = pDAO.getById(id);
 	    review.setReviewId(rDAO.getTopReviewId()+1);
 		review.setAccount(getAccountAuth());
-		review.setReviewDate(date);
+		review.setReviewDate(date.toLocalDateTime());
 		review.setProduct(p);
 		rDAO.save(review);
 
-		Review r = new Review();
+		Review r = review;
 
-	    return ResponseEntity.ok("ok");
+	    return ResponseEntity.ok(r);
 	}
 	@GetMapping("/avgRating/{productId}")
 	public ResponseEntity<Double> getAvgRating(@PathVariable("productId") int productId) {
