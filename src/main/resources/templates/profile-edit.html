@@ -87,7 +87,7 @@
 				</div>
 				<div class="mb-3">
 					<label for="addressDetail" class="form-label">Địa chỉ cụ thể:</label>
-					<input type="text" id="address" class="form-control" required ng-model="form.addressDetail" />
+					<input type="text" id="addressDetail" class="form-control" required ng-model="form.addressDetail" />
 				</div>
 
 				<div class="mb-3">
@@ -97,8 +97,8 @@
 				<div class="mb-3">
 					<div class="row">
 						<div class="col">
-							<label for="phoneNumber" class="form-label">Password:</label>
-							<input type="password" id="phoneNumber" class="form-control" ng-model="form.password" />
+							<label for="password" class="form-label">Password:</label>
+							<input type="password" id="password" class="form-control" ng-model="form.password" />
 						</div>
 						<div class="col">
 						</div>
@@ -125,10 +125,9 @@
 								</div>
 								<div class="modal-body">
 									<label for="formFileSm" class="form-label">CHỌN ẢNH</label>
-									<div class="row">
-										<div class="col-8">
-											<input class="form-control form-control-sm" type="file" id="file" name="file">
-										</div>
+									<div>
+											<img id="imgAvatar" src="" class="square-image" style="margin: 10px auto;">
+											<input class="form-control form-control-sm" type="file" id="fileAvatar" name="file">
 									</div>
 								</div>
 								<div class="modal-footer">
@@ -152,7 +151,20 @@
 	<div th:insert="~{layout :: copyright}"></div>
 	<div th:insert="~{layout :: backtotop}"></div>
 	<div th:insert="~{layout :: js-link}"></div>
-
+	<script>
+		var fileAvatar = document.getElementById("fileAvatar");
+		var imgAvatar = document.getElementById("imgAvatar");
+	
+		fileAvatar.addEventListener('change', function () {
+			var file = fileAvatar.files[0];
+			var reader = new FileReader();
+	
+			reader.onload = function (e) {
+				imgAvatar.src = e.target.result;
+			};
+			if (file) reader.readAsDataURL(file); 
+		});
+	</script>
 </body>
 
 </html>
