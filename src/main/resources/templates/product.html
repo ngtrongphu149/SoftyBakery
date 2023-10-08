@@ -84,16 +84,13 @@
 								<img ng-src="/images/{{p.imageUrl}}" class="square-image align-items-start">
 								<div class="product-overlay">
 									<a class="btn btn-lg-square btn-outline-light rounded-circle"
-										href="/product/detail/{{p.productId}}" ng-click="setSelectedProductId()">
+										href="/product/detail/{{p.productId}}" ng-click="setSelectedProductId()" style="margin-right: 5px;">
 										<i class="fa fa-eye text-primary"></i>
 									</a>
-
-									<span>
-										<button class="btn btn-lg-square btn-outline-light rounded-circle"
-											ng-click="modifyCart(p.productId, 'add')">
-											<i class="fa fa-cart-plus"></i>
-										</button>
-									</span>
+									<button class="btn btn-lg-square btn-outline-light rounded-circle" style="margin-left: 5px;"
+										ng-click="modifyCart(p.productId, 'add')">
+										<i class="fa fa-cart-plus"></i>
+									</button>
 								</div>
 							</div>
 						</div>

@@ -48,11 +48,7 @@ public class Test {
 	}
 	@GetMapping("/test")
 	public String test(Model model) throws ParseException {
-		for(Account a : aDAO.findAll()) {
-			a.setPassword(passwordEncoder().encode("123"));
-			aDAO.save(a);
-		}
-		System.out.println("nghia ngu");
+		
 		return "test"; 
 	}
 
@@ -91,5 +87,11 @@ public class Test {
 		System.out.println(a.getPhoto());
 		return a.getPhoto();
 	}
-
+	public void setPassword() {
+		for(Account a : aDAO.findAll()) {
+			a.setPassword(passwordEncoder().encode("123"));
+			aDAO.save(a);
+		}
+		System.out.println("nghia ngu");
+	}
 }

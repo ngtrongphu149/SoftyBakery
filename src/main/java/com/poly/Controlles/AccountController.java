@@ -4,7 +4,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.apache.http.client.methods.*;
+import org.apache.http.impl.client.*;
+import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -25,9 +29,7 @@ import DB.UserUtils;
 public class AccountController {
 	@Autowired AccountDAO aDAO;
 	@Autowired FileStorageService fileService;
-	
-	private String UPLOAD_DIR = "C:\\Users\\lunba\\SoftyBakery\\src\\main\\resources\\static\\images\\accountPhoto";
-	
+		
 	@GetMapping("/register")
 	public String register(Model model) {
 		Account a = new Account();
@@ -46,16 +48,14 @@ public class AccountController {
 		aDAO.save(a);
 		return "login";
 	}
-	
 	@GetMapping("/login")
 	public String login() {
 
 		return "login";
 	}
 	@GetMapping("/login/")
-	public String loginValidation(@RequestParam("error") Boolean error,
-								  Model model) {
-			if(error == true) {
+	public String loginValidation(@RequestParam("error") Boolean error, Model model) {
+		if(error == true) {
 				String message = "Sai tên đăng nhập hoặc mật khẩu!";
 				model.addAttribute("message",message);
 				return "login";
@@ -74,26 +74,60 @@ public class AccountController {
 	public String editProfile(Model model) {
 		return "profile-edit";
 	}
-	@PostMapping("/profile/edit")
-	public String editProfile(@RequestParam("file") MultipartFile file,Model model) {
-	    try {
-	        Account user = getAccountAuth();
-	        if(!file.isEmpty()) {
-	        	Path uploadDir = Paths.get(UPLOAD_DIR);
-	            Files.createDirectories(uploadDir);
-		        Path filePath = uploadDir.resolve(file.getOriginalFilename());
-	            Files.write(filePath, file.getBytes());
-	            user.setPhoto(file.getOriginalFilename());
-	        }
-	        aDAO.save(user);
-	    } catch (Exception e) {
-	    	e.printStackTrace();
-	    }
+	private static final String CLIENT_ID = "0ab0fb9877708c6";
+    private static final String CLIENT_SECRET = "d55ae0d35f1f889cd6be96aca5684032c59ac50a";
+    private static final String IMGUR_UPLOAD_URL = "https://api.imgur.com/3/upload";
 
-	    return "redirect:/profile";
-	}
+    @PostMapping("/profile/edit")
+    public String editProfile(@RequestParam("file") MultipartFile file, Model model) {
+        // try {
+        //     Account user = getAccountAuth();
+        //     if (!file.isEmpty()) {
+        //         CloseableHttpClient httpClient = HttpClients.createDefault();
 
-	
+        //         // Xác thực bằng OAuth2 và nhận access token
+        //         String accessToken = authenticateAndGetAccessToken();
+
+        //         if (accessToken != null) {
+        //             HttpPost httpPost = new HttpPost(IMGUR_UPLOAD_URL);
+        //             httpPost.setHeader("Authorization", "Bearer " + accessToken);
+
+        //             // Sử dụng HttpMultipartMode.BROWSER_COMPATIBLE cho MultipartEntityBuilder
+        //             MultipartEntityBuilder builder = MultipartEntityBuilder.create().setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+        //             builder.addBinaryBody("image", file.getBytes(), ContentType.DEFAULT_BINARY, file.getOriginalFilename());
+        //             HttpEntity entity = builder.build();
+
+        //             httpPost.setEntity(entity);
+
+        //             CloseableHttpResponse response = httpClient.execute(httpPost);
+
+        //             // Xử lý phản hồi từ Imgur
+        //             if (response.getStatusLine().getStatusCode() == 200) {
+        //                 String responseBody = EntityUtils.toString(response.getEntity());
+        //                 // Phân tích JSON phản hồi để lấy URL hình ảnh đã tải lên
+        //                 // Thực hiện lưu URL vào cơ sở dữ liệu hoặc bất kỳ hành động nào khác bạn muốn.
+        //                 // Ví dụ: user.setPhoto(imgurImageUrl);
+        //             }
+        //         }
+
+        //         httpClient.close();
+        //     }
+        //     aDAO.save(user);
+        // } catch (Exception e) {
+        //     e.printStackTrace();
+        // }
+
+        return "redirect:/profile";
+    }
+
+    // Hàm để xác thực và nhận access token từ Imgur
+    private String authenticateAndGetAccessToken() {
+        // Thực hiện xác thực và nhận access token từ Imgur
+        // Sử dụng CLIENT_ID và CLIENT_SECRET để thực hiện xác thực
+        // Trả về access token hoặc null nếu xác thực không thành công
+        // Đây là nơi bạn cần triển khai xác thực OAuth2 với Imgur API.
+        return null;
+    }	
 	
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
