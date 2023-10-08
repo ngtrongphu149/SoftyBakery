@@ -417,15 +417,20 @@ app.controller('UserController', function ($scope, $http) {
     };
 
     $scope.setAddress = function() {
-		$scope.form.address = '';
-		if($scope.city != null) {
-			$scope.form.address = $scope.city.name_with_type;
-			if($scope.district != null) {
-				$scope.form.address = $scope.district.path_with_type;
-				if($scope.ward != null) {
-					$scope.form.address = $scope.ward.path_with_type;
-				}
-			}
+		// $scope.form.address = '';
+		// if($scope.city != null) {
+		// 	$scope.form.address = $scope.city.name_with_type;
+		// 	if($scope.district != null) {
+		// 		$scope.form.address = $scope.district.path_with_type;
+		// 		if($scope.ward != null) {
+		// 			$scope.form.address = $scope.ward.path_with_type;
+		// 		}
+		// 	}
+		// }
+
+		if($scope.ward != null) {
+			$scope.form.address = '';
+			$scope.form.address = $scope.ward.path_with_type;
 		}
 	}
 	

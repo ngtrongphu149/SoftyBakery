@@ -21,7 +21,7 @@ public class SecurityConfig {
 	AccountDAO aDAO;
 
 	@Bean
-	public PasswordEncoder passwordEncoder() {
+	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 	
@@ -31,7 +31,7 @@ public class SecurityConfig {
 	        .csrf(csrf -> csrf.disable())
 	        .authorizeRequests(authorizeRequests ->
 	            authorizeRequests
-	            .requestMatchers("/cart", "/order","/rest/cart/add/**","/profile").authenticated()
+	            .requestMatchers("/cart", "/order","/rest/cart/add/**","/profile","/profile/edit").authenticated()
 	            .requestMatchers("/home", "/about", "/service", "/contact", "/rest/**").permitAll()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
 	        )

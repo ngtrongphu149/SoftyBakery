@@ -53,6 +53,11 @@
 				<h1 class="display-6 mb-4">Explore The Categories Of Our Bakery
 					Products</h1>
 			</div>
+			<p th:if="${message}" style="text-align: center;" class="text-danger text-center">
+			    <i class="fa fa-info-circle" style="font-size: 2em; vertical-align: middle; line-height: 1;"></i>
+			    <span th:text="${message}" style="vertical-align: middle; line-height: 1;"></span>
+			</p>
+
 			<br />
 			<hr />
 			<br />

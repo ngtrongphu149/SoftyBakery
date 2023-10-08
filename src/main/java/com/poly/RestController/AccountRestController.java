@@ -23,12 +23,11 @@ import DB.UserUtils;
 @CrossOrigin(origins = "*")
 @RequestMapping("/rest/user")
 public class AccountRestController {
-    @Autowired 
+    @Autowired
     AccountDAO aDAO;
     private Account userInfo = null;
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+	@Autowired
+	private PasswordEncoder passwordEncoder;
     @GetMapping
     public ResponseEntity<Account> user() {
     	userInfo = null;
@@ -44,7 +43,7 @@ public class AccountRestController {
     }
 	@PutMapping()
 	public ResponseEntity<Account> editProfile(Model model,@RequestBody Account user) {
-		user.setPassword(passwordEncoder().encode(user.getPassword()));
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		aDAO.save(user);
 		return ResponseEntity.ok(user);
 	}

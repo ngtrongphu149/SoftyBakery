@@ -50,7 +50,7 @@ public class Test {
 	public String test(Model model) throws ParseException {
 		
 		return "test"; 
-	}
+	} 
 
 
 

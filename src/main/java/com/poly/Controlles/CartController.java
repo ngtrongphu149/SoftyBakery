@@ -20,10 +20,10 @@ public class CartController {
 	
 	@GetMapping("/cart")
 	public String cart(Model model) {
-		System.out.println("----------------------------------------------------------------");
-		cart.toString1();
-		System.out.println("----------------------------------------------------------------");
-		
+		if(cart.getItems().values().isEmpty()) {
+			model.addAttribute("message", "Cart is empty, let's take a look at some products!");
+			return "redirect:/product/";
+		}
 		return "cart";
 	}
 }

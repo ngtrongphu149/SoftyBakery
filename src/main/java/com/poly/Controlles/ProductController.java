@@ -24,7 +24,8 @@ public class ProductController {
     }
     
 	@GetMapping("/product/")
-	public String roduct(Model model) {
+	public String product(Model model) {
+		model.addAttribute("message", "Cart is empty, let's take a look at some products!");
 		return "product"; 
 	}
 	@GetMapping("/product/detail/{id}")
