@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.thymeleaf.org"
+  lang="vi"
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>Purchase - Softy Bakery</title>
+    <th:block th:insert="~{layout :: css-link}"></th:block>
+  </head>
+
+  <body ng-app="app" ng-controller="ProductController">
+    <div th:insert="~{layout :: spinner}"></div>
+    <div th:insert="~{layout :: topbar}"></div>
+    <div th:insert="~{layout :: navbarProduct}"></div>
+    <!-- Page Header Start -->
+    <div
+      class="container-fluid page-header py-6 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="container text-center pt-5 pb-3">
+        <h1 class="display-4 text-white animated slideInDown mb-3">
+          Purchases
+        </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Order</a>
+            </li>
+            <li class="breadcrumb-item text-primary active" aria-current="page">
+              Purchase
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+    <!-- Product Start -->
+    <div class="bg-light my-6 py-6 pt-0">
+      <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Tất cả</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+	
+    <!-- Product End -->
+    <div th:insert="~{layout :: footer}"></div>
+    <div th:insert="~{layout :: copyright}"></div>
+    <div th:insert="~{layout :: backtotop}"></div>
+    <div th:insert="~{layout :: js-link}"></div>
+  </body>
+</html>

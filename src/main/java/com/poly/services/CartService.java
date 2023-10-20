@@ -1,7 +1,7 @@
 package com.poly.services;
 import java.util.Map;
 
-import com.poly.entities.ProductDTO;
+import com.poly.dto.ProductDTO;
 
 
 public interface CartService {

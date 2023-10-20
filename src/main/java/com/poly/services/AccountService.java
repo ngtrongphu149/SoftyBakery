@@ -6,9 +6,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.poly.dao.AccountDAO;
-import com.poly.entities.AccountToUserDetails;
-import com.poly.model.Account;
+import com.poly.daos.AccountDAO;
+import com.poly.dto.AccountToUserDetails;
+import com.poly.models.Account;
 
 @Component
 public class AccountService implements UserDetailsService {

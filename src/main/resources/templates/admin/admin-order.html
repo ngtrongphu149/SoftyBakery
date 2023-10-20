@@ -91,8 +91,9 @@
 							  </div>
 							</div>
                         </td>
-                        <td>
-                        	<button ng-class="getStatusClass(o.status)" ng-click="updateStatus(o.orderId)">{{o.status}}</button>
+                        <td class="btn-group">
+                        	<button ng-class="getStatusClass(o.status)" ng-click="updateStatus(o.orderId)" style="width: 120px;">{{o.status}}</button>							
+							<button class="btn btn-danger">Xóa</button>
                        	</td>
                     </tr>
                 </tbody>
@@ -107,3 +108,12 @@
 	
 </body>
 </html>
+
+
+
+<form th:action="@{/edit/{id}(id=${id})}" method="post" th:object="${product}">
+    <!-- Các trường dữ liệu khác trong form -->
+    <input type="text" th:field="*{propertyName}" />
+    <!-- ... -->
+    <a th:href="@{/product/delete/{id} (id=${id})}">Xóa</a>
+</form>
