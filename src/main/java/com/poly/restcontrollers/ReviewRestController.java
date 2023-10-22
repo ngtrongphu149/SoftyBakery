@@ -18,13 +18,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import com.poly.dao.*;
 import com.poly.dto.*;
-import com.poly.daos.*;
 import com.poly.models.Account;
 import com.poly.models.Product;
 import com.poly.models.Review;
-
-import staticvariable.UserUtils;
+import com.poly.services.AccountService;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -33,7 +32,7 @@ public class ReviewRestController {
 	@Autowired ProductDAO pDAO;
 	@Autowired AccountDAO aDAO;
 	@Autowired ReviewDAO rDAO;
-
+	@Autowired AccountService accountService;
 	@GetMapping("/{id}")
 	public ResponseEntity<List <Review>> findById(@PathVariable("id") int id) {
 		List<Review> reviewList = rDAO.getAllReviewsByProductId(id);
@@ -63,7 +62,6 @@ public class ReviewRestController {
 		return ResponseEntity.ok(rDAO.getAvgRating(productId));
 	}
 	public Account getAccountAuth() {
-		if(UserUtils.getUser() == null) return null;
-		return aDAO.getByUserName(UserUtils.getUser().getUsername());
+		return accountService.getAccountAuth();
 	}
 }

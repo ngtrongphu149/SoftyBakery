@@ -1,0 +1,45 @@
+// cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart
+	function updateCartLocalStorage() {
+		localStorage.setItem('cart', JSON.stringify($scope.cart));
+	}
+
+	$scope.loadAllCart = function () {
+		$http.get(`${host}/cart`).then(function (resp) {
+			$scope.cart = resp.data;
+			$scope.cartLength = resp.data.length;
+			updateCartLocalStorage();
+		});
+	}
+
+	$scope.modifyCart = function (id, method) {
+		$http.get(`${host}/cart/${method}/${id}`).then(function () {
+			$scope.loadAllCart();
+		});
+	};
+
+	$scope.deleteCart = function (id) {
+		$http.get(`${host}/cart/delete/${id}`).then(function () {
+			$scope.loadAllCart();
+		});
+	};
+
+	$scope.clearCart = function () {
+		$http.get(`${host}/cart/clear`).then(function () {
+			$scope.loadAllCart();
+		});
+	};
+
+	$scope.getAmountCart = function () {
+		return $scope.cart.reduce(function (total, product) {
+			return total + product.price * product.quantity;
+		}, 0);
+	};
+
+	function initCartFromLocalStorage() {
+		$scope.cart = JSON.parse(localStorage.getItem('cart')) || [];
+	}
+	// cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart
+
+	$scope.loadAllCart();
+	initCartFromLocalStorage();
+	

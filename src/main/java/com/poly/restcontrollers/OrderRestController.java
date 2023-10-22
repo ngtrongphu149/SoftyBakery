@@ -8,13 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.poly.dao.*;
 import com.poly.dto.*;
-import com.poly.daos.*;
 import com.poly.models.Account;
 import com.poly.models.Order;
 import com.poly.models.OrderItem;
-
-import staticvariable.UserUtils;
+import com.poly.services.AccountService;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/rest/order")
@@ -31,7 +30,8 @@ public class OrderRestController {
 	OrderItemDAO oiDAO;
 	@Autowired
 	AccountDAO aDAO;
-	
+	@Autowired
+    AccountService accountService;
 	
     @GetMapping
     public ResponseEntity<List<OrderDTO>> findAll() {
@@ -113,13 +113,14 @@ public class OrderRestController {
     public ResponseEntity<List<OrderItem>> getOrderItemByOrderId(@PathVariable("orderId") int orderId) {
     		List<OrderItem> oiList = new ArrayList<>(); 
     		for(OrderItem oi : oiDAO.getOrderItemByOrderId(orderId)) {
-    			ProductDTO pDTO = new ProductDTO(oi.getProduct());
+    			ProductDTO pDTO = new ProductDTO();
+                pDTO.setProduct(oi.getProduct());
     		    
     		    try {
     		        List<String> imageUrlList = pDAO.getImageUrlByProductId(oi.getProduct().getProductId());
     		        if (!imageUrlList.isEmpty()) {
     		        	pDTO.setImageUrl(imageUrlList.get(0));
-    		        	oi.setProduct(pDTO);
+    		        	oi.setProduct(pDTO.getProduct());
     		        }
     		    } catch (IndexOutOfBoundsException e) {
     		        e.printStackTrace();
@@ -132,13 +133,14 @@ public class OrderRestController {
     public ResponseEntity<List<OrderItem>> removeOrderById(@PathVariable("orderId") int orderId) {
     		List<OrderItem> oiList = new ArrayList<>(); 
     		for(OrderItem oi : oiDAO.getOrderItemByOrderId(orderId)) {
-    			ProductDTO pDTO = new ProductDTO(oi.getProduct());
+    			ProductDTO pDTO = new ProductDTO();
+                pDTO.setProduct(oi.getProduct());
     		    
     		    try {
     		        List<String> imageUrlList = pDAO.getImageUrlByProductId(oi.getProduct().getProductId());
     		        if (!imageUrlList.isEmpty()) {
     		        	pDTO.setImageUrl(imageUrlList.get(0));
-    		        	oi.setProduct(pDTO);
+    		        	oi.setProduct(pDTO.getProduct());
     		        }
     		    } catch (IndexOutOfBoundsException e) {
     		        e.printStackTrace();
@@ -149,6 +151,6 @@ public class OrderRestController {
     }
     
     public Account getAccountAuth() {
-		return aDAO.getByUserName(UserUtils.getUser().getUsername());
+		return accountService.getAccountAuth();
 	}
 }

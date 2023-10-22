@@ -1,7 +1,6 @@
 package com.poly.models;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
@@ -9,7 +8,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "Reviews")
 @Data
-@NoArgsConstructor
 public class Review {
     @Id
     @Column(name = "reviewid")

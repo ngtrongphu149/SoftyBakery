@@ -1,18 +1,12 @@
 package com.poly.models;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Categories")
 @Data
-@NoArgsConstructor
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

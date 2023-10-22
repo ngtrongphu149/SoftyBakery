@@ -22,5 +22,4 @@ public interface CartService {
 	
 	ProductDTO getItem(Integer id);
 	
-	void toString1();
 }

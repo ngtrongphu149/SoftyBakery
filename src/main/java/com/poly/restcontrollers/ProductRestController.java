@@ -15,139 +15,137 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import com.poly.dao.*;
 import com.poly.dto.*;
-import com.poly.daos.*;
 import com.poly.models.Product;
 
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/rest/product")
 public class ProductRestController {
-	@Autowired ProductDAO pDAO;
-	@Autowired CategoryDAO cDAO;
-	@Autowired OrderItemDAO oiDAO;
-	@Autowired ProductImageDAO piDAO;
-	
+	@Autowired
+	ProductDAO pDAO;
+	@Autowired
+	CategoryDAO cDAO;
+	@Autowired
+	OrderItemDAO oiDAO;
+	@Autowired
+	ProductImageDAO piDAO;
+
 	@GetMapping
 	public ResponseEntity<List<ProductDTO>> page() {
-		List<ProductDTO> pDTOs = new ArrayList<>();
-		for (Product p : pDAO.findAll()) {
-		    ProductDTO pDTO = new ProductDTO(p);
-		    
-		    try {
-		        List<String> imageUrlList = pDAO.getImageUrlByProductId(p.getProductId());
-		        if (!imageUrlList.isEmpty()) {
-		            pDTO.setImageUrl(imageUrlList.get(0));
-		        }
-		    } catch (IndexOutOfBoundsException e) {
-		        e.printStackTrace();
-		    }
-		    
-		    pDTOs.add(pDTO);
-		}
+		List<ProductDTO> pDTOs = pDAO.findAll().stream()
+				.map(p -> {
+					ProductDTO pDTO = new ProductDTO();
+					List<String> imageUrlList = pDAO.getImageUrlByProductId(p.getProductId());
+					if (!imageUrlList.isEmpty()) {
+						pDTO.setProduct(p);
+						pDTO.setImageUrl(imageUrlList.get(0));
+					}
+					return pDTO;
+				})
+				.collect(Collectors.toList());
 
 		return ResponseEntity.ok(pDTOs);
 	}
+
 	@GetMapping("/{id}")
 	public ResponseEntity<Product> findById(@PathVariable("id") int id) {
-			return ResponseEntity.ok(pDAO.findById(id));
+		return ResponseEntity.ok(pDAO.findById(id));
 	}
-	@GetMapping("/selectedProductId")
-	public ResponseEntity<Integer> getProductSelected() {
-		return ResponseEntity.ok(staticvariable.DataSharing.selectedProductId);
-	}
-	
+
 	@GetMapping("/top")
 	public ResponseEntity<Integer> findTopProductId() {
 		int num = pDAO.findTopProductId() + 1;
 		return ResponseEntity.ok(num);
 	}
-	
+
 	@GetMapping("/c/{categoryId}")
-	public ResponseEntity<List <Product>> findByCategory(@PathVariable("categoryId") int categoryId) {
+	public ResponseEntity<List<Product>> findByCategory(@PathVariable("categoryId") int categoryId) {
 		List<Product> products = pDAO.getProductByCategory(categoryId);
 		return ResponseEntity.ok(products);
 	}
-	@PostMapping()
-	public ResponseEntity<Product> post(@RequestBody ProductDTO pDTO) {
-	    if (pDTO.getProductId() <= 0) {
-	        return ResponseEntity.badRequest().build();
-	    }
-	    Product existingProduct = pDAO.findById(pDTO.getProductId());
-	    Product prd = new Product(pDTO);
-	    if (existingProduct==null) {
-	        return ResponseEntity.badRequest().build();
-	    }
-	    prd.setProductId(pDAO.findTopProductId()+1);
-	    pDAO.save(prd);
-	    return ResponseEntity.ok(pDTO);
-	}
 
+	@PostMapping()
+	public ResponseEntity<ProductDTO> post(@RequestBody ProductDTO pDTO) {
+		if (pDTO.getProduct().getProductId() <= 0) {
+			return ResponseEntity.badRequest().build();
+		}
+		Product existingProduct = pDAO.findById(pDTO.getProduct().getProductId());
+		Product prd = new Product(pDTO);
+		if (existingProduct == null) {
+			return ResponseEntity.badRequest().build();
+		}
+		prd.setProductId(pDAO.findTopProductId() + 1);
+		pDAO.save(prd);
+		return ResponseEntity.ok(pDTO);
+	}
 
 	@PutMapping("/{id}")
 	public ResponseEntity<Product> put(
-	    @PathVariable("id") String id,
-	@RequestBody ProductDTO productDTO) {
-	    if (productDTO.getProductId() != Integer.parseInt(id) || productDTO.getProductId() <= 0) {
-	        return ResponseEntity.badRequest().build();
-	    }
-	    Product prd = new Product(productDTO);
-	    pDAO.save(prd);
-	
-	return ResponseEntity.ok(productDTO);
+			@PathVariable("id") String id,
+			@RequestBody ProductDTO productDTO) {
+		if (productDTO.getProduct().getProductId() != Integer.parseInt(id) || productDTO.getProduct().getProductId() <= 0) {
+			return ResponseEntity.badRequest().build();
+		}
+		Product prd = new Product(productDTO);
+		pDAO.save(prd);
+
+		return ResponseEntity.ok(prd);
 	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") String id) {
-	    int productId = Integer.parseInt(id);
-	    Product existingProduct = pDAO.findById(productId);
-	    
-	    if (existingProduct==null) {
-	        return ResponseEntity.notFound().build();
-	    }
+		int productId = Integer.parseInt(id);
+		Product existingProduct = pDAO.findById(productId);
 
-	    pDAO.deleteById(productId);
-	    return ResponseEntity.ok().build();
+		if (existingProduct == null) {
+			return ResponseEntity.notFound().build();
+		}
+
+		pDAO.deleteById(productId);
+		return ResponseEntity.ok().build();
 	}
+	// pagination - pagination - pagination - pagination - pagination - pagination - pagination - pagination - pagination - pagination
 	@GetMapping("/")
-	public ResponseEntity<List<ProductDTO>> pageProduct(Model model, 
+	public ResponseEntity<List<ProductDTO>> pageProduct(Model model,
 			@RequestParam(required = false, name = "c") String categoryId,
 			@RequestParam(required = false, name = "page", defaultValue = "0") Integer page,
 			@RequestParam(required = false, name = "size", defaultValue = "4") Integer size,
 			@RequestParam(required = false, name = "sort", defaultValue = "ASC") String sort,
-			@RequestParam(required = false, name = "key") String key, 
+			@RequestParam(required = false, name = "key") String key,
 			@RequestParam(required = false) Double minPrice,
 			@RequestParam(required = false) Double maxPrice) {
 		if (size <= 0) {
-	        size = 4;
-	    }
+			size = 4;
+		}
 		if (!sort.equals("ASC") && !sort.equals("DESC")) {
-	        sort = "ASC";
-	    }
+			sort = "ASC";
+		}
 		List<Product> products = pDAO.findAll();
 		List<ProductDTO> prdDTOList = new ArrayList<>();
-		
+
 		Page<Product> filteredProducts = filterAndPaginateProducts(products, key, minPrice, maxPrice, sort, page, size,
-	            categoryId);
+				categoryId);
 
 		for (Product p : filteredProducts) {
-			ProductDTO pDTO = new ProductDTO(p);
-			
+			ProductDTO pDTO = new ProductDTO();
+			pDTO.setProduct(p);
 			try {
-		        List<String> imageUrlList = pDAO.getImageUrlByProductId(p.getProductId());
-		        if (!imageUrlList.isEmpty()) {
-		            pDTO.setImageUrl(imageUrlList.get(0));
-		        }
-		    } catch (IndexOutOfBoundsException e) {
-		        e.printStackTrace();
-		    }
-			
+				List<String> imageUrlList = pDAO.getImageUrlByProductId(p.getProductId());
+				if (!imageUrlList.isEmpty()) {
+					pDTO.setImageUrl(imageUrlList.get(0));
+				}
+			} catch (IndexOutOfBoundsException e) {
+				e.printStackTrace();
+			}
+
 			prdDTOList.add(pDTO);
-        }
-		
+		}
+
 		return ResponseEntity.ok(prdDTOList);
 	}
-	
+
 	private List<Product> filterByName(List<Product> products, String name) {
 		return products.stream().filter(product -> product.getProductName().toLowerCase().contains(name.toLowerCase()))
 				.collect(Collectors.toList());
@@ -170,7 +168,7 @@ public class ProductRestController {
 		}
 		return products.stream().sorted(priceComparator).collect(Collectors.toList());
 	}
-	
+
 	private Page<Product> filterAndPaginateProducts(List<Product> products, String name, Double minPrice,
 			Double maxPrice, String sort, int page, int size, String categoryId) {
 		List<Product> filteredProducts = products;
@@ -189,7 +187,7 @@ public class ProductRestController {
 		} else if (sort.equals("DESC")) {
 			filteredProducts = sort(filteredProducts, false);
 		}
-		
+
 		Pageable pageable = PageRequest.of(page, size);
 		int totalItems = filteredProducts.size();
 		int startIndex = (int) pageable.getOffset();
@@ -198,5 +196,5 @@ public class ProductRestController {
 
 		return new PageImpl<>(items, pageable, totalItems);
 	}
-	
+
 }

@@ -16,10 +16,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Accounts")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class Account implements UserDetails{
 	@Id
     @Column(name = "accountid")
@@ -90,29 +87,4 @@ public class Account implements UserDetails{
 	public boolean isEnabled() {
 		return true;
 	}
-	public String toString() {
-    	return "- - - - - - - - - - - - - - - - - - - - ** User Info ** - - - - - - - - - - - - - - - - - - - -\n"
-		        + "Username: " + getUsername() + "\n"
-		        + "Password: " + getPassword() + "\n"
-		        + "Authorities: " + getAuthorities() + "\n"
-        +      "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -";
-    }
-	public String toStringDetail() {
-    	return "- - - - - - - - - - - - - - - - - - - - ** User Info ** - - - - - - - - - - - - - - - - - - - -\n"
-    			+ "Id: " + getAccountId() + "\n"
-				+ "PhoneNumber: " + getPhoneNumber() + "\n"
-		        + "Username: " + getUsername() + "\n"
-		        + "Fullname: " + getFullName() + "\n"
-		        + "Email: " + getEmail() + "\n"
-		        + "Address: " + getAddress() + "\n"
-		        + "Password: " + getPassword() + "\n"
-        		+ "Admin: " + getAuthorities() + "\n"
-				+ "Photo: " + getPhoto() + "\n"
-		                		
-        +      "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -";
-    }
-    
-    
-    
-    
 }

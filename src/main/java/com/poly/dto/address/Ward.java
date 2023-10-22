@@ -1,4 +1,4 @@
-package com.poly.dto;
+package com.poly.dto.address;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

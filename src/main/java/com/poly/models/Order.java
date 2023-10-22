@@ -5,15 +5,9 @@ import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 @Table(name = "Orders")
-
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class Order {
     @Id
     @Column(name = "orderid")
@@ -34,8 +28,4 @@ public class Order {
 
     @Column(name = "status")
     private String status;
-
-    public String toString() {
-        return orderId + " - " + (account != null ? account.getFullName() : "N/A") + " - " + orderDate + " - " + totalAmount + " - " + address + " - " + status;
-    }
 }

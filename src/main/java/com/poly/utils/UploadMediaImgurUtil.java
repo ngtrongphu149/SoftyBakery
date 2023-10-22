@@ -8,10 +8,10 @@ import java.io.IOException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UploadUtil {
+public class UploadMediaImgurUtil {
   private final OkHttpClient client;
 
-  public UploadUtil() {
+  public UploadMediaImgurUtil() {
     this.client = new OkHttpClient();
   }
 

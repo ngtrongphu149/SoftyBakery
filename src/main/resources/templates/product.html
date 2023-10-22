@@ -1,126 +1,246 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" lang="vi">
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.thymeleaf.org"
+  lang="vi"
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>Products - Softy Bakery</title>
+    <th:block th:insert="~{layout :: css-link}"></th:block>
+    <style>
+      .input-searchkey {
+        font-size: 18px;
+        border: none;
+        border-bottom: 1px solid white;
+		width: 120px;
+      }
+      .input-searchkey:focus {
+        outline: none;
+      }
+	  .btn-searchkey {
+		outline: none;
+		color: white;
+		border: none;
+	  }
+	  .select-sort {
+		border: none;
+		outline: none;
+		padding:14px;
+		border-bottom: 1px solid white;
+		margin:15px;
+	  }
+    </style>
+  </head>
 
-<head>
-	<meta charset="utf-8">
-	<title>Products - Softy Bakery</title>
-	<th:block th:insert="~{layout :: css-link}"></th:block>
-</head>
+  <body ng-app="app" ng-controller="ProductController">
+    <div th:insert="~{layout :: spinner}"></div>
+    <div th:insert="~{layout :: topbar}"></div>
+    <div th:insert="~{layout :: navbarProduct}"></div>
+    <!-- Page Header Start -->
+    <div
+      class="container-fluid page-header py-6 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container text-center pt-5 pb-3">
+        <h1 class="display-4 text-white animated slideInDown mb-3">Products</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Pages</a>
+            </li>
+            <li class="breadcrumb-item text-primary active" aria-current="page">
+              Products
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+    <!-- Product Start -->
+    <div
+      class="container-fluid bg-light my-6 py-6 pt-0"
+      style="margin: 12rem 0"
+    >
+      <div class="container-fluid">
+        <div
+          class="bg-primary text-light rounded-bottom p-5 my-6 mt-0 wow fadeInUp"
+          data-wow-delay="0.1s"
+        >
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+              <h1 class="display-4 text-light mb-0">
+                The Best Bakery In Your City
+              </h1>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+              <div class="d-inline-flex align-items-center text-start">
+                <i class="fa fa-phone-alt fa-4x flex-shrink-0"></i>
+                <div class="ms-4">
+                  <p class="fs-5 fw-bold mb-0">Call Us</p>
+                  <p class="fs-1 fw-bold mb-0">+84 869945854</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="text-center mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 500px"
+        >
+          <p class="text-primary text-uppercase mb-2">// Bakery Products</p>
+          <h1 class="display-6 mb-4">
+            Explore The Categories Of Our Bakery Products
+          </h1>
+        </div>
+        <p
+          th:if="${message}"
+          style="text-align: center"
+          class="text-danger text-center"
+        >
+          <i
+            class="fa fa-info-circle"
+            style="font-size: 2em; vertical-align: middle; line-height: 1"
+          ></i>
+          <span
+            th:text="${message}"
+            style="vertical-align: middle; line-height: 1"
+          ></span>
+        </p>
 
-<body ng-app="app" ng-controller="ProductController">
-	<div th:insert="~{layout :: spinner}"></div>
-	<div th:insert="~{layout :: topbar}"></div>
-	<div th:insert="~{layout :: navbarProduct}"></div>
-	<!-- Page Header Start -->
-	<div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
-		<div class="container text-center pt-5 pb-3">
-			<h1 class="display-4 text-white animated slideInDown mb-3">Products</h1>
-			<nav aria-label="breadcrumb animated slideInDown">
-				<ol class="breadcrumb justify-content-center mb-0">
-					<li class="breadcrumb-item"><a class="text-white" href="#">Home</a>
-					</li>
-					<li class="breadcrumb-item"><a class="text-white" href="#">Pages</a>
-					</li>
-					<li class="breadcrumb-item text-primary active" aria-current="page">Products</li>
-				</ol>
-			</nav>
-		</div>
-	</div>
-	<!-- Page Header End -->
-	<!-- Product Start -->
-	<div class="container-fluid bg-light my-6 py-6 pt-0" style="margin: 12rem 0;">
-		<div class="container-fluid">
-			<div class="bg-primary text-light rounded-bottom p-5 my-6 mt-0 wow fadeInUp" data-wow-delay="0.1s">
-				<div class="row g-4 align-items-center">
-					<div class="col-lg-6">
-						<h1 class="display-4 text-light mb-0">
-							The Best Bakery In Your City
-						</h1>
-					</div>
-					<div class="col-lg-6 text-lg-end">
-						<div class="d-inline-flex align-items-center text-start">
-							<i class="fa fa-phone-alt fa-4x flex-shrink-0"></i>
-							<div class="ms-4">
-								<p class="fs-5 fw-bold mb-0">Call Us</p>
-								<p class="fs-1 fw-bold mb-0">+84 869945854</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-				<p class="text-primary text-uppercase mb-2">// Bakery Products</p>
-				<h1 class="display-6 mb-4">Explore The Categories Of Our Bakery
-					Products</h1>
-			</div>
-			<p th:if="${message}" style="text-align: center;" class="text-danger text-center">
-			    <i class="fa fa-info-circle" style="font-size: 2em; vertical-align: middle; line-height: 1;"></i>
-			    <span th:text="${message}" style="vertical-align: middle; line-height: 1;"></span>
-			</p>
+        <br />
+        <hr />
+        <br />
+        <div class="row g-4">
+          <div class="col text-center justify-content-md-center">
+            <button
+			class="rounded-pill py-3 px-5 btn"
+			ng-class="{'btn-primary': searchCategory !== 0, 'btn-outline-primary text-dark': searchCategory === 0}"
+			ng-click="reset()" style="margin: 15px">
+              Tất cả
+            </button>
+            <button
+              class="rounded-pill py-3 px-5 btn"
+              ng-class="{'btn-primary': c.categoryId !== searchCategory, 'btn-outline-primary text-dark': c.categoryId === searchCategory}"
+              ng-repeat="c in category"
+              ng-click="setSearchCategory(c.categoryId)"
+              style="margin: 15px"
+            >
+              <span>{{c.categoryName}}</span>
+            </button>
 
-			<br />
-			<hr />
-			<br />
-			<div class="row g-4">
-				<div class="col text-center justify-content-md-center">
-					<button class="btn btn-primary rounded-pill py-3 px-5" ng-click="setCategory(0)" style="margin:15px;">
-						Tất cả
-					</button>
-					<button class="btn btn-primary rounded-pill py-3 px-5" ng-repeat="c in category"
-						ng-click="setCategory(c.categoryId)" style="margin:15px;">
-						<span>{{c.categoryName}}</span>
-					</button>
-				</div>
-			</div>
-			<br />
-			<hr />
-			<br />
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-lg-3 wow fadeInUp" data-wow-delay="0.5s" ng-repeat="p in products">
-						<div class="product-item d-flex flex-column bg-white rounded">
-							<div class="text-center p-4">
-								<div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">{{p.price
-									| vndCurrency}}</div>
-								<h4 class="mb-3 text-truncate">{{p.productName}}</h4>
-								<p class="mb-3 text-truncate">{{p.description}}</p>
-							</div>
-							<div class="position-relative mt-auto">
-								<img ng-src="/images/{{p.imageUrl}}" class="square-image align-items-start">
-								<div class="product-overlay">
-									<a class="btn btn-lg-square btn-outline-light rounded-circle"
-										href="/product/detail/{{p.productId}}" ng-click="setSelectedProductId()" style="margin-right: 5px;">
-										<i class="fa fa-eye text-primary"></i>
-									</a>
-									<button class="btn btn-lg-square btn-outline-light rounded-circle" style="margin-left: 5px;"
-										ng-click="modifyCart(p.productId, 'add')">
-										<i class="fa fa-cart-plus"></i>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<div class="col-12 text-center">
-						<div class="mt-5 pt-5">
-							<button class="btn btn-primary rounded-pill py-3 px-5 text-center" style="width: 150px;"
-								ng-click="loadPage(pageNum - 1)" ng-disabled="disablePrev()">Previous</button>
-							<span class="py-3 px-5 text-center">{{pageNum+1 + ' / ' +totalPages}}</span>
-							<button class="btn btn-primary rounded-pill py-3 px-5 text-center" style="width: 150px;"
-								ng-click="loadPage(pageNum + 1)" ng-disabled="disableNext()">Next</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Product End -->
-	<div th:insert="~{layout :: footer}"></div>
-	<div th:insert="~{layout :: copyright}"></div>
-	<div th:insert="~{layout :: backtotop}"></div>
-	<div th:insert="~{layout :: js-link}"></div>
 
-</body>
 
+
+
+            <span class="bg-primary rounded-pill py-3 px-5 dropdown">
+              <input
+                type="text"
+                ng-model="searchKey"
+                class="search-input bg-primary text-light input-searchkey text-center dropdown-toggle" data-bs-toggle="dropdown"
+              />
+              <button
+                type="submit"
+                class="search-button btn-searchkey bg-primary text-light"
+                ng-click="setSearchKey(searchKey)">
+                <i class="fa fa-search"></i>
+              </button>
+                <div class="dropdown-menu dropdown-menu">
+                    <a class="dropdown-item" ng-repeat="p in listAllProducts | filter : searchKey" ng-href="/product/detail/{{p.product.productId}}" >
+                      <span>
+                        <img src="/images/{{p.imageUrl}}" style="width: 60px;">
+                      </span>  
+                      {{p.product.productName}}
+                    </a>
+                </div>
+            </span>			  
+          </div>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <div class="container">
+          <div class="row justify-content-center">
+            <div
+              class="col-lg-3 wow fadeInUp"
+              data-wow-delay="0.3s"
+              ng-repeat="p in filteredAndPagingProduct"
+            >
+              <div class="product-item d-flex flex-column bg-white rounded wow">
+                <div class="text-center p-4 wow fadeInUp" data-wow-delay="0.3s">
+                  <div
+                    class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3"
+                  >
+                    {{p.product.price | vndCurrency}}
+                  </div>
+                  <h4 class="mb-3 text-truncate">{{p.product.productName}}</h4>
+                  <p class="mb-3 text-truncate">{{p.product.description}}</p>
+                </div>
+                <div class="position-relative mt-auto">
+                  <img
+                    ng-src="/images/{{p.imageUrl}}"
+                    class="square-image align-items-start"
+                  />
+                  <div class="product-overlay">
+                    <a
+                      class="btn btn-lg-square btn-outline-light rounded-circle"
+                      href="/product/detail/{{p.product.productId}}"
+                      ng-click="setSelectedProductId()"
+                      style="margin-right: 5px"
+                    >
+                      <i class="fa fa-eye text-primary"></i>
+                    </a>
+                    <button
+                      class="btn btn-lg-square btn-outline-light rounded-circle"
+                      style="margin-left: 5px"
+                      ng-click="modifyCart(p.productId, 'add')"
+                    >
+                      <i class="fa fa-cart-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row justify-content-center wow fadeInUp"
+            data-wow-delay="1s"
+          >
+            <div class="col-12 text-center">
+              <div class="mt-5 pt-5">
+                <button
+                  class="btn btn-primary rounded-pill py-3 px-5 text-center"
+                  style="width: 150px"
+                  ng-click="loadPage(currentPage - 1)"
+                  ng-disabled="disablePrev()"
+                >
+                  Previous
+                </button>
+                <span class="py-3 px-5 text-center"
+                  >{{currentPage+' / '+totalPage}}</span
+                >
+                <button
+                  class="btn btn-primary rounded-pill py-3 px-5 text-center"
+                  style="width: 150px"
+                  ng-click="loadPage(currentPage + 1)"
+                  ng-disabled="disableNext()"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product End -->
+    <div th:insert="~{layout :: footer}"></div>
+    <div th:insert="~{layout :: copyright}"></div>
+    <div th:insert="~{layout :: backtotop}"></div>
+    <div th:insert="~{layout :: js-link}"></div>
+  </body>
 </html>

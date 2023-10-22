@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.poly.daos.ProductDAO;
+import com.poly.dao.ProductDAO;
 import com.poly.services.CartService;
 
 @Controller

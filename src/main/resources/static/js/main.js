@@ -113,24 +113,28 @@ app.filter('dateFilter', function ($filter) {
 	};
 });
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-app.controller('ProductController', function ($scope, $http) {
-	$scope.products = [];
-	$scope.category = [];
+app.controller('ProductController', function ($scope, $http, $filter) {
+	// product
+	$scope.listAllProducts = [];
+	$scope.filteredProducts = [];
+	$scope.filterByCategory = [];
+	// category
+	$scope.filteredAndPagingProduct = [];
 
-	$scope.pageNum = 0;
-	$scope.totalPages = 0;
-	$scope.totalProducts = 0;
-	$scope.selectedProductId = 0;
+	$scope.totalPage = 0;
+	$scope.currentPage = 1;
+	$scope.itemsPerPage = 0;
+	$scope.category = 0;
 
+	$scope.searchCategory = 0;
+	$scope.searchKey = "";
+	$scope.searchSort = "asc";
 
-	$scope.selectedCategoryId = 0;
-	$scope.key = '';
-
-
+	//cart
 	$scope.cart = [];
 	$scope.cartLength = 0;
 
-	$scope.imgData = "";
+	$scope.imageClick = "";
 	$scope.productImages = [];
 
 	$scope.reviewList = [];
@@ -140,137 +144,109 @@ app.controller('ProductController', function ($scope, $http) {
 	$scope.isHovered = new Array(5).fill(false);
 
 	$scope.userInfo = {};
-	
 
+
+	$scope.categoryList = [];
+	function loadAllProducts() {
+		var url = `${host}/product`;
+		return $http.get(url).then(response => {
+			$scope.listAllProducts = response.data;
+			$scope.itemsPerPage = 4;
+			$scope.totalPage = Math.ceil(response.data.length / $scope.itemsPerPage);
+		});
+	}
 	function loadCategory() {
 		return $http.get(`${host}/category`).then(function (resp) {
 			$scope.category = resp.data;
 		});
 	}
-
-	// pagination and filters - pagination and filters - pagination and filters - pagination and filters - pagination and filters
-
-	$scope.loadPage = function (page) {
-		$scope.pageNum = page;
-		var url = `${host}/product/?page=`+page;
-		$http.get(url).then(function (resp) {
-			if ($scope.selectedCategoryId != 0 && $scope.selectedCategoryId != null) {
-				
-				
-				
-				$http.get(`${host}/product/c/${$scope.selectedCategoryId}`).then(function (resp) {
-					$scope.totalProducts = resp.data.length;
-					$scope.totalPages = Math.ceil($scope.totalProducts / 4);
-				})
-				$http.get(url +"&c="+$scope.selectedCategoryId).then(resp => {
-					$scope.products = resp.data;
-				})
-			} else {
-				$http.get(`${host}/product`).then(resp => {
-					$scope.totalPages = Math.ceil(resp.data.length / 4);
-				})
-				$http.get(url).then(resp => {
-					$scope.products = resp.data;
-				})
-				
-			}
-		});
+	$scope.loadPage = function (currentPage) {
+		$scope.filteredProducts = $scope.listAllProducts;
+		if ($scope.searchCategory != 0) {
+			$scope.filterByCategory($scope.searchCategory);
+		}
+		if ($scope.searchKey != "") {
+			$scope.filterByKey($scope.searchKey);
+		}
+		$scope.currentPage = currentPage;
+		var begin = (currentPage - 1) * $scope.itemsPerPage;
+		$scope.filteredAndPagingProduct = $scope.filteredProducts.slice(begin, begin + $scope.itemsPerPage);
+		$scope.totalPage = Math.ceil($scope.filteredProducts.length / $scope.itemsPerPage);
 	};
-	// pagination and filters - pagination and filters - pagination and filters - pagination and filters - pagination and filters
 
+	$scope.filterByKey = function (key) {
+		var filteredProducts = $scope.listAllProducts.filter(function (product) {
+			return product.product.productName.toLowerCase().includes(key.toLowerCase());
+		});
+
+		$scope.totalPage = Math.ceil(filteredProducts.length / $scope.itemsPerPage);
+
+		if (filteredProducts.length > 0) {
+			$scope.filteredProducts = filteredProducts;
+		}
+	};
+
+
+
+	$scope.filterByCategory = function (categoryId) {
+		$scope.currentPage = 1;
+		$scope.filteredProducts = $filter('filter')($scope.listAllProducts, function (product) {
+			return product.product.category.categoryId === categoryId;
+		});
+		$scope.totalPage = Math.ceil($scope.filteredProducts.length / $scope.itemsPerPage);
+	};
+	$scope.setSearchCategory = function (categoryId) {
+		$scope.searchCategory = categoryId;
+		$scope.loadPage(1);
+	}
+	$scope.setSearchKey = function (key) {
+		$scope.searchKey = key;
+		$scope.loadPage(1);
+	}
+	$scope.reset = function () {
+		$scope.searchCategory = 0;
+		$scope.searchKey = "";
+		$scope.loadPage(1);
+	}
+
+
+
+	// pagination and filters - pagination and filters - pagination and filters - pagination and filters - pagination and filters
 	$scope.disablePrev = function () {
-		return $scope.pageNum === 0;
+		return $scope.currentPage === 1;
 	};
 
 	$scope.disableNext = function () {
-		return $scope.pageNum === $scope.totalPages - 1;
+		return $scope.currentPage === $scope.totalPage;
 	};
-
-	$scope.setCategory = function (categoryId) {
-		$scope.selectedCategoryId = categoryId;
-		$scope.loadPage(0);
-	};
-	$scope.getprdId = function () {
-		const url = `${host}/product/selectedProductId`;
-		return $http.get(url).then(resp => {
-			return resp.data;
-		});
-	}
-	$scope.setSelectedProductId = function () {
-		$scope.getprdId().then(function (productId) {
-			$scope.selectedProductId = productId;
-		});
-	}
-
-	// cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart
-	function updateCartLocalStorage() {
-		localStorage.setItem('cart', JSON.stringify($scope.cart));
-	}
-
-	$scope.loadAllCart = function () {
-		$http.get(`${host}/cart`).then(function (resp) {
-			$scope.cart = resp.data;
-			$scope.cartLength = resp.data.length;
-			updateCartLocalStorage();
-		});
-	}
-
-	$scope.modifyCart = function (id, method) {
-		$http.get(`${host}/cart/${method}/${id}`).then(function () {
-			$scope.loadAllCart();
-		});
-	};
-
-	$scope.deleteCart = function (id) {
-		$http.get(`${host}/cart/delete/${id}`).then(function () {
-			$scope.loadAllCart();
-		});
-	};
-
-	$scope.clearCart = function () {
-		$http.get(`${host}/cart/clear`).then(function () {
-			$scope.loadAllCart();
-		});
-	};
-
-	$scope.getAmountCart = function () {
-		return $scope.cart.reduce(function (total, product) {
-			return total + product.price * product.quantity;
-		}, 0);
-	};
-
-	function initCartFromLocalStorage() {
-		$scope.cart = JSON.parse(localStorage.getItem('cart')) || [];
-	}
-	// cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart
-
 	// product images - product images - product images - product images - product images - product images - product images
 	$scope.loadAllProductImages = function () {
 		$scope.getprdId().then(function (productId) {
-			$scope.selectedProductId = productId;
-			var url = "http://localhost:8080/rest/pi/";
+			$scope.selectedProductId = 42;
+			var url = `${host}/pi/`;
 			url += productId;
 			$http.get(url).then(resp => {
 				$scope.productImages = resp.data;
+				console.log(resp.data)
 			})
 			$scope.loadReviews();
 		})
-		
 	}
 	$scope.setImgData = function (data) {
-		$scope.imgData = data;
+		var src = data.target.src;
+		$scope.imageClick = src;
 	}
 	// product images - product images - product images - product images - product images - product images - product images 
 
 	// review - review - review - review - review - review - review - review - review - review - review - review - review
-	
+
 	$scope.loadReviews = function () {
 		$http.get(`${host}/review/${$scope.selectedProductId}`).then(resp => {
 			$scope.reviewList = resp.data;
 			console.log(resp.data);
 		})
 	}
-	
+
 	function getUser() {
 		var url = `${host}/user`;
 		$http.get(url).then(resp => {
@@ -286,47 +262,36 @@ app.controller('ProductController', function ($scope, $http) {
 			$scope.userInfo.admin = resp.data.admin;
 		})
 	}
-	$scope.postReview = function() {
+	$scope.postReview = function () {
 		$scope.formReview.rating = $scope.rating;
 		const url = `${host}/review/${$scope.selectedProductId}`;
-		$http.post(url, $scope.formReview,{headers:{'Content-Type': 'application/json'}
-		}).then(function(response) {
+		$http.post(url, $scope.formReview, {
+			headers: { 'Content-Type': 'application/json' }
+		}).then(function (response) {
 			$scope.reviewList += response.data;
 			$scope.loadReviews();
 			console.log($scope.reviewList);
 		});
-			
+
 	}
-	
-	
-	$scope.setHovered = function(index, hovered) {
-	  for (var i = 0; i <= index; i++) {
-		$scope.isHovered[i] = hovered;
-	  }
+
+	$scope.setHovered = function (index, hovered) {
+		for (var i = 0; i <= index; i++) {
+			$scope.isHovered[i] = hovered;
+		}
 	};
-	$scope.setRating = function(rating) {
-	  $scope.rating = rating;
+	$scope.setRating = function (rating) {
+		$scope.rating = rating;
 	};
 	// review - review - review - review - review - review - review - review - review - review - review - review - review
-	
-	
-
-
 
 	// Khởi tạo dữ liệu ban đầu
+	loadAllProducts().then(function () {
+		$scope.loadPage(1);
+	});
 	loadCategory();
-	$scope.loadPage(0);
-	$scope.setSelectedProductId();
-	$scope.loadAllCart();
-	initCartFromLocalStorage();
-
-	$scope.loadAllProductImages();
-
 	getUser();
 });
-
-
-
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 app.controller('OrderController', function ($scope, $http) {
@@ -339,18 +304,18 @@ app.controller('UserController', function ($scope, $http) {
 	$scope.userInfo = {};
 	$scope.form = {};
 
-    $scope.cities = [];
-    $scope.districts = [];
-    $scope.wards = [];
+	$scope.cities = [];
+	$scope.districts = [];
+	$scope.wards = [];
 
-    $scope.city = null;
-    $scope.district = null;
-    $scope.ward = null;
+	$scope.city = null;
+	$scope.district = null;
+	$scope.ward = null;
 
 
 	const url = `${host}/address/`;
 	const urlUser = `${host}/user`;
-	
+
 	function getUser() {
 		var url = `${host}/user`;
 		$http.get(url).then(resp => {
@@ -367,56 +332,56 @@ app.controller('UserController', function ($scope, $http) {
 			$scope.form.admin = $scope.userInfo.admin;
 		})
 	}
-	$scope.test = function() {
+	$scope.test = function () {
 		console.log($scope.form);
 	}
-	$scope.putUser = function() {
+	$scope.putUser = function () {
 		$http.put(urlUser, $scope.form)
-        .then(function (resp) {
-            // Xử lý phản hồi thành công từ máy chủ
-            $scope.form = resp.data;
-        })
-        .catch(function (error) {
-            // Xử lý lỗi
-            console.error("Error:", error);
-            // Hiển thị thông báo lỗi cho người dùng (tùy bạn)
-        });
+			.then(function (resp) {
+				// Xử lý phản hồi thành công từ máy chủ
+				$scope.form = resp.data;
+			})
+			.catch(function (error) {
+				// Xử lý lỗi
+				console.error("Error:", error);
+				// Hiển thị thông báo lỗi cho người dùng (tùy bạn)
+			});
 	}
-    $scope.loadCities = function () {
-        $http.get(url+"cities").then(function (response) {
-            $scope.cities = response.data;
-        });
-    };
+	$scope.loadCities = function () {
+		$http.get(url + "cities").then(function (response) {
+			$scope.cities = response.data;
+		});
+	};
 
-    $scope.loadDistricts = function () {
-        if ($scope.city !== null && $scope.city === '') {
+	$scope.loadDistricts = function () {
+		if ($scope.city !== null && $scope.city === '') {
 			$scope.address = $scope.city.name;
-            $scope.districts = [];
-            $scope.wards = [];
-            return;
-        }
+			$scope.districts = [];
+			$scope.wards = [];
+			return;
+		}
 
-        $http.get(url+$scope.city.code+"/districts").then(function (response) {
-            $scope.districts = response.data;
-            $scope.district = null;
-            $scope.wards = [];	
-			$scope.setAddress();		
-        });
+		$http.get(url + $scope.city.code + "/districts").then(function (response) {
+			$scope.districts = response.data;
+			$scope.district = null;
+			$scope.wards = [];
+			$scope.setAddress();
+		});
 
-    };
+	};
 
-    $scope.loadWards = function () {
-        if (!$scope.district) {
-            $scope.wards = [];
-            return;
-        }
-        $http.get(url+$scope.district.code+"/wards").then(function (response) {
-            $scope.wards = response.data;
-			$scope.setAddress();		
-        });
-    };
+	$scope.loadWards = function () {
+		if (!$scope.district) {
+			$scope.wards = [];
+			return;
+		}
+		$http.get(url + $scope.district.code + "/wards").then(function (response) {
+			$scope.wards = response.data;
+			$scope.setAddress();
+		});
+	};
 
-    $scope.setAddress = function() {
+	$scope.setAddress = function () {
 		// $scope.form.address = '';
 		// if($scope.city != null) {
 		// 	$scope.form.address = $scope.city.name_with_type;
@@ -428,13 +393,13 @@ app.controller('UserController', function ($scope, $http) {
 		// 	}
 		// }
 
-		if($scope.ward != null) {
+		if ($scope.ward != null) {
 			$scope.form.address = '';
 			$scope.form.address = $scope.ward.path_with_type;
 		}
 	}
-	
-	
+
+
 
 
 

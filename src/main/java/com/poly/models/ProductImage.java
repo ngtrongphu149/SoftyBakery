@@ -7,13 +7,11 @@ import com.poly.dto.ProductDTO;
 
 import jakarta.persistence.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+
 @Entity
 @Table(name = "productimages")
-
+@Data
+@NoArgsConstructor
 public class ProductImage {
     @Id
     @Column(name = "imageid")

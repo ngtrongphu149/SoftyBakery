@@ -1,0 +1,97 @@
+app.controller('ProductController', function ($scope, $http, $filter) {
+	$scope.listAllProducts = [];
+    $scope.filteredProducts = [];
+	$scope.filteredAndPagingProduct = [];
+	
+	$scope.totalPage = 0;
+    $scope.currentPage = 1;
+    $scope.itemsPerPage = 0;
+    $scope.category = 0;
+
+	$scope.searchCategory = 0;
+	$scope.searchKey = "";
+
+	$scope.cart = [];
+	$scope.cartLength = 0;
+
+	$scope.imgData = "";
+	$scope.productImages = [];
+
+	$scope.reviewList = [];
+	$scope.formReview = {};
+	$scope.rating = 0;
+	$scope.stars = new Array(5);
+	$scope.isHovered = new Array(5).fill(false);
+
+	$scope.userInfo = {};
+
+
+	$scope.categoryList = [];
+    function loadAllProducts() {
+        var url = `${host}/product`;
+        return $http.get(url).then(response => {
+            $scope.listAllProducts = response.data;
+            $scope.itemsPerPage = 4;
+            $scope.totalPage = Math.ceil(response.data.length / $scope.itemsPerPage);
+        });
+    }
+	function loadCategory() {
+		return $http.get(`${host}/category`).then(function (resp) {
+			$scope.category = resp.data;
+		});
+	}
+    $scope.loadPage = function(currentPage) {
+		$scope.filteredProducts = $scope.listAllProducts;
+		if($scope.searchCategory != 0) {
+			$scope.filterByCategory();
+		} 
+		if($scope.searchKey != "") {
+			$scope.filterByKey();
+		}
+        $scope.currentPage = currentPage;
+        var begin = (currentPage - 1) * $scope.itemsPerPage;
+        $scope.filteredAndPagingProduct = $scope.filteredProducts.slice(begin, begin + $scope.itemsPerPage);
+		console.log($scope.filteredAndPagingProduct)
+    };
+	
+    $scope.filterByKey = function (key) {
+        $scope.currentPage = 1;
+        $scope.filteredProducts = $scope.listAllProducts.filter(function (product) {
+            
+            return product.name.toLowerCase().includes($scope.key.toLowerCase());
+        });
+        $scope.totalPage = Math.ceil($scope.filteredProducts.length / $scope.itemsPerPage);
+    };
+
+    $scope.filterByCategory = function (categoryId) {
+        $scope.currentPage = 1;
+        $scope.filteredProducts = $filter('filter')($scope.listAllProducts, function(product) {
+			return product.product.category.categoryId === $scope.searchCategory;
+		});
+        $scope.totalPage = Math.ceil($scope.filteredProducts.length / $scope.itemsPerPage);
+    };
+    $scope.setSearchCategory = function (categoryId) {
+		$scope.searchCategory = categoryId;
+		$scope.loadPage(1);
+	}
+
+	// pagination and filters - pagination and filters - pagination and filters - pagination and filters - pagination and filters
+	$scope.disablePrev = function () {
+		return $scope.currentPage === 1;
+	};
+	
+	$scope.disableNext = function () {
+		return $scope.currentPage === $scope.totalPage;
+	};
+	
+
+	
+
+	// Khởi tạo dữ liệu ban đầu
+	loadAllProducts().then(function () {
+        $scope.loadPage(1);
+    });
+	loadCategory();
+
+	
+});

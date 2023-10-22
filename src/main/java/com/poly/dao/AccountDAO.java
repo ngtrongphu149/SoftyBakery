@@ -1,4 +1,4 @@
-package com.poly.daos;
+package com.poly.dao;
 
 import java.util.Optional;
 

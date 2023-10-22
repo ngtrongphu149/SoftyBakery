@@ -1,11 +1,11 @@
-package com.poly.dto;
+package com.poly.dto.address;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.*;
 
 @Data
-public class City {
+public class District {
     @JsonProperty("name")
     private String name;
 
@@ -18,6 +18,15 @@ public class City {
     @JsonProperty("name_with_type")
     private String nameWithType;
 
+    @JsonProperty("path")
+    private String path;
+
+    @JsonProperty("path_with_type")
+    private String pathWithType;
+
     @JsonProperty("code")
     private String code;
+
+    @JsonProperty("parent_code")
+    private String parentCode;
 }

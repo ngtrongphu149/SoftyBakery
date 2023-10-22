@@ -1,66 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <meta charset="utf-8">
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <meta charset="utf-8" />
     <title>Softy Bakery</title>
     <th:block th:insert="~{layout :: css-link}"></th:block>
-</head>
+  </head>
 
-<body ng-app="app" ng-controller="ProductController">
+  <body ng-app="app" ng-controller="ProductController">
     <div th:insert="~{layout :: navbarProduct}"></div>
-    <div style="height: 150px;"></div>
-
-
-    <img src="https://i.imgur.com/Xit5nG5.png" id="img">
-    <input type="file" id="file">
-    <p id="url"></p>
-    <script>
-        const file = document.getElementById("file");
-        const img = document.getElementById("img");
-        const url = document.getElementById("url");
-
-        file.addEventListener("change", ev => {
-            const formData = new FormData();
-            formData.append("image", ev.target.files[0]);
-
-            fetch("https://api.imgur.com/3/image/", {
-                method: "POST",
-                headers: {
-                    Authorization: "Client-ID 7e634ae0a816eb4"
-                },
-                body: formData
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    img.src = data.data.link;
-                    url.innerText = data.data.link;
-                })
-                .catch(error => {
-                    console.error("Error uploading image:", error);
-                });
-        });
-    </script>
-
-
-
-
-
-
-
+    <div style="height: 150px"></div>
 
     <h1 ng-bind="address.path_with_type"></h1>
     <div th:insert="~{layout :: footer}"></div>
     <div th:insert="~{layout :: copyright}"></div>
     <div th:insert="~{layout :: backtotop}"></div>
     <div th:insert="~{layout :: js-link}"></div>
-</body>
-
-
-
+  </body>
 </html>

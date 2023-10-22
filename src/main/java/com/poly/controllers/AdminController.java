@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.poly.daos.CategoryDAO;
-import com.poly.daos.ProductDAO;
-import com.poly.daos.ProductImageDAO;
+import com.poly.dao.CategoryDAO;
+import com.poly.dao.ProductDAO;
+import com.poly.dao.ProductImageDAO;
 import com.poly.models.Product;
 import com.poly.models.ProductImage;
 

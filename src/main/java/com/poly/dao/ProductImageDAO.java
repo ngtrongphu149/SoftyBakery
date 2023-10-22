@@ -1,4 +1,4 @@
-package com.poly.daos;
+package com.poly.dao;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import com.poly.models.Product;
 import com.poly.models.ProductImage;
 
 public interface ProductImageDAO extends JpaRepository<ProductImage, Integer> {
-	@Query("SELECT pi.imageUrl FROM ProductImage pi WHERE pi.product = ?1")
-	List<String> getProductImagesByProductId(Product product);
+	@Query("SELECT pi.imageUrl FROM ProductImage pi WHERE pi.product.productId = ?1")
+	List<String> getProductImagesByProductId(int productId);
 	
 	@Query("SELECT pi FROM ProductImage pi WHERE pi.product = ?1")
 	List<ProductImage> getPIByProductId(Product product);

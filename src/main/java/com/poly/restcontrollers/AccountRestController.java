@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.poly.dao.AccountDAO;
 import com.poly.dto.AccountDTO;
-import com.poly.daos.AccountDAO;
 import com.poly.models.Account;
-
-import staticvariable.UserUtils;
+import com.poly.services.AccountService;
 
 
 @RestController
@@ -27,6 +26,8 @@ import staticvariable.UserUtils;
 public class AccountRestController {
     @Autowired
     AccountDAO aDAO;
+	@Autowired
+	AccountService accountService;
     private Account userInfo = null;
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -64,8 +65,7 @@ public class AccountRestController {
 
 
 	public Account getAccountAuth() {
-		if(UserUtils.getUser() == null) return null;
-		return aDAO.getByUserName(UserUtils.getUser().getUsername());
+		return accountService.getAccountAuth();
 	}
 }
 

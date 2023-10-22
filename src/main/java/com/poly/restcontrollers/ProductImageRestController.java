@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.poly.daos.*;
+import com.poly.dao.*;
 import com.poly.models.Product;
 import com.poly.models.ProductImage;
 

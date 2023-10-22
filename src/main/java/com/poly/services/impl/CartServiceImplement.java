@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 
-import com.poly.daos.ProductDAO;
+import com.poly.dao.ProductDAO;
 import com.poly.dto.ProductDTO;
 import com.poly.services.CartService;
 import com.poly.services.LocalStorageService;
@@ -25,8 +25,8 @@ public class CartServiceImplement implements CartService {
     public void add(Integer id) {
     	
         if (!map.containsKey(id)) {
-            ProductDTO dto = new ProductDTO(pDAO.getById(id));
-            dto.setProductId(id);
+            ProductDTO dto = new ProductDTO();
+            dto.setProduct(pDAO.getById(id));
             map.put(id, dto);
         } else {
             update(id, "plus");
@@ -68,21 +68,12 @@ public class CartServiceImplement implements CartService {
 
     @Override
     public double getAmount() {
-        return map.values().stream().mapToDouble(item -> item.getPrice() * item.getQuantity()).sum();
+        return map.values().stream().mapToDouble(item -> item.getProduct().getPrice() * item.getQuantity()).sum();
     }
 
     @Override
     public ProductDTO getItem(Integer id) {
         return map.get(id);
-    }
-    @Override
-    public void toString1() {
-    	if(map.values().size()==0) {
-    		System.out.println("Cart rỗng!");
-    	}
-    	for(ProductDTO p : map.values()) {
-    		System.out.println(p.toString());
-    	}
     }
 }
     

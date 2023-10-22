@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 
-import com.poly.daos.CategoryDAO;
-import com.poly.daos.ProductDAO;
-import com.poly.daos.ProductImageDAO;
+import com.poly.dao.CategoryDAO;
+import com.poly.dao.ProductDAO;
+import com.poly.dao.ProductImageDAO;
+import com.poly.models.ProductImage;
 
 @Controller
 public class ProductController {
@@ -28,12 +29,12 @@ public class ProductController {
 		model.addAttribute("message", "Cart is empty, let's take a look at some products!");
 		return "product"; 
 	}
+	
 	@GetMapping("/product/detail/{id}")
 	public String product_detail(@PathVariable("id") int id, Model model) {
-		model.addAttribute("piList", piDAO.getProductImagesByProductId(pDAO.getById(id)));
+		model.addAttribute("piList", piDAO.getProductImagesByProductId(id));
 		model.addAttribute("product", pDAO.getProductById(id));
-		model.addAttribute("img", piDAO.getProductImagesByProductId(pDAO.getById(id)).get(0));
-		staticvariable.DataSharing.selectedProductId = id;
 		return "product-detail";
 	}
+
 }

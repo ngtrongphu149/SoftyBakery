@@ -4,17 +4,14 @@ import lombok.*;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.poly.dto.ProductDTO;
 
 import jakarta.persistence.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "products")
+@Data
+@NoArgsConstructor
 public class Product {
 	@Id
 	@Column(name = "productid")
@@ -29,7 +26,11 @@ public class Product {
     @Column(name = "price", nullable = false)
     private Double price;
     
+    @Column(name = "isenable", nullable = false)
+    private boolean isEnable;
     
+    
+
     @ManyToOne
     @JoinColumn(name = "categoryid")
     private Category category;
@@ -37,15 +38,13 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<OrderItem> orderDetails;
     
-    public Product(ProductDTO p) {
+    public Product(ProductDTO pDTO) {
+        Product p = pDTO.getProduct();
     	productId = p.getProductId();
     	productName = p.getProductName();
     	description = p.getDescription();
     	price = p.getPrice();
     	category = p.getCategory();
     	orderDetails = p.getOrderDetails();
-    }
-    public String toString() {
-    	return productId + " - " + productName + " - " +description+ " - " +price+ " - " +category.getCategoryId();
     }
 }

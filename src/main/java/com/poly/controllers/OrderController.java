@@ -9,14 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import com.poly.daos.*;
+import com.poly.dao.*;
 import com.poly.dto.*;
 import com.poly.models.Account;
 import com.poly.models.Order;
 import com.poly.models.OrderItem;
 import com.poly.services.*;
-
-import staticvariable.UserUtils;
 
 @Controller
 public class OrderController {
@@ -28,9 +26,11 @@ public class OrderController {
     OrderDAO oDAO;
     @Autowired
     OrderItemDAO oiDAO;
+	@Autowired
+	AccountService accountService;
 	@GetMapping("/order")
     public String index(Model model) {
-		Account acc = getAccountAuth();
+		Account acc = accountService.getAccountAuth();
 		for(ProductDTO p : cart.getItems().values()) {
 			System.out.println(p.toString());
 		}
@@ -45,7 +45,6 @@ public class OrderController {
 		LocalDateTime localDateTime = LocalDateTime.now();
 		ZoneId zoneId = ZoneId.of("Asia/Ho_Chi_Minh");
 		ZonedDateTime date = localDateTime.atZone(zoneId);
-	    System.out.println(user.toStringDetail());
 	     Order o = new Order();
 	     o.setOrderId(oDAO.findTopOrderId()+1);
 	     o.setOrderDate(date.toLocalDateTime());
@@ -60,7 +59,7 @@ public class OrderController {
 	         oi.setOrderItemId(oiDAO.findTopOrderItemId()+1);
 	         oi.setOrder(o);
 	         oi.setProduct(d.getProduct());
-	         oi.setPrice(d.getPrice());
+	         oi.setPrice(d.getProduct().getPrice());
 	         oi.setQuantity(d.getQuantity());
 	         oi.toString();
 	         oiDAO.save(oi);
@@ -72,9 +71,4 @@ public class OrderController {
 		
 	    return "order-success";
 	}
-	public Account getAccountAuth() {
-		return aDAO.getByUserName(UserUtils.getUser().getUsername());
-	}
-	///hellos
-
 }

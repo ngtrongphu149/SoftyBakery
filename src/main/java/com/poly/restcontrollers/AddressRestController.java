@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.poly.dto.*;
+import com.poly.dto.address.City;
+import com.poly.dto.address.District;
+import com.poly.dto.address.Ward;
 import com.poly.utils.JsonReaderUtil;
 
 @RestController

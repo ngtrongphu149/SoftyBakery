@@ -9,8 +9,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "orderitems")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class OrderItem {
 	@Id
     @Column(name = "orderitemid")
@@ -28,8 +26,4 @@ public class OrderItem {
 
     @Column(nullable = false)
     private double price;
-    
-    public String toString() {
-    	return getOrder().getOrderId()+" - "+getProduct().getProductName()+" - "+ getOrderItemId();
-    }
 }

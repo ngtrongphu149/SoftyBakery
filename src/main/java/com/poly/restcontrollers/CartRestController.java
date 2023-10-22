@@ -1,4 +1,3 @@
-
 package com.poly.restcontrollers;
 
 import java.util.ArrayList;
@@ -15,8 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.poly.daos.CategoryDAO;
-import com.poly.daos.ProductDAO;
+import com.poly.dao.CategoryDAO;
+import com.poly.dao.ProductDAO;
 import com.poly.dto.ProductDTO;
 import com.poly.services.CartService;
 
@@ -31,7 +30,7 @@ public class CartRestController {
 		synchronized (cart) {
 	        List<ProductDTO> pDTOList = new ArrayList<>();
 	        for (ProductDTO p : cart.getItems().values()) {
-	            p.setImageUrl(pDAO.getImageUrlByProductId(p.getProductId()).get(0));
+	            p.setImageUrl(pDAO.getImageUrlByProductId(p.getProduct().getProductId()).get(0));
 	            pDTOList.add(p);
 	        }
 	        return ResponseEntity.ok(pDTOList);
@@ -40,17 +39,23 @@ public class CartRestController {
 	@GetMapping("/add/{id}")
 	public ResponseEntity<ProductDTO> add(@PathVariable("id") Integer id) {
 		cart.add(id);
-		return ResponseEntity.ok(new ProductDTO(pDAO.getById(id)));
+		ProductDTO pDTO = new ProductDTO();
+		pDTO.setProduct(pDAO.getById(id));
+		return ResponseEntity.ok(pDTO);
 	}
 	@GetMapping("/dis/{id}")
 	public ResponseEntity<ProductDTO> dis(@PathVariable("id") Integer id) {
 		cart.update(id, "dis");
-		return ResponseEntity.ok(new ProductDTO(pDAO.getById(id)));
+		ProductDTO pDTO = new ProductDTO();
+		pDTO.setProduct(pDAO.getById(id));
+		return ResponseEntity.ok(pDTO);
 	}
 	@GetMapping("/plus/{id}")
 	public ResponseEntity<ProductDTO> plus(@PathVariable("id") Integer id) {
 		cart.update(id, "plus");
-		return ResponseEntity.ok(new ProductDTO(pDAO.getById(id)));
+		ProductDTO pDTO = new ProductDTO();
+		pDTO.setProduct(pDAO.getById(id));
+		return ResponseEntity.ok(pDTO);
 	}
 	@GetMapping("/delete/{id}")
 	public void delete(@PathVariable("id") Integer id) {

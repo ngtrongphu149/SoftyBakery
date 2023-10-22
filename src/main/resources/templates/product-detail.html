@@ -34,12 +34,19 @@
     <div class="row">
       <div class="col-md-1" style="margin-top: 45px;">
         <div class="images">
-          <img ng-repeat="pi in productImages" class="img-thumbnail" ng-src="/images/{{pi.imageUrl}}"
-            ng-click="setImgData(pi.imageUrl)">
+            <img th:each="imageUrl: ${piList}" class="img-thumbnail" th:src="@{/images/{imageUrl} (imageUrl = ${imageUrl})}"
+            ng-click="setImgData($event)">
         </div>
       </div>
       <div class="col-md-6">
-        <ul class="nav nav-tabs border-0">
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <img ng-src="{{imageClick ? imageClick : ''}}" th:src="@{/images/{imageUrl} (imageUrl = ${piList[0]})}"
+              style="border-radius: 20px; border:5px solid white; max-height: 600px; max-width: 100%;"
+          >
+      </div>
+      
+
+      <ul class="nav nav-tabs border-0">
           <li class="nav-item nav-info mt-2 ms-2">
             <a class="nav-link" data-bs-toggle="tab" href="#mota"> Mô Tả Sản Phẩm </a>
           </li>
@@ -50,23 +57,18 @@
             <a class="nav-link" data-bs-toggle="tab" href="#baoquan">Hướng dẫn bảo quản</a>
           </li>
         </ul>
-        <div class="large-image">
-          <img class="d-block w-100" ng-src="/images/{{imgData ? imgData : productImages[0].imageUrl}}">
-        </div>
-
-
         <div class="tab-content">
           <div class="tab-pane" id="mota">
             <div class="product-description">
               <div id="showmore" class="container position-relative">
                 <div class="d-flex flex-column align-items-center">
-                  oe oe oe oe oe oe oe oe oe oe oe oe oe oe oe oe
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi, nesciunt suscipit facilis id et delectus vero maxime repellendus omnis quo quas corporis minus tenetur nobis excepturi earum saepe est!
                 </div>
               </div>
               <div class="row border-0 g-0 rounded shadow-sm">
                 <div class="col p-4">
                   <h4 class=" text-secondary">Tiêu đề</h4>
-                  <small>Định nghĩa</small>
+                  <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam error veniam dicta sint magnam optio nisi similique porro molestiae illo esse eum omnis qui aspernatur, nam dolores deserunt blanditiis distinctio.</small>
                 </div>
               </div>
             </div>
@@ -90,7 +92,7 @@
               <div class="col p-4">
                 <h3 class=" text-secondary">Hướng dẫn bảo quản</h3>
                 <h5 class="fw-bold fs-6 text-capitalize">Tiêu đề</h5>
-                <small>Định nghĩa</small>
+                <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolor ullam dolorum, cum voluptatem quae repudiandae et suscipit eos nesciunt quas nulla eligendi ipsam vitae sapiente non sit commodi praesentium?</small>
               </div>
             </div>
           </div>
