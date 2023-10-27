@@ -26,10 +26,14 @@ public class Product {
     @Column(name = "price", nullable = false)
     private Double price;
     
-    @Column(name = "isenable", nullable = false)
-    private boolean isEnable;
-    
-    
+    @Column(name = "detail_description")
+    private String detailDescription;
+
+    @Column(name = "ingredient")
+    private String ingredient;
+
+    @Column(name = "storage_instruction")
+    private String storageInstruction;
 
     @ManyToOne
     @JoinColumn(name = "categoryid")

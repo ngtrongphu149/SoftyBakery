@@ -113,12 +113,11 @@ app.filter('dateFilter', function ($filter) {
 	};
 });
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-app.controller('ProductController', function ($scope, $http, $filter) {
+app.controller('ProductController', function ($scope, $http, $filter, $location, $routeParams) {
 	// product
 	$scope.listAllProducts = [];
 	$scope.filteredProducts = [];
 	$scope.filterByCategory = [];
-	// category
 	$scope.filteredAndPagingProduct = [];
 
 	$scope.totalPage = 0;
@@ -126,6 +125,8 @@ app.controller('ProductController', function ($scope, $http, $filter) {
 	$scope.itemsPerPage = 0;
 	$scope.category = 0;
 
+	$scope.selectedProductId = 0;
+	// category
 	$scope.searchCategory = 0;
 	$scope.searchKey = "";
 	$scope.searchSort = "asc";
@@ -222,7 +223,7 @@ app.controller('ProductController', function ($scope, $http, $filter) {
 	// product images - product images - product images - product images - product images - product images - product images
 	$scope.loadAllProductImages = function () {
 		$scope.getprdId().then(function (productId) {
-			$scope.selectedProductId = 42;
+			$scope.selectedProductId = productId;
 			var url = `${host}/pi/`;
 			url += productId;
 			$http.get(url).then(resp => {
@@ -241,11 +242,15 @@ app.controller('ProductController', function ($scope, $http, $filter) {
 	// review - review - review - review - review - review - review - review - review - review - review - review - review
 
 	$scope.loadReviews = function () {
-		$http.get(`${host}/review/${$scope.selectedProductId}`).then(resp => {
-			$scope.reviewList = resp.data;
-			console.log(resp.data);
-		})
-	}
+		var pathUrl = $location.absUrl().substring(21);
+		if (pathUrl.startsWith('/product/detail/')) {
+			var productId = pathUrl.split('/').pop();
+			$http.get(`${host}/review/${productId}`).then(resp => {
+				$scope.reviewList = resp.data;
+			});
+		}
+	};
+
 
 	function getUser() {
 		var url = `${host}/user`;
@@ -270,7 +275,6 @@ app.controller('ProductController', function ($scope, $http, $filter) {
 		}).then(function (response) {
 			$scope.reviewList += response.data;
 			$scope.loadReviews();
-			console.log($scope.reviewList);
 		});
 
 	}
@@ -283,14 +287,68 @@ app.controller('ProductController', function ($scope, $http, $filter) {
 	$scope.setRating = function (rating) {
 		$scope.rating = rating;
 	};
+
+	$scope.setSelectedProductId = function () {
+		var fullUrl = $location.absUrl();
+		var lastSegment = fullUrl.substring(fullUrl.lastIndexOf('/') + 1);
+		$scope.selectedProductId = lastSegment
+	}
 	// review - review - review - review - review - review - review - review - review - review - review - review - review
+	// cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart
+	function updateCartLocalStorage() {
+		localStorage.setItem('cart', JSON.stringify($scope.cart));
+	}
+
+	$scope.loadAllCart = function () {
+		$http.get(`${host}/cart`).then(function (resp) {
+			$scope.cart = resp.data;
+			$scope.cartLength = resp.data.length;
+			updateCartLocalStorage();
+		});
+	}
+
+	$scope.modifyCart = function (id, method) {
+		$http.get(`${host}/cart/${method}/${id}`).then(function () {
+			$scope.loadAllCart();
+		});
+	};
+
+	$scope.deleteCart = function (id) {
+		$http.get(`${host}/cart/delete/${id}`).then(function () {
+			$scope.loadAllCart();
+		});
+	};
+
+	$scope.clearCart = function () {
+		$http.get(`${host}/cart/clear`).then(function () {
+			$scope.loadAllCart();
+		});
+	};
+
+	$scope.getAmountCart = function () {
+		return $scope.cart.reduce(function (total, product) {
+			return total + product.price * product.quantity;
+		}, 0);
+	};
+
+	function initCartFromLocalStorage() {
+		$scope.cart = JSON.parse(localStorage.getItem('cart')) || [];
+	}
+	// cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart - cart
+
 
 	// Khởi tạo dữ liệu ban đầu
 	loadAllProducts().then(function () {
 		$scope.loadPage(1);
 	});
 	loadCategory();
+
+	$scope.loadAllCart();
+	// initCartFromLocalStorage();
+
 	getUser();
+	$scope.setSelectedProductId();
+	$scope.loadReviews();
 });
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -319,21 +377,24 @@ app.controller('UserController', function ($scope, $http) {
 	function getUser() {
 		var url = `${host}/user`;
 		$http.get(url).then(resp => {
-			$scope.userInfo = resp.data;
-			$scope.form.accountId = $scope.userInfo.accountId;
-			$scope.form.username = $scope.userInfo.username;
-			$scope.form.password = $scope.userInfo.password;
-			$scope.form.email = $scope.userInfo.email;
-			$scope.form.fullName = resp.data.fullName;
-			$scope.form.address = $scope.userInfo.address;
-			$scope.form.addressDetail = $scope.userInfo.addressDetail;
-			$scope.form.phoneNumber = $scope.userInfo.phoneNumber;
-			$scope.form.photo = $scope.userInfo.photo;
-			$scope.form.admin = $scope.userInfo.admin;
+			if (resp.data != null) {
+				$scope.userInfo = resp.data;
+				$scope.form.accountId = $scope.userInfo.accountId;
+				$scope.form.username = $scope.userInfo.username;
+				$scope.form.password = $scope.userInfo.password;
+				$scope.form.email = $scope.userInfo.email;
+				$scope.form.fullName = resp.data.fullName;
+				$scope.form.address = $scope.userInfo.address;
+				$scope.form.addressDetail = $scope.userInfo.addressDetail;
+				$scope.form.phoneNumber = $scope.userInfo.phoneNumber;
+				$scope.form.photo = $scope.userInfo.photo;
+				$scope.form.admin = $scope.userInfo.admin;
+			}
+
 		})
-	}
-	$scope.test = function () {
 		console.log($scope.form);
+		console.log($scope.userInfo);
+
 	}
 	$scope.putUser = function () {
 		$http.put(urlUser, $scope.form)

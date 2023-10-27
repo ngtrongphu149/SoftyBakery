@@ -1,6 +1,7 @@
 package com.poly.controllers;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import java.util.ArrayList;
@@ -10,6 +11,13 @@ import java.util.List;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellValue;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -49,10 +57,12 @@ public class Test {
 	AccountService accountService;
 	@Autowired
 	JsonReaderUtil jsonReaderUtil;
+
 	@GetMapping("/test")
 	public String test(Model model) {
-		System.out.println(jsonReaderUtil.write( accountService.getAccountAuth() ));
-		setPassword();
+
+		
+
 		return "test";
 	}
 
@@ -83,5 +93,36 @@ public class Test {
 			aDAO.save(a);
 		}
 		System.out.println("nghia ngu");
+	}
+	public void addExcelProductDetailToDatabase() {
+		try (FileInputStream fis = new FileInputStream(new File("src\\main\\resources\\static\\data\\product_detail_data.xlsx"));
+				Workbook wb = WorkbookFactory.create(fis)) {
+			Sheet sheet = wb.getSheetAt(0);
+			FormulaEvaluator formulaEvaluator = wb.getCreationHelper().createFormulaEvaluator();
+
+			for (Row row : sheet) {
+				Product p = new Product();
+				for (Cell cell : row) {
+					CellValue cellValue = formulaEvaluator.evaluate(cell);
+					switch (cell.getColumnIndex()) {
+						case 0:
+							p = pDAO.getById((int) cellValue.getNumberValue());
+							break;
+						case 1:
+							p.setDetailDescription(cellValue.getStringValue());
+							break;
+						case 2:
+							p.setIngredient(cellValue.getStringValue());
+							break;
+						case 3:
+							p.setStorageInstruction(cellValue.getStringValue());
+							break;
+					}
+				}
+				pDAO.save(p);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

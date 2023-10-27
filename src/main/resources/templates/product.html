@@ -149,7 +149,7 @@
                 ng-click="setSearchKey(searchKey)">
                 <i class="fa fa-search"></i>
               </button>
-                <div class="dropdown-menu dropdown-menu">
+                <div class="dropdown-menu dropdown-menu" style="max-height: 400px; overflow-x: hidden; overflow-y: inherit;">
                     <a class="dropdown-item" ng-repeat="p in listAllProducts | filter : searchKey" ng-href="/product/detail/{{p.product.productId}}" >
                       <span>
                         <img src="/images/{{p.imageUrl}}" style="width: 60px;">
@@ -197,7 +197,7 @@
                     <button
                       class="btn btn-lg-square btn-outline-light rounded-circle"
                       style="margin-left: 5px"
-                      ng-click="modifyCart(p.productId, 'add')"
+                      ng-click="modifyCart(p.product.productId, 'add')"
                     >
                       <i class="fa fa-cart-plus"></i>
                     </button>

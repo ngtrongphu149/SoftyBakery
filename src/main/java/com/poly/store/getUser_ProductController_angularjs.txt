@@ -1,0 +1,23 @@
+function getUser() {
+		var url = `${host}/user`;
+		$http.get(url).then(resp => {
+			if (resp.data != null) {
+				// console.log(resp.data);
+				$scope.userInfo.accountId = resp.data.accountId;
+				$scope.userInfo.address = resp.data.address;
+				$scope.userInfo.addressDetail = resp.data.addressDetail;
+				$scope.userInfo.admin = resp.data.admin;
+				$scope.userInfo.authorities[0] = resp.data.authorities[0];
+				$scope.userInfo.email = resp.data.email;
+				$scope.userInfo.fullName = resp.data.fullName;
+				$scope.userInfo.password = resp.data.password;
+				$scope.userInfo.phoneNumber = resp.data.phoneNumber;
+				$scope.userInfo.photo = resp.data.photo;
+				$scope.userInfo.username = resp.data.username;
+				
+				$scope.form = 
+				console.log($scope.userInfo);
+			}
+
+		})
+	}

@@ -61,14 +61,8 @@
           <div class="tab-pane" id="mota">
             <div class="product-description">
               <div id="showmore" class="container position-relative">
-                <div class="d-flex flex-column align-items-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi, nesciunt suscipit facilis id et delectus vero maxime repellendus omnis quo quas corporis minus tenetur nobis excepturi earum saepe est!
-                </div>
-              </div>
-              <div class="row border-0 g-0 rounded shadow-sm">
-                <div class="col p-4">
-                  <h4 class=" text-secondary">Tiêu đề</h4>
-                  <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam error veniam dicta sint magnam optio nisi similique porro molestiae illo esse eum omnis qui aspernatur, nam dolores deserunt blanditiis distinctio.</small>
+                <div class="d-flex flex-column align-items-center" th:utext="${product.detailDescription}">
+                  
                 </div>
               </div>
             </div>
@@ -77,13 +71,9 @@
             <div class="row border-0 g-0 rounded shadow-sm">
               <div class="col p-4">
                 <p>Thành phần</p>
-                <ul>
-                  <li>Bột mì số 8</li>
-                  <li>Kem béo</li>
-                  <li>Whisping Cream</li>
-                  <li>Chocolate nguyên chất</li>
-                  <li>Nước lọc</li>
-                </ul>
+                <div th:utext="${product.ingredient}">
+
+                </div>
               </div>
             </div>
           </div>
@@ -91,8 +81,8 @@
             <div class="row border-0 g-0 rounded shadow-sm">
               <div class="col p-4">
                 <h3 class=" text-secondary">Hướng dẫn bảo quản</h3>
-                <h5 class="fw-bold fs-6 text-capitalize">Tiêu đề</h5>
-                <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolor ullam dolorum, cum voluptatem quae repudiandae et suscipit eos nesciunt quas nulla eligendi ipsam vitae sapiente non sit commodi praesentium?</small>
+                <div th:utext="${product.storageInstruction}">
+                </div>
               </div>
             </div>
           </div>
@@ -149,7 +139,7 @@
   </div>
   <!-- Comment Start -->
   <div class="container-xxl py-3" style="background-color: #FFFFFF; border-radius: 20px;">
-    <form class="comment-container">
+    <form class="comment-container" ng-if="userInfo">
       <div class="comment-avatar">
         <img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar">
       </div>
@@ -166,16 +156,10 @@
         </div>        
         <div class="comment-input-container">
           <input class="comment-input" placeholder="Viết đánh giá..." ng-model="formReview.comment"></input>
-          <!-- 
-            <label class="form-label">
-            <button class="comment-button" ng-click="postReview()"><i class="fa fa-arrow-right"></i></button>
-            </label>
-          -->
           <div class="btn-group">
             <button class="comment-button" ng-click="postReview()"><i class="fas fa-arrow-right"></i></button>
-            <button class="comment-button" ng-click="loadReviews()"><i class="fas fa-sync-alt"></i></button>
+            <button class="comment-button" ng-click="loadReviews()"><i class="fas fa-sync-alt"></i></button>            
           </div>
-          
         </div>
       </div>
     </form>

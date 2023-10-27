@@ -39,7 +39,7 @@ public class CartRestController {
 	@GetMapping("/add/{id}")
 	public ResponseEntity<ProductDTO> add(@PathVariable("id") Integer id) {
 		cart.add(id);
-		ProductDTO pDTO = new ProductDTO();
+		ProductDTO pDTO = cart.getItem(id);
 		pDTO.setProduct(pDAO.getById(id));
 		return ResponseEntity.ok(pDTO);
 	}
