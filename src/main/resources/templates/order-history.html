@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="utf-8">
+<<<<<<< HEAD
     <title>Condition - Softy Bakery</title>
+=======
+    <title>condition - Softy Bakery</title>
+>>>>>>> 27a41e11226b549cd18e23647d8af64000a79101
     <th:block th:insert="~{layout :: css-link}"></th:block>
     <style>
 
@@ -46,12 +50,21 @@
                 <div class="card">
                     <div class="card">
                         <h5 class="card-header">Tên loại bánh</h5>
+<<<<<<< HEAD
                         <a href="/product-detail">
                             <div class="card-body">
                                 <div class="float-start m-2 "><img th:src="${'/images/accountPhoto/'+user.photo}"
                                         class="card-text" style width="80px" height="80px" alt="..."></div>
                                 <div class="m-2" th:each="order : ${orderList}">
                                     <p class="card-text">Tên loại bánh: <span th:text="${order.status}"></span></p>
+=======
+                        <a href="product-detail">
+                            <div class="card-body">
+                                <div class="float-start m-2 "><img th:src="${'/images/accountPhoto/'+user.photo}"
+                                        class="card-text" style width="80px" height="80px" alt="..."></div>
+                                <div class="m-2">
+                                    <p class="card-texr">Tên loại bánh:...     </p>
+>>>>>>> 27a41e11226b549cd18e23647d8af64000a79101
                                     <p class="card-text">Số lượng:...          </p>
                                     <p class="card-text float-end">giá tiền:...</p>
                                 </div>
