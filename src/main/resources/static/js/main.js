@@ -392,9 +392,6 @@ app.controller('UserController', function ($scope, $http) {
 			}
 
 		})
-		console.log($scope.form);
-		console.log($scope.userInfo);
-
 	}
 	$scope.putUser = function () {
 		$http.put(urlUser, $scope.form)
@@ -490,15 +487,18 @@ app.controller('AdminProductController', function ($scope, $http) {
 	}
 
 	$scope.reset = function () {
-		$scope.form = {};
-		$scope.form.price = 0.00;
-		$scope.topProductId();
+		var product = {};
+		topProductId();
+		product.price = 0;
+		$scope.form.product = product;
+		$scope.form.imageUrl = "";
 	}
 
 	$scope.add = function () {
-		if ($scope.form != null) {
+		if ($scope.form.product != null) {
 			const url = `${host}/product`;
-			$http.post(url, $scope.form).then(function (resp) {
+			const product = $scope.form.product;
+			$http.post(url, $scope.form.product).then(function (resp) {
 				console.log("Thêm sản phẩm thành công!");
 				$scope.loadAll();
 			}).catch(function (error) {
@@ -535,22 +535,35 @@ app.controller('AdminProductController', function ($scope, $http) {
 		});
 	}
 
+	function find(productId) {
+		var products = [];
+		products = $scope.products;
+		for(var i=0; i<products.length;i++) {
+			if(products[i].product.productId == productId) return products[i];
+		}
+	};
+	
 	$scope.loadForm = function (productId) {
-		const product = $scope.products.find(product => product.productId === productId);
+		const product = find(productId);
 		if (product) {
-			$scope.form = angular.copy(product);
-			$scope.form.price = parseFloat($scope.form.price);
+			$scope.form = { ...product };
+			$scope.form.price = parseFloat($scope.form.price) || 0;
+	
 			$scope.scrollToForm();
 		} else {
 			$scope.form = {};
 		}
-	}
-	$scope.topProductId = function () {
-		const url = `${host}/product/top`;
+	};
+	
+	
+
+	function topProductId() {
+		var url = `${host}/product/top`;
+		var temp = 0;
 		$http.get(url).then(resp => {
-			$scope.form.productId = resp.data;
+			$scope.form.product.productId = resp.data;
 		});
-	}
+	};
 	$scope.scrollToForm = function () {
 		var formElement = document.getElementById('formProduct');
 		if (formElement) {
@@ -561,7 +574,6 @@ app.controller('AdminProductController', function ($scope, $http) {
 			});
 		}
 	};
-	$scope.topProductId();
 	$scope.loadAll();
 
 	$scope.loadCategory();

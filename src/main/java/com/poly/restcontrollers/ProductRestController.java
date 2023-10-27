@@ -67,18 +67,17 @@ public class ProductRestController {
 	}
 
 	@PostMapping()
-	public ResponseEntity<ProductDTO> post(@RequestBody ProductDTO pDTO) {
-		if (pDTO.getProduct().getProductId() <= 0) {
+	public ResponseEntity<Product> post(@RequestBody Product product) {
+		if (product.getProductId() <= 0) {
 			return ResponseEntity.badRequest().build();
 		}
-		Product existingProduct = pDAO.findById(pDTO.getProduct().getProductId());
-		Product prd = new Product(pDTO);
+		Product existingProduct = pDAO.findById(product.getProductId());
 		if (existingProduct == null) {
 			return ResponseEntity.badRequest().build();
 		}
-		prd.setProductId(pDAO.findTopProductId() + 1);
-		pDAO.save(prd);
-		return ResponseEntity.ok(pDTO);
+		product.setProductId(pDAO.findTopProductId() + 1);
+		pDAO.save(product);
+		return ResponseEntity.ok(product);
 	}
 
 	@PutMapping("/{id}")

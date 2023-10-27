@@ -60,7 +60,7 @@ public class Test {
 
 	@GetMapping("/test")
 	public String test(Model model) {
-
+		addExcelProductDetailToDatabase();
 		
 
 		return "test";
@@ -95,18 +95,20 @@ public class Test {
 		System.out.println("nghia ngu");
 	}
 	public void addExcelProductDetailToDatabase() {
-		try (FileInputStream fis = new FileInputStream(new File("src\\main\\resources\\static\\data\\product_detail_data.xlsx"));
+		try (FileInputStream fis = new FileInputStream(new File("src\\main\\resources\\static\\data\\producsdetail.xlsx"));
 				Workbook wb = WorkbookFactory.create(fis)) {
 			Sheet sheet = wb.getSheetAt(0);
 			FormulaEvaluator formulaEvaluator = wb.getCreationHelper().createFormulaEvaluator();
 
 			for (Row row : sheet) {
 				Product p = new Product();
+				boolean temp = false;
 				for (Cell cell : row) {
 					CellValue cellValue = formulaEvaluator.evaluate(cell);
 					switch (cell.getColumnIndex()) {
 						case 0:
 							p = pDAO.getById((int) cellValue.getNumberValue());
+							if(p!=null)temp=true;else temp=false;
 							break;
 						case 1:
 							p.setDetailDescription(cellValue.getStringValue());
@@ -119,7 +121,7 @@ public class Test {
 							break;
 					}
 				}
-				pDAO.save(p);
+				if(temp) pDAO.save(p);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

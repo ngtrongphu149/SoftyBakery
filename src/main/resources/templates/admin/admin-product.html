@@ -69,7 +69,7 @@
             <br />
             <hr />
             <br />
-            <table id="fillAllProducts" class="table table-hover">
+            <table class="table table-hover">
                 <thead>
                     <tr class="bg-primary text-white">
                         <th>Id</th>
@@ -92,16 +92,14 @@
                         <td>{{p.product.price | vndCurrency}}</td>
                         <td>{{p.product.category.categoryId+' - '+p.product.category.categoryName}}</td>
                         <td>
-                            <div class="d-inline">
-                                <button href="#" ng-click="loadForm(p.product.productId)" class="btn btn-link" target="formProduct">
+							<div style="display: flex; align-items: center;">
+								<button ng-click="loadForm(p.product.productId)" class="btn btn-link" target="formProduct">
 									<i class="fa fa-pen"></i>
 								</button>
-                            </div>
-                            <div class="d-inline">
-                                <a class="" href="/admin/pi/{{p.product.productId}}"><i class="fa fa-file-image"></i></a>
-                            </div>
-                            
-                        </td>
+								<a href="/admin/pi/{{p.product.productId}}" class="ml-2"><i class="fa fa-file-image"></i></a>
+							</div>
+						</td>
+						
                     </tr>
                 </tbody>
             </table>
