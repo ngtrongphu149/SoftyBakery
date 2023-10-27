@@ -46,10 +46,11 @@ h4, h5, h6, .h4, .h5, .h6 {
 .btn {
 	font-weight: 500;
 	transition: .5s;
+	
 }
 
 .btn.btn-primary {
-	color: #FFFFFF;
+	color: #111111;
 }
 
 .btn-square {

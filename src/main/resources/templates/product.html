@@ -132,11 +132,8 @@
             >
               <span>{{c.categoryName}}</span>
             </button>
-
-
-
-
-
+ 
+             <!-- dropdown menu item -->
             <span class="bg-primary rounded-pill py-3 px-5 dropdown">
               <input
                 type="text"
@@ -157,7 +154,8 @@
                       {{p.product.productName}}
                     </a>
                 </div>
-            </span>			  
+            </span>	
+            		  
           </div>
         </div>
         <br />
@@ -168,7 +166,7 @@
             <div
               class="col-lg-3 wow fadeInUp"
               data-wow-delay="0.3s"
-              ng-repeat="p in filteredAndPagingProduct"
+              ng-repeat="p in filt  eredAndPagingProduct"
             >
               <div class="product-item d-flex flex-column bg-white rounded wow">
                 <div class="text-center p-4 wow fadeInUp" data-wow-delay="0.3s">
