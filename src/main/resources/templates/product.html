@@ -134,7 +134,12 @@
             >
               <span>{{c.categoryName}}</span>
             </button>
+<<<<<<< HEAD
 
+=======
+ 
+             <!-- dropdown menu item -->
+>>>>>>> 163bd46711a8534881bb7712413515f1dbc10cea
             <span class="bg-primary rounded-pill py-3 px-5 dropdown">
               <input
                 type="text"
@@ -149,26 +154,16 @@
               >
                 <i class="fa fa-search"></i>
               </button>
-              <div
-                class="dropdown-menu dropdown-menu"
-                style="
-                  max-height: 400px;
-                  overflow-x: hidden;
-                  overflow-y: inherit;
-                "
-              >
-                <a
-                  class="dropdown-item"
-                  ng-repeat="p in listAllProducts | filter : searchKey"
-                  ng-href="/product/detail/{{p.product.productId}}"
-                >
-                  <span>
-                    <img ng-src="/images/{{p.imageUrl}}" style="width: 60px" />
-                  </span>
-                  {{p.product.productName}}
-                </a>
-              </div>
-            </span>
+                <div class="dropdown-menu dropdown-menu">
+                    <a class="dropdown-item" ng-repeat="p in listAllProducts | filter : searchKey" ng-href="/product/detail/{{p.product.productId}}" >
+                      <span>
+                        <img src="/images/{{p.imageUrl}}" style="width: 60px;">
+                      </span>  
+                      {{p.product.productName}}
+                    </a>
+                </div>
+            </span>	
+            		  
           </div>
         </div>
         <br />
@@ -179,8 +174,7 @@
             <div
               class="col-lg-3 wow fadeInUp"
               data-wow-delay="0.3s"
-              ng-repeat="p in filteredAndPagingProduct"
-              ng-if="filteredAndPagingProduct"
+              ng-repeat="p in filt  eredAndPagingProduct"
             >
               <div class="product-item d-flex flex-column bg-white rounded wow">
                 <div class="text-center p-4 wow fadeInUp" data-wow-delay="0.3s">
