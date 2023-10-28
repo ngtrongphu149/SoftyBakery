@@ -1,5 +1,10 @@
 package com.poly.controllers;
 
+import java.nio.charset.StandardCharsets;
+import java.text.Normalizer;
+import java.util.regex.Pattern;
+
+import org.hibernate.validator.constraints.CodePointLength.NormalizationStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,24 +19,28 @@ import com.poly.models.ProductImage;
 
 @Controller
 public class ProductController {
-	@Autowired ProductDAO pDAO;
-	@Autowired CategoryDAO cDAO;
-	@Autowired ProductImageDAO piDAO;
-	
+	@Autowired
+	ProductDAO pDAO;
+	@Autowired
+	CategoryDAO cDAO;
+	@Autowired
+	ProductImageDAO piDAO;
+
 	private final RestTemplate restTemplate;
 
-    public ProductController(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
-    
+	public ProductController(RestTemplate restTemplate) {
+		this.restTemplate = restTemplate;
+	}
+
 	@GetMapping("/product/")
 	public String product(Model model) {
 		model.addAttribute("message", "Cart is empty, let's take a look at some products!");
-		return "product"; 
+		return "product";
 	}
-	
+
 	@GetMapping("/product/detail/{id}")
 	public String product_detail(@PathVariable("id") int id, Model model) {
+
 		model.addAttribute("piList", piDAO.getProductImagesByProductId(id));
 		model.addAttribute("product", pDAO.getProductById(id));
 		return "product-detail";

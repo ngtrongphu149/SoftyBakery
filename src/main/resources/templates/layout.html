@@ -47,7 +47,7 @@
 
 
 	<!-- Topbar Start -->
-	<div class="container-fluid top-bar bg-dark text-light px-0 wow fadeIn" data-wow-delay="0.1s" th:fragment="topbar">
+	<div class="container-fluid top-bar bg-dark text-light px-0 wow fadeIn" data-wow-delay="0.1s" th:fragment="topbar" ng-app="app" ng-controller="TopBarController">
     <div class="row gx-0 align-items-center d-none d-lg-flex">
         <div class="col-lg-6 px-5 text-start">
             <small>Follow us:</small>
@@ -63,6 +63,10 @@
                 </a>
             </div>
         </div>
+		<div class="col px-5 text-end">
+            <small><i class="fas fa-map-marker-alt"></i> HCM City, <span ng-bind="date | date: 'HH:mm:s MM/dd/yyyy'"></span></small>
+        </div>
+		
     </div>
 </div>
 
@@ -122,7 +126,7 @@
 	                    <i class="fa fa-user-plus"></i> Register
 	                </a>
 					<a href="/order-history" class="dropdown-item">
-						<i class="bi bi-clock-history"></i> Purchase
+						<i class="fas fa-history"></i> Purchase
 					</a>
 					<!-- <a href="/user/purchase" class="dropdown-item">
 						<i class="fa fa-shopping-cart"></i> Purchase
@@ -189,7 +193,7 @@
 	                    <i class="fa fa-user-plus"></i> Register
 	                </a>
 					<a href="/order-history" class="dropdown-item">
-						<i class="bi bi-clock-history"></i> Order history
+						<i class="fas fa-history"></i> Order history
 					</a>
 	                <a href="/logout" class="dropdown-item">
 	                    <i class="fa fa-sign-out-alt"></i> Logout
@@ -240,7 +244,7 @@
 	                    <i class="fa fa-user-plus"></i> Register
 	                </a>
 					<a href="/order-history" class="dropdown-item">
-						<i class="bi bi-clock-history"></i> Order history
+						<i class="fas fa-history"></i> Order history
 					</a>
 	                <a href="/logout" class="dropdown-item">
 	                    <i class="fa fa-sign-out-alt"></i> Logout

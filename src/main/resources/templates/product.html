@@ -13,23 +13,23 @@
         font-size: 18px;
         border: none;
         border-bottom: 1px solid white;
-		width: 120px;
+        width: 120px;
       }
       .input-searchkey:focus {
         outline: none;
       }
-	  .btn-searchkey {
-		outline: none;
-		color: white;
-		border: none;
-	  }
-	  .select-sort {
-		border: none;
-		outline: none;
-		padding:14px;
-		border-bottom: 1px solid white;
-		margin:15px;
-	  }
+      .btn-searchkey {
+        outline: none;
+        color: white;
+        border: none;
+      }
+      .select-sort {
+        border: none;
+        outline: none;
+        padding: 14px;
+        border-bottom: 1px solid white;
+        margin: 15px;
+      }
     </style>
   </head>
 
@@ -118,9 +118,11 @@
         <div class="row g-4">
           <div class="col text-center justify-content-md-center">
             <button
-			class="rounded-pill py-3 px-5 btn"
-			ng-class="{'btn-primary': searchCategory !== 0, 'btn-outline-primary text-dark': searchCategory === 0}"
-			ng-click="reset()" style="margin: 15px">
+              class="rounded-pill py-3 px-5 btn"
+              ng-class="{'btn-primary': searchCategory !== 0, 'btn-outline-primary text-dark': searchCategory === 0}"
+              ng-click="reset()"
+              style="margin: 15px"
+            >
               Tất cả
             </button>
             <button
@@ -133,31 +135,40 @@
               <span>{{c.categoryName}}</span>
             </button>
 
-
-
-
-
             <span class="bg-primary rounded-pill py-3 px-5 dropdown">
               <input
                 type="text"
                 ng-model="searchKey"
-                class="search-input bg-primary text-light input-searchkey text-center dropdown-toggle" data-bs-toggle="dropdown"
+                class="search-input bg-primary text-light input-searchkey text-center dropdown-toggle"
+                data-bs-toggle="dropdown"
               />
               <button
                 type="submit"
                 class="search-button btn-searchkey bg-primary text-light"
-                ng-click="setSearchKey(searchKey)">
+                ng-click="setSearchKey(searchKey)"
+              >
                 <i class="fa fa-search"></i>
               </button>
-                <div class="dropdown-menu dropdown-menu" style="max-height: 400px; overflow-x: hidden; overflow-y: inherit;">
-                    <a class="dropdown-item" ng-repeat="p in listAllProducts | filter : searchKey" ng-href="/product/detail/{{p.product.productId}}" >
-                      <span>
-                        <img src="/images/{{p.imageUrl}}" style="width: 60px;">
-                      </span>  
-                      {{p.product.productName}}
-                    </a>
-                </div>
-            </span>			  
+              <div
+                class="dropdown-menu dropdown-menu"
+                style="
+                  max-height: 400px;
+                  overflow-x: hidden;
+                  overflow-y: inherit;
+                "
+              >
+                <a
+                  class="dropdown-item"
+                  ng-repeat="p in listAllProducts | filter : searchKey"
+                  ng-href="/product/detail/{{p.product.productId}}"
+                >
+                  <span>
+                    <img ng-src="/images/{{p.imageUrl}}" style="width: 60px" />
+                  </span>
+                  {{p.product.productName}}
+                </a>
+              </div>
+            </span>
           </div>
         </div>
         <br />
@@ -169,6 +180,7 @@
               class="col-lg-3 wow fadeInUp"
               data-wow-delay="0.3s"
               ng-repeat="p in filteredAndPagingProduct"
+              ng-if="filteredAndPagingProduct"
             >
               <div class="product-item d-flex flex-column bg-white rounded wow">
                 <div class="text-center p-4 wow fadeInUp" data-wow-delay="0.3s">
@@ -204,6 +216,17 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s" ng-if="!filteredAndPagingProduct">
+              <p class="text-danger text-center">
+                Không tìm thấy sản phẩm nào!
+              </p>
+              <p class="text-danger text-center">
+                <i
+                  class="fa fa-info-circle"
+                  style="font-size: 2em; vertical-align: middle; line-height: 1"
+                ></i>
+              </p>
             </div>
           </div>
           <div

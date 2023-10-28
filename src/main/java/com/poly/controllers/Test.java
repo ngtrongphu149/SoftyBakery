@@ -50,8 +50,6 @@ public class Test {
 	@Autowired
 	ReviewDAO rDAO;
 	@Autowired
-	PasswordEncoder passwordEncoder;
-	@Autowired
 	UploadMediaImgurUtil uploadUtil;
 	@Autowired
 	AccountService accountService;
@@ -89,7 +87,7 @@ public class Test {
 
 	public void setPassword() {
 		for (Account a : aDAO.findAll()) {
-			a.setPassword(passwordEncoder.encode("123"));
+			a.setPassword(PasswordUtil.encode("123"));
 			aDAO.save(a);
 		}
 		System.out.println("nghia ngu");

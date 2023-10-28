@@ -3,7 +3,6 @@ package com.poly.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.poly.dao.AccountDAO;
 import com.poly.models.Account;
 import com.poly.services.AccountService;
+import com.poly.utils.PasswordUtil;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -23,7 +23,6 @@ import jakarta.servlet.http.HttpServletResponse;
 @Controller
 public class AccountController {
 	@Autowired AccountDAO aDAO;
-	@Autowired PasswordEncoder passwordEncoder;
 	@Autowired AccountService accountService;
 	@GetMapping("/register")
 	public String register(Model model, HttpServletRequest request, HttpServletResponse response) {
@@ -41,7 +40,7 @@ public class AccountController {
 	public String register1(Model model, @ModelAttribute("user") Account a) {
 		a.setAccountId(aDAO.getTopAccountId()+1);
 		a.setAdmin(false);
-		a.setPassword(passwordEncoder.encode(a.getPassword()));
+		a.setPassword(PasswordUtil.encode(a.getPassword()));
 		a.setPhoto("noImage.jpg");
 		aDAO.save(a);
 		return "login";

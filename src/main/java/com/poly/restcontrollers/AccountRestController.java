@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +17,7 @@ import com.poly.dao.AccountDAO;
 import com.poly.dto.AccountDTO;
 import com.poly.models.Account;
 import com.poly.services.AccountService;
+import com.poly.utils.PasswordUtil;
 
 
 @RestController
@@ -29,8 +29,6 @@ public class AccountRestController {
 	@Autowired
 	AccountService accountService;
     private Account userInfo = null;
-	@Autowired
-	private PasswordEncoder passwordEncoder;
 	
 	@GetMapping("/meomeo")
 	public ResponseEntity<List <AccountDTO>> findAll() {
@@ -58,7 +56,7 @@ public class AccountRestController {
     
 	@PutMapping()
 	public ResponseEntity<Account> editProfile(Model model,@RequestBody Account user) {
-		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		user.setPassword(PasswordUtil.encode(user.getPassword()));
 		aDAO.save(user);
 		return ResponseEntity.ok(user);
 	}

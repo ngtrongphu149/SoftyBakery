@@ -628,3 +628,12 @@ app.controller('AdminOrderController', function ($scope, $http) {
 	$scope.loadAll();
 });
 
+
+app.controller('TopBarController', function($interval, $scope) { 
+	$scope.date = new Date();
+  
+	$interval(function() {
+		$scope.date = new Date();
+	}, 1000);  
+  })
+
