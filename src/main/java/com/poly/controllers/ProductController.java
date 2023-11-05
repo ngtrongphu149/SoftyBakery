@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 import com.poly.dao.CategoryDAO;
 import com.poly.dao.ProductDAO;
 import com.poly.dao.ProductImageDAO;
-import com.poly.models.ProductImage;
+import com.poly.entities.ProductImage;
 
 @Controller
 public class ProductController {

@@ -1,4 +1,4 @@
-package com.poly.services.impl;
+package com.poly.services.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.poly.dao.AccountDAO;
 import com.poly.dto.AccountToUserDetails;
-import com.poly.models.Account;
+import com.poly.entities.Account;
 import com.poly.services.AccountService;
 
 @Service

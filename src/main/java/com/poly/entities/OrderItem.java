@@ -1,4 +1,4 @@
-package com.poly.models;
+package com.poly.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

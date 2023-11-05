@@ -1,7 +1,7 @@
 package com.poly.dto;
 
-import com.poly.models.Account;
-import com.poly.models.Order;
+import com.poly.entities.Account;
+import com.poly.entities.Order;
 
 import lombok.*;
 

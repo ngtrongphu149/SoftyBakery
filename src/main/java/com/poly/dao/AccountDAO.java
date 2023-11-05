@@ -3,7 +3,7 @@ package com.poly.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.poly.models.Account;
+import com.poly.entities.Account;
 
 public interface AccountDAO extends JpaRepository<Account, Integer> {
 	@Query("SELECT a.accountId FROM Account a ORDER BY a.accountId DESC LIMIT 1")

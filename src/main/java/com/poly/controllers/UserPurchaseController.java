@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 import com.poly.dao.OrderDAO;
-import com.poly.models.Order;
+import com.poly.entities.Order;
 import com.poly.services.AccountService;
 
 @Controller

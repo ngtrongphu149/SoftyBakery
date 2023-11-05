@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.poly.models.Account;
+import com.poly.entities.Account;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -85,12 +85,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <div class="navbar-nav mx-auto p-4 p-lg-0">
-      <a href="/home" class="nav-item nav-link">Home</a>
-      <a href="/about" class="nav-item nav-link">About</a>
-      <a href="/service" class="nav-item nav-link">Services</a>
-      <a href="/product/" class="nav-item nav-link">Products</a>
-      <a href="/contact" class="nav-item nav-link">Contact</a>
-      <a href="/test" class="nav-item nav-link">Test</a>
+		<a href="/home" class="nav-item nav-link" th:text="#{header}">Home</a>
+		<a href="/about" class="nav-item nav-link" th:text="#{about}">About</a>
+		<a href="/service" class="nav-item nav-link" th:text="#{services}">Services</a>
+		<a href="/product/" class="nav-item nav-link" th:text="#{product}">Products</a>
+		<a href="/contact" class="nav-item nav-link" th:text="#{contact}">Contact</a>
+		<a href="/test" class="nav-item nav-link"  th:text="#{test}">Test</a>
+		<a href="?lang=vi" class="nav-item nav-link">Tiếng Việt</a>
+		<a href="?lang=en" class="nav-item nav-link">English</a>
 		<div class="cart-icon" ng-app="app" ng-controller="ProductController" style="margin-top:20px; margin-left:10px;">
 			<a href="/cart"> <i class="fa fa-shopping-cart text-primary"></i>
 				<span class="cart-badge" ng-bind="cartLength">0</span>
@@ -126,11 +128,8 @@
 	                    <i class="fa fa-user-plus"></i> Register
 	                </a>
 					<a href="/order-history" class="dropdown-item">
-						<i class="fas fa-history"></i> Purchase
+						<i class="fas fa-history"></i> Order History
 					</a>
-					<!-- <a href="/user/purchase" class="dropdown-item">
-						<i class="fa fa-shopping-cart"></i> Purchase
-					</a> -->
 	                <a href="/logout" class="dropdown-item">
 	                    <i class="fa fa-sign-out-alt"></i> Logout
 	                </a>
@@ -152,12 +151,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <div class="navbar-nav mx-auto p-4 p-lg-0">
-      <a href="/home" class="nav-item nav-link">Home</a>
-      <a href="/about" class="nav-item nav-link">About</a>
-      <a href="/service" class="nav-item nav-link">Services</a>
-      <a href="/product/" class="nav-item nav-link">Products</a>
-      <a href="/contact" class="nav-item nav-link">Contact</a>
-      <a href="/test" class="nav-item nav-link">Test</a>
+		<a href="/home" class="nav-item nav-link" th:text="#{header}">Home</a>
+		<a href="/about" class="nav-item nav-link" th:text="#{about}">About</a>
+		<a href="/service" class="nav-item nav-link" th:text="#{services}">Services</a>
+		<a href="/product/" class="nav-item nav-link" th:text="#{product}">Products</a>
+		<a href="/contact" class="nav-item nav-link" th:text="#{contact}">Contact</a>
+		<a href="/test" class="nav-item nav-link"  th:text="#{test}">Test</a>
+		<a href="?lang=vi" class="nav-item nav-link">Tiếng Việt</a>
+		<a href="?lang=en" class="nav-item nav-link">English</a>
 		<div class="cart-icon" style="margin-top:20px; margin-left:10px;">
 			<a href="/cart"> <i class="fa fa-shopping-cart text-primary"></i>
 				<span class="cart-badge" ng-bind="cartLength"></span>
@@ -194,7 +195,6 @@
 	                </a>
 					<a href="/order-history" class="dropdown-item">
 						<i class="fas fa-history"></i> Order history
-						<i class="bi bi-clock-history"></i> Purchase
 					</a>
 	                <a href="/logout" class="dropdown-item">
 	                    <i class="fa fa-sign-out-alt"></i> Logout
@@ -222,6 +222,8 @@
       <a href="/admin/product" class="nav-item nav-link">Product</a>
       <a href="/admin/order" class="nav-item nav-link">Order</a>
       <a href="/test" class="nav-item nav-link">Test</a>
+      <a href="?lang=vi" class="nav-item nav-link">Tiếng Việt</a>
+      <a href="?lang=en" class="nav-item nav-link">English</a>
 		<div class="cart-icon" ng-app="app" ng-controller="ProductController" style="margin-top:20px; margin-left:10px;">
 			<a href="/cart"> <i class="fa fa-shopping-cart text-primary"></i>
 				<span class="cart-badge" ng-bind="cartLength">0</span>
@@ -245,7 +247,6 @@
 	                    <i class="fa fa-user-plus"></i> Register
 	                </a>
 					<a href="/order-history" class="dropdown-item">
-						<i class="fas fa-history"></i> Order history
 						<i class="fas fa-history"></i> Order history
 					</a>
 	                <a href="/logout" class="dropdown-item">

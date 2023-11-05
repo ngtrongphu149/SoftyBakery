@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import com.poly.dao.*;
 import com.poly.dto.*;
-import com.poly.models.Account;
-import com.poly.models.Order;
-import com.poly.models.OrderItem;
+import com.poly.entities.Account;
+import com.poly.entities.Order;
+import com.poly.entities.OrderItem;
 import com.poly.services.AccountService;
 @RestController
 @CrossOrigin(origins = "*")

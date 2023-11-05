@@ -1,4 +1,4 @@
-package com.poly.services;
+package com.poly.utils;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -8,13 +8,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.prefs.Preferences;
 
 @Service
-public class LocalStorageService {
+public class LocalStorageUtil {
 
     private static final String PREFIX = "softy-bakery";
 
     private Preferences preferences;
 
-    public LocalStorageService() {
+    public LocalStorageUtil() {
         this.preferences = Preferences.userRoot().node(PREFIX);
     }
 

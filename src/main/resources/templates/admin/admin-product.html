@@ -5,6 +5,9 @@
 <meta charset="utf-8">
 <title>Products - Softy Bakery</title>
 <th:block th:insert="~{layout :: css-link}"></th:block>
+<style>
+
+</style>
 </head>
 <body ng-app="app" ng-controller="AdminProductController">
 	<div th:insert="~{layout :: spinner}"></div>
@@ -58,8 +61,8 @@
                 
                 <div class="d-flex flex-row-reverse">
                 	<div class="btn-group">
-		                <button ng-click="add()" class="btn btn-outline-success">Add</button>
-		                <button ng-click="update(form.productId)" class="btn btn-outline-primary">Update</button>
+		                <button ng-click="save('add')" class="btn btn-outline-success">Add</button>
+		                <button ng-click="save('update')" class="btn btn-outline-primary">Update</button>
 		                <button ng-click="delete(form.productId)" class="btn btn-outline-danger">Delete</button>
 		                <button ng-click="reset()" class="btn btn-outline-warning">Reset</button>
 	                </div>

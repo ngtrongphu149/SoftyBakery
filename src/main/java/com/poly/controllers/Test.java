@@ -9,7 +9,12 @@ import java.util.Iterator;
 import java.util.List;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellValue;
@@ -28,8 +33,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.poly.dao.*;
-import com.poly.models.*;
+import com.poly.entities.*;
 import com.poly.services.*;
 import com.poly.utils.*;
 
@@ -55,14 +62,28 @@ public class Test {
 	AccountService accountService;
 	@Autowired
 	JsonReaderUtil jsonReaderUtil;
+	ObjectMapper objectMapper = new ObjectMapper();
 
 	@GetMapping("/test")
-	public String test(Model model) {
-		addExcelProductDetailToDatabase();
-		
+	public String test(Model model) throws IOException {
 
+
+
+
+		// Đường dẫn đến file
+        // Path filePath = Path.of("src\\main\\resources\\static\\store\\Reviews.json");
+        // try {nono
+        //     if (!Files.exists(filePath)) {
+        //         Files.createFile(filePath);
+        //     }
+        //     String content = objectMapper.writeValueAsString(rDAO.findAll());
+        //     Files.write(filePath, content.getBytes(StandardCharsets.UTF_8), StandardOpenOption.WRITE);
+        // } catch (IOException e) {
+        //     e.printStackTrace();
+        // }
 		return "test";
 	}
+
 
 	public Account getAccountAuth() {
 		return accountService.getAccountAuth();
@@ -92,8 +113,10 @@ public class Test {
 		}
 		System.out.println("nghia ngu");
 	}
+
 	public void addExcelProductDetailToDatabase() {
-		try (FileInputStream fis = new FileInputStream(new File("src\\main\\resources\\static\\data\\producsdetail.xlsx"));
+		try (FileInputStream fis = new FileInputStream(
+				new File("src\\main\\resources\\static\\data\\producsdetail.xlsx"));
 				Workbook wb = WorkbookFactory.create(fis)) {
 			Sheet sheet = wb.getSheetAt(0);
 			FormulaEvaluator formulaEvaluator = wb.getCreationHelper().createFormulaEvaluator();
@@ -106,7 +129,10 @@ public class Test {
 					switch (cell.getColumnIndex()) {
 						case 0:
 							p = pDAO.getById((int) cellValue.getNumberValue());
-							if(p!=null)temp=true;else temp=false;
+							if (p != null)
+								temp = true;
+							else
+								temp = false;
 							break;
 						case 1:
 							p.setDetailDescription(cellValue.getStringValue());
@@ -119,7 +145,8 @@ public class Test {
 							break;
 					}
 				}
-				if(temp) pDAO.save(p);
+				if (temp)
+					pDAO.save(p);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

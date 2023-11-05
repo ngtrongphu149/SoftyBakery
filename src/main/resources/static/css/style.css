@@ -50,13 +50,14 @@ h4, h5, h6, .h4, .h5, .h6 {
 }
 
 .btn.btn-primary {
-	color: #111111;
+	color: #ffffff;
 }
 
 .btn-square {
 	width: 38px;
 	height: 38px;
 }
+
 
 .btn-sm-square {
 	width: 32px;
@@ -75,7 +76,6 @@ h4, h5, h6, .h4, .h5, .h6 {
 	justify-content: center;
 	font-weight: normal;
 }
-
 /*** Navbar ***/
 .navbar .dropdown-toggle::after {
 	border: none;

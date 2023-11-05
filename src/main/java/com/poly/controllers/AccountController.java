@@ -8,12 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.poly.dao.AccountDAO;
-import com.poly.models.Account;
+import com.poly.entities.Account;
 import com.poly.services.AccountService;
 import com.poly.utils.PasswordUtil;
 
@@ -67,6 +68,15 @@ public class AccountController {
 		model.addAttribute("user", a);
 		return "profile";
 	}
+	@GetMapping("/profile/{username}")
+	public String profileUser(@PathVariable("username") String username,Model model) {
+		Account a = aDAO.getByUserName(username);
+		
+		model.addAttribute("user", a);
+		return "profile";
+	}
+	
+
 	@GetMapping("/profile/edit")
 	public String editProfile(Model model) {
 		return "profile-edit";
@@ -87,7 +97,6 @@ public class AccountController {
 		model.addAttribute("user", a);
 		return "order-history";
 	}
-	
 	public Account getAccountAuth() { 
 		return accountService.getAccountAuth();
 	}

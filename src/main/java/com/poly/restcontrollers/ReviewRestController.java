@@ -10,9 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.poly.dao.*;
-import com.poly.models.Account;
-import com.poly.models.Product;
-import com.poly.models.Review;
+import com.poly.entities.Account;
+import com.poly.entities.Product;
+import com.poly.entities.Review;
 import com.poly.services.AccountService;
 
 @RestController
@@ -39,7 +39,7 @@ public class ReviewRestController {
 	    Product p = pDAO.getById(id);
 	    review.setReviewId(rDAO.getTopReviewId()+1);
 		review.setAccount(getAccountAuth());
-		review.setReviewDate(date.toLocalDateTime());
+		// review.setReviewDate(date.toLocalDateTime());
 		review.setProduct(p);
 		rDAO.save(review);
 

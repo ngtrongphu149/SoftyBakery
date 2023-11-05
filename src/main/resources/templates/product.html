@@ -150,7 +150,7 @@
               >
                 <i class="fa fa-search"></i>
               </button>
-                <div class="dropdown-menu dropdown-menu">
+                <div class="dropdown-menu dropdown-menu" style="max-height: 400px; overflow-x: hidden; overflow-y: inherit;">
                     <a class="dropdown-item" ng-repeat="p in listAllProducts | filter : searchKey" ng-href="/product/detail/{{p.product.productId}}" >
                       <span>
                         <img src="/images/{{p.imageUrl}}" style="width: 60px;">
@@ -190,17 +190,19 @@
             <div
               class="col-lg-3 wow fadeInUp"
               data-wow-delay="0.3s"
-              ng-repeat="p in filt  eredAndPagingProduct"
+              ng-repeat="p in filteredAndPagingProduct"
             >
               <div class="product-item d-flex flex-column bg-white rounded wow">
+                
+                
                 <div class="text-center p-4 wow fadeInUp" data-wow-delay="0.3s">
+                  <h4 class="mb-3 text-truncate">{{p.product.productName}}</h4>
+                  <p class="mb-3 text-truncate">{{p.product.description}}</p>
                   <div
                     class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3"
                   >
                     {{p.product.price | vndCurrency}}
                   </div>
-                  <h4 class="mb-3 text-truncate">{{p.product.productName}}</h4>
-                  <p class="mb-3 text-truncate">{{p.product.description}}</p>
                 </div>
                 <div class="position-relative mt-auto">
                   <img

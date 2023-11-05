@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 
 import com.poly.dao.*;
 import com.poly.dto.*;
-import com.poly.models.Account;
-import com.poly.models.Order;
-import com.poly.models.OrderItem;
+import com.poly.entities.Account;
+import com.poly.entities.Order;
+import com.poly.entities.OrderItem;
 import com.poly.services.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -50,7 +50,7 @@ public class OrderController {
 		ZonedDateTime date = localDateTime.atZone(zoneId);
 	     Order o = new Order();
 	     o.setOrderId(oDAO.findTopOrderId()+1);
-	     o.setOrderDate(date.toLocalDateTime());
+	    //  o.setOrderDate(date.to);
 	     o.setAccount(user);
 	     o.setAddress(user.getAddressDetail()+" ,"+user.getAddress());
 	     o.setTotalAmount(cart.getAmount());

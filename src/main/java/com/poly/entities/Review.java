@@ -1,9 +1,10 @@
-package com.poly.models;
+package com.poly.entities;
 
 import lombok.Data;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+
+import java.sql.Date;
 
 @Entity
 @Table(name = "Reviews")
@@ -28,5 +29,5 @@ public class Review {
     private String comment;
     
     @Column(name = "reviewdate")
-    private LocalDateTime reviewDate;
+    private Date reviewDate;
 }

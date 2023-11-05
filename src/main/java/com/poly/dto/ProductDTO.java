@@ -1,6 +1,6 @@
 package com.poly.dto;
 
-import com.poly.models.Product;
+import com.poly.entities.Product;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

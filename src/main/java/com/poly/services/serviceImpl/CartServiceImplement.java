@@ -1,4 +1,4 @@
-package com.poly.services.impl;
+package com.poly.services.serviceImpl;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,13 +10,13 @@ import org.springframework.web.context.annotation.SessionScope;
 import com.poly.dao.ProductDAO;
 import com.poly.dto.ProductDTO;
 import com.poly.services.CartService;
-import com.poly.services.LocalStorageService;
+import com.poly.utils.LocalStorageUtil;
 
 
 @Service
 @SessionScope
 public class CartServiceImplement implements CartService {
-	@Autowired LocalStorageService lsService;
+	@Autowired LocalStorageUtil lsService;
 	@Autowired ProductDAO pDAO;
 	
 	Map<Integer, ProductDTO> map = new HashMap<>();

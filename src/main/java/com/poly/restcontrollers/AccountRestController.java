@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.poly.dao.AccountDAO;
 import com.poly.dto.AccountDTO;
-import com.poly.models.Account;
+import com.poly.entities.Account;
 import com.poly.services.AccountService;
 import com.poly.utils.PasswordUtil;
 

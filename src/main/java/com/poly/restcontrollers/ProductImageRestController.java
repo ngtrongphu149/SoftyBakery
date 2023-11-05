@@ -12,8 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.poly.dao.*;
-import com.poly.models.Product;
-import com.poly.models.ProductImage;
+import com.poly.entities.Product;
+import com.poly.entities.ProductImage;
 
 @RestController
 @CrossOrigin(origins = "*")

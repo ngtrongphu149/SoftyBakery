@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.poly.models.OrderItem;
+import com.poly.entities.OrderItem;
 
 public interface OrderItemDAO extends JpaRepository<OrderItem, Integer> {
 	@Query("SELECT oi.orderItemId FROM OrderItem oi ORDER BY oi.orderItemId DESC LIMIT 1")

@@ -495,38 +495,34 @@ app.controller('AdminProductController', function ($scope, $http) {
 	}
 
 	$scope.add = function () {
-		if ($scope.form.product != null) {
-			const url = `${host}/product`;
-			const product = $scope.form.product;
-			$http.post(url, $scope.form.product).then(function (resp) {
-				console.log("Thêm sản phẩm thành công!");
+		var formProduct = $scope.form.product;
+		const url = `${host}/product`;
+		if (formProduct != null) {
+			$http.post(url, formProduct).then(() => {
+				console.log("Save sản phẩm thành công!");
 				$scope.loadAll();
 			}).catch(function (error) {
-				console.error("Lỗi khi thêm sản phẩm:", error);
+				console.error("Lỗi khi save sản phẩm:", error);
 			});
-		} else {
-			console.log('Form rỗng!');
 		}
 	}
-
-	$scope.update = function (productId) {
-		const url = `${host}/product/${productId}`;
-		if ($scope.form != null) {
-			$http.put(url, $scope.form).then(function (resp) {
-				console.log("Cập nhật sản phẩm thành công!");
+	$scope.update = function () {
+		var formProduct = $scope.form.product;
+		const url = `${host}/product/${formProduct.productId}`;
+		if (formProduct != null) {
+			$http.put(url, formProduct).then(() => {
+				console.log("Save sản phẩm thành công!");
 				$scope.loadAll();
 			}).catch(function (error) {
-				console.error("Lỗi khi cập nhật sản phẩm:", error);
+				console.error("Lỗi khi save sản phẩm:", error);
 			});
-		} else {
-			console.log('Form rỗng!');
 		}
 	}
 
 
 	$scope.delete = function (productId) {
 		const url = `${host}/product/${productId}`;
-		$http.delete(url).then(function (resp) {
+		$http.delete(url).then(function () {
 			console.log("Xóa sản phẩm thành công!");
 			$scope.loadAll();
 			$scope.reset();
@@ -538,24 +534,24 @@ app.controller('AdminProductController', function ($scope, $http) {
 	function find(productId) {
 		var products = [];
 		products = $scope.products;
-		for(var i=0; i<products.length;i++) {
-			if(products[i].product.productId == productId) return products[i];
+		for (var i = 0; i < products.length; i++) {
+			if (products[i].product.productId == productId) return products[i];
 		}
 	};
-	
+
 	$scope.loadForm = function (productId) {
 		const product = find(productId);
 		if (product) {
-			$scope.form = { ...product };
+			$scope.form = angular.copy(product);
 			$scope.form.price = parseFloat($scope.form.price) || 0;
-	
+
 			$scope.scrollToForm();
 		} else {
 			$scope.form = {};
 		}
 	};
-	
-	
+
+
 
 	function topProductId() {
 		var url = `${host}/product/top`;
@@ -629,11 +625,11 @@ app.controller('AdminOrderController', function ($scope, $http) {
 });
 
 
-app.controller('TopBarController', function($interval, $scope) { 
+app.controller('TopBarController', function ($interval, $scope) {
 	$scope.date = new Date();
-  
-	$interval(function() {
+
+	$interval(function () {
 		$scope.date = new Date();
-	}, 1000);  
-  })
+	}, 1000);
+})
 

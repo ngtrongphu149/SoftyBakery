@@ -1,9 +1,9 @@
-package com.poly.models;
+package com.poly.entities;
 
 import lombok.*;
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
 
 @Entity
 @Table(name = "Orders")
@@ -18,7 +18,7 @@ public class Order {
     private Account account;
 
     @Column(name = "orderdate")
-    private LocalDateTime orderDate;
+    private Date orderDate;
 
     @Column(name = "totalamount", nullable = false)
     private Double totalAmount;

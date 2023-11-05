@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.poly.dao.*;
 import com.poly.dto.*;
-import com.poly.models.Category;
+import com.poly.entities.Category;
 
 @RestController
 @CrossOrigin(origins = "*")

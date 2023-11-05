@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.poly.dao.OrderItemDAO;
-import com.poly.models.OrderItem;
+import com.poly.entities.OrderItem;
 
 @RestController
 @CrossOrigin(origins = "*")

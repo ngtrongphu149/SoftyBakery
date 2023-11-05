@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.poly.models.Account;
+import com.poly.entities.Account;
 
 @Service
 public interface AccountService extends UserDetailsService {

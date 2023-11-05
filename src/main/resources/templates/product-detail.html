@@ -144,9 +144,17 @@
         </div>
         <div class="mt-5 pt-5">
           <div class="col-12 text-center">
-            <button class="btn btn-success rounded-pill py-3 px-5" ng-click="modifyCart(selectedProductId,'add')">Add to
-              Cart</button>
-            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Order Now</a>
+            <table>
+              <tr>
+                <td>
+                  <button class="btn btn-success rounded-pill py-3 px-5" ng-click="modifyCart(selectedProductId,'add')">Add to
+                    Cart</button>
+                </td>
+                <td>
+                  <a class="btn btn-primary rounded-pill py-3 px-5" href="">Order Now</a>
+                </td>
+              </tr>
+            </table>            
           </div>
         </div>
       </div>
@@ -180,9 +188,9 @@
     </form>
     
     <div class="comment-container" ng-repeat="r in reviewList">
-      <div class="comment-avatar">
+      <a class="comment-avatar" href="/images/accountPhoto/{{r.account.photo}}">
         <img ng-src="/images/accountPhoto/{{r.account.photo}}" class="circle-avatar">
-      </div>
+      </a>
       <div class="comment-content">
         <div>
           <span class="comment-name" ng-bind="r.account.fullName"></span>
