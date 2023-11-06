@@ -6,28 +6,25 @@ import jakarta.persistence.*;
 
 import java.sql.Date;
 
-@Entity
-@Table(name = "Reviews")
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Data
 public class Review {
-    @Id
-    @Column(name = "reviewid")
+    @JsonProperty("reviewId")
     private Integer reviewId;
 
-    @ManyToOne
-    @JoinColumn(name = "accountid")
-    private Account account;
+    @JsonProperty("account")
+    private AccountDTO account;
 
-    @ManyToOne
-    @JoinColumn(name = "productid")
-    private Product product;
+    @JsonProperty("productId")
+    private ProductDTO product;
 
-    @Column(name="rating")
+    @JsonProperty("rating")
     private int rating;
 
-    @Lob
+    @JsonProperty("comment")
     private String comment;
     
-    @Column(name = "reviewdate")
+    @JsonProperty("reviewDate")
     private Date reviewDate;
 }

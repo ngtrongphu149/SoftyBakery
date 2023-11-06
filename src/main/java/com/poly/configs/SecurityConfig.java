@@ -14,13 +14,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.client.RestTemplate;
 
-import com.poly.dao.AccountDAO;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-	@Autowired
-	AccountDAO aDAO;
 	@Bean
 	public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
 		http

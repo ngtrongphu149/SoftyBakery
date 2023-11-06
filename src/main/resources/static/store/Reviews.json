@@ -1,1 +1,420 @@
-[{"reviewId":10001,"account":{"accountId":60201,"username":"nghiabanhmi","password":"$2a$10$uHG6qfCYsbSdHyIwkmpKaeL.Z8vNdOD5KDDPSXT6oX/u9XHH3h9RK","email":"tthanhnghia1411@gmail.com","fullName":"nghĩa bánh bèo hix hix","address":"Ở đâu còn lâu mới nói","addressDetail":"328 Ấp 1","phoneNumber":"0869945854","photo":"yzC20ne.gif","admin":true,"accountNonExpired":true,"credentialsNonExpired":true,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_ADMIN"}]},"product":{"productId":1,"productName":"Bánh mì gà ngon dữ dằn lun hông dỡn","description":"Bánh mì gà ngon quá trời","price":12000.0,"detailDescription":"<p><strong>Bánh mì  Gà tại Softy Bakery:</strong></p>\r           <ul>\r           <li>  Bánh mì gà không còn xa lạ với người Việt Nam, đặc biệt là đối với người dân Sài Gòn và những tín đồ của món bánh mì. Tuy nhiên, bánh mì gà là điểm mới và tô thêm màu sắc cho món bánh mì đường phố.</li>\r             <li>Vừa có hương vị thơm ngon tuyệt hảo vừa cân bằng dinh dưỡng cho cơ thể. Bánh mì gà  là sự lựa chọn hoàn hảo cho bất kỳ bữa ăn nào trong ngày. Để làm ra món bánh gà lý tưởng. Điều quan trọng là phải có được một công thức làm thịt gà tuyệt hảo. Điều này đặc biệt quan trọng khi nói đến tỷ lệ thành phần thịt gà tươi có nhiều hay không và các loại gia vị khác mới có thể tạo ra được các miếng thịt gà chắc  mịn chất lượng và vị mặn ngọt vừa phải.</li>\r               <li>Nếu các thành phần không được kết hợp đúng cách, thành phẩm cuối cùng sẽ không đạt yêu cầu. Nhờ đặt cái tâm vào từng bước chế biến nhằm mang đến món ăn tốt nhất đến cho khách hàng. Bánh mì gà  đã vươn lên là thương hiệu bánh mì chả cá sợi hàng đầu trong lòng người tiêu dùng. </li>\r           </ul>     ","ingredient":"             <ul>\r                   <li>Bánh mì</li>\r   <li>Thịt gà</li>\r   <li>Chả lụa</li>\r   <li>Hành tím</li>\r   <li>Ớt xanh và ớt đỏ</li>\r   <li>Sốt cà chua </li>\r       </ul>","storageInstruction":"<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>","category":{"categoryId":1,"categoryName":"Bánh mì","imageUrl":null,"description":null}},"rating":4,"comment":"Bánh mì khá ngon đặc biệt là nước sốt bí kíp riêng của quán,\nRau thơm tươi ngon, tương ớt sa tế cay nhẹ phù hợp với mọi người\nBánh mì nóng giòn, bên trong còn có bánh tráng mỏng chiên giòn cảm giác rất khác với bánh mì Sài Gòn hay Bánh mì Hội An.\nThấy có trứng gà nhưng mình chưa kịp thưởng thức, giá trung bình 15k/ ổ\nCũng nên có thưởng thức :)","reviewDate":1695229200000},{"reviewId":10002,"account":{"accountId":60204,"username":"kxuyen","password":"$2a$10$s0/N4fFdl71M3FZVuiqGY.RUDQN9LLLDs4yihaxLx5ighRulz6baW","email":"xuyenxuyen@gmail.com","fullName":"kxuyen","address":"Phường 05, Quận 11, Thành phố Hồ Chí Minh","addressDetail":"Kí túc xá Đại học Sư phạm - 351a Lạc Long Quân","phoneNumber":"0123123123","photo":"anh-meo-cute-de-thuong.jpg","admin":false,"accountNonExpired":true,"credentialsNonExpired":true,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_USER"}]},"product":{"productId":1,"productName":"Bánh mì gà ngon dữ dằn lun hông dỡn","description":"Bánh mì gà ngon quá trời","price":12000.0,"detailDescription":"<p><strong>Bánh mì  Gà tại Softy Bakery:</strong></p>\r           <ul>\r           <li>  Bánh mì gà không còn xa lạ với người Việt Nam, đặc biệt là đối với người dân Sài Gòn và những tín đồ của món bánh mì. Tuy nhiên, bánh mì gà là điểm mới và tô thêm màu sắc cho món bánh mì đường phố.</li>\r             <li>Vừa có hương vị thơm ngon tuyệt hảo vừa cân bằng dinh dưỡng cho cơ thể. Bánh mì gà  là sự lựa chọn hoàn hảo cho bất kỳ bữa ăn nào trong ngày. Để làm ra món bánh gà lý tưởng. Điều quan trọng là phải có được một công thức làm thịt gà tuyệt hảo. Điều này đặc biệt quan trọng khi nói đến tỷ lệ thành phần thịt gà tươi có nhiều hay không và các loại gia vị khác mới có thể tạo ra được các miếng thịt gà chắc  mịn chất lượng và vị mặn ngọt vừa phải.</li>\r               <li>Nếu các thành phần không được kết hợp đúng cách, thành phẩm cuối cùng sẽ không đạt yêu cầu. Nhờ đặt cái tâm vào từng bước chế biến nhằm mang đến món ăn tốt nhất đến cho khách hàng. Bánh mì gà  đã vươn lên là thương hiệu bánh mì chả cá sợi hàng đầu trong lòng người tiêu dùng. </li>\r           </ul>     ","ingredient":"             <ul>\r                   <li>Bánh mì</li>\r   <li>Thịt gà</li>\r   <li>Chả lụa</li>\r   <li>Hành tím</li>\r   <li>Ớt xanh và ớt đỏ</li>\r   <li>Sốt cà chua </li>\r       </ul>","storageInstruction":"<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>","category":{"categoryId":1,"categoryName":"Bánh mì","imageUrl":null,"description":null}},"rating":5,"comment":"rất ngon nha cả nhà, bánh mỳ thơm ngon vỏ ngoài giòn, ruột bánh mỳ thơm đồ ăn rất ngon và hơn hết là thấy quầy hàng sạch sẽ vệ sinh tốt. tin tưởng","reviewDate":1695229200000},{"reviewId":10003,"account":{"accountId":60202,"username":"cuongtt","password":"$2a$10$nEmaUKtXoETyncTd0w/zA.GpQGbErhGGrVKX7WF7eyAN0oNVPK.N6","email":"Cuongtt@gmail.com","fullName":"thạch tuấn cường","address":"Chợ Bình Thành, Nguyễn Thị Tú, Bình Tân","addressDetail":null,"phoneNumber":"0355317961","photo":"cuong.jpg","admin":true,"accountNonExpired":true,"credentialsNonExpired":true,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_ADMIN"}]},"product":{"productId":42,"productName":"Bánh mì không","description":"Bánh mì không ăn với bò kho ngon lắm nhe","price":3000.0,"detailDescription":" <p><strong>Bánh mì Không tại Softy Bakery:</strong></p>\n          <ul>\n<li>Bánh mì không có lớp vỏ mỏng, giòn, thường có màu vàng của bánh nướng – không quá đậm, chỉ hơi hoe vàng và hơi nứt. Bên dưới lớp vỏ giòn là phần ruột mềm và trắng nên có thể được mô tả vắn tắt là \"giòn vỏ mềm ruột.\" \n</li>\n<li>Bánh mì không có thể kết hợp với nhiều món ăn khác như sữa đặc, cà ri,... để tạo ra hương vị đặc trưng nhất, lớp vỏ giòn giòn và phần ruột mềm mại càng ăn càng cuốn.\n</li>\n  </ul>  ","ingredient":"  <ul>\n                  <li>Bột mì</li>\n                </ul>","storageInstruction":"<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>","category":{"categoryId":1,"categoryName":"Bánh mì","imageUrl":null,"description":null}},"rating":5,"comment":"Bánh mì ngon, mới ra lò cầm lên còn nóng hổi. Rất chất lượng nheee. Sẽ ghé lại shop một ngày gần nhất. (≧∇≦)ﾉ","reviewDate":1695142800000},{"reviewId":10004,"account":{"accountId":10001,"username":"admin","password":"$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.","email":"admin@gmail.com","fullName":"admin ngu","address":"Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu","addressDetail":"Bãi Sau","phoneNumber":"0123123123","photo":"www_tiengdong_com-anh-meme-meo-khoc.jpeg","admin":true,"accountNonExpired":true,"credentialsNonExpired":true,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_ADMIN"}]},"product":{"productId":42,"productName":"Bánh mì không","description":"Bánh mì không ăn với bò kho ngon lắm nhe","price":3000.0,"detailDescription":" <p><strong>Bánh mì Không tại Softy Bakery:</strong></p>\n          <ul>\n<li>Bánh mì không có lớp vỏ mỏng, giòn, thường có màu vàng của bánh nướng – không quá đậm, chỉ hơi hoe vàng và hơi nứt. Bên dưới lớp vỏ giòn là phần ruột mềm và trắng nên có thể được mô tả vắn tắt là \"giòn vỏ mềm ruột.\" \n</li>\n<li>Bánh mì không có thể kết hợp với nhiều món ăn khác như sữa đặc, cà ri,... để tạo ra hương vị đặc trưng nhất, lớp vỏ giòn giòn và phần ruột mềm mại càng ăn càng cuốn.\n</li>\n  </ul>  ","ingredient":"  <ul>\n                  <li>Bột mì</li>\n                </ul>","storageInstruction":"<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>","category":{"categoryId":1,"categoryName":"Bánh mì","imageUrl":null,"description":null}},"rating":5,"comment":"Trông rất bắt mắt 😍😍😍","reviewDate":1695229200000},{"reviewId":10005,"account":{"accountId":10001,"username":"admin","password":"$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.","email":"admin@gmail.com","fullName":"admin ngu","address":"Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu","addressDetail":"Bãi Sau","phoneNumber":"0123123123","photo":"www_tiengdong_com-anh-meme-meo-khoc.jpeg","admin":true,"accountNonExpired":true,"credentialsNonExpired":true,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_ADMIN"}]},"product":{"productId":12,"productName":"Herbal mocktail","description":"spectial dink","price":79000.0,"detailDescription":"<p><strong>'Herbal mocktail tại Softy Bakery:</strong></p>\n          <ul>\n <li> Nếu'Herbal mocktail quyến rũ bởi men cay, là sự hòa quyện tinh tế của rượu. Thì Mocktail lại khiến người ta say bởi hương vị ngọt ngào nhẹ nhàng của sự kết hợp giữa các loại nước uống sẵn có và trái cây tươi, là hương thơm đặc trưng của các loại trái tươi.  Vị ngọt ngào của của những miếng dâu tươi kết hợp với lát chanh chua mát, tạo nên một sự cân bằng hoàn hảo. \n  </li>\n <li>Được trang trí một lát chanh mỏng , trái dâu, bạc hà. Khi thưởng thức 'Herbal mocktail chắc chắn sẽ xua tan cơn nóng trong mùa hè, tạo một cảm giác mát lạnh và cực kỳ sảng khoái.\n </li>\n          </ul> ","ingredient":"<ul>                 \n  <li>Gừng tươi</li>\n  <li>Nước cốt chanh</li>\n  <li>Lá bạc hà</li>\n  <li>Zavia cola</li>\n  <li>Lát chanh</li>\n                </ul>","storageInstruction":"<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>","category":{"categoryId":5,"categoryName":"Mocktail","imageUrl":null,"description":null}},"rating":5,"comment":"Mang đến ta hương vị của vùng nhiệt đới. ╰(*°▽°*)╯","reviewDate":1695229200000},{"reviewId":10006,"account":{"accountId":60206,"username":"bemeonho","password":"$2a$10$hC6nDfCrxHIN66DO00zz1.EcYG8Xcx6a6obU8AHra1TRift0FpvV.","email":"bemeonhomituot@gmail.com","fullName":"bé mèo nhỏ mít ướt","address":"Xã Hưng Thành, Huyện Vĩnh Lợi, Tỉnh Bạc Liêu","addressDetail":"Chân cầu ông Giang","phoneNumber":"0654654654","photo":"meme-meo-khoc-20.jpg","admin":false,"accountNonExpired":true,"credentialsNonExpired":true,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_USER"}]},"product":{"productId":42,"productName":"Bánh mì không","description":"Bánh mì không ăn với bò kho ngon lắm nhe","price":3000.0,"detailDescription":" <p><strong>Bánh mì Không tại Softy Bakery:</strong></p>\n          <ul>\n<li>Bánh mì không có lớp vỏ mỏng, giòn, thường có màu vàng của bánh nướng – không quá đậm, chỉ hơi hoe vàng và hơi nứt. Bên dưới lớp vỏ giòn là phần ruột mềm và trắng nên có thể được mô tả vắn tắt là \"giòn vỏ mềm ruột.\" \n</li>\n<li>Bánh mì không có thể kết hợp với nhiều món ăn khác như sữa đặc, cà ri,... để tạo ra hương vị đặc trưng nhất, lớp vỏ giòn giòn và phần ruột mềm mại càng ăn càng cuốn.\n</li>\n  </ul>  ","ingredient":"  <ul>\n                  <li>Bột mì</li>\n                </ul>","storageInstruction":"<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>","category":{"categoryId":1,"categoryName":"Bánh mì","imageUrl":null,"description":null}},"rating":1,"comment":"Ăn như khúc củi. 1* dằn mặt nha","reviewDate":1695229200000},{"reviewId":10007,"account":{"accountId":10001,"username":"admin","password":"$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.","email":"admin@gmail.com","fullName":"admin ngu","address":"Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu","addressDetail":"Bãi Sau","phoneNumber":"0123123123","photo":"www_tiengdong_com-anh-meme-meo-khoc.jpeg","admin":true,"accountNonExpired":true,"credentialsNonExpired":true,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_ADMIN"}]},"product":{"productId":1,"productName":"Bánh mì gà ngon dữ dằn lun hông dỡn","description":"Bánh mì gà ngon quá trời","price":12000.0,"detailDescription":"<p><strong>Bánh mì  Gà tại Softy Bakery:</strong></p>\r           <ul>\r           <li>  Bánh mì gà không còn xa lạ với người Việt Nam, đặc biệt là đối với người dân Sài Gòn và những tín đồ của món bánh mì. Tuy nhiên, bánh mì gà là điểm mới và tô thêm màu sắc cho món bánh mì đường phố.</li>\r             <li>Vừa có hương vị thơm ngon tuyệt hảo vừa cân bằng dinh dưỡng cho cơ thể. Bánh mì gà  là sự lựa chọn hoàn hảo cho bất kỳ bữa ăn nào trong ngày. Để làm ra món bánh gà lý tưởng. Điều quan trọng là phải có được một công thức làm thịt gà tuyệt hảo. Điều này đặc biệt quan trọng khi nói đến tỷ lệ thành phần thịt gà tươi có nhiều hay không và các loại gia vị khác mới có thể tạo ra được các miếng thịt gà chắc  mịn chất lượng và vị mặn ngọt vừa phải.</li>\r               <li>Nếu các thành phần không được kết hợp đúng cách, thành phẩm cuối cùng sẽ không đạt yêu cầu. Nhờ đặt cái tâm vào từng bước chế biến nhằm mang đến món ăn tốt nhất đến cho khách hàng. Bánh mì gà  đã vươn lên là thương hiệu bánh mì chả cá sợi hàng đầu trong lòng người tiêu dùng. </li>\r           </ul>     ","ingredient":"             <ul>\r                   <li>Bánh mì</li>\r   <li>Thịt gà</li>\r   <li>Chả lụa</li>\r   <li>Hành tím</li>\r   <li>Ớt xanh và ớt đỏ</li>\r   <li>Sốt cà chua </li>\r       </ul>","storageInstruction":"<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>","category":{"categoryId":1,"categoryName":"Bánh mì","imageUrl":null,"description":null}},"rating":3,"comment":"banh ngon qué 😁😀","reviewDate":1698426000000},{"reviewId":10008,"account":{"accountId":10001,"username":"admin","password":"$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.","email":"admin@gmail.com","fullName":"admin ngu","address":"Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu","addressDetail":"Bãi Sau","phoneNumber":"0123123123","photo":"www_tiengdong_com-anh-meme-meo-khoc.jpeg","admin":true,"accountNonExpired":true,"credentialsNonExpired":true,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_ADMIN"}]},"product":{"productId":1,"productName":"Bánh mì gà ngon dữ dằn lun hông dỡn","description":"Bánh mì gà ngon quá trời","price":12000.0,"detailDescription":"<p><strong>Bánh mì  Gà tại Softy Bakery:</strong></p>\r           <ul>\r           <li>  Bánh mì gà không còn xa lạ với người Việt Nam, đặc biệt là đối với người dân Sài Gòn và những tín đồ của món bánh mì. Tuy nhiên, bánh mì gà là điểm mới và tô thêm màu sắc cho món bánh mì đường phố.</li>\r             <li>Vừa có hương vị thơm ngon tuyệt hảo vừa cân bằng dinh dưỡng cho cơ thể. Bánh mì gà  là sự lựa chọn hoàn hảo cho bất kỳ bữa ăn nào trong ngày. Để làm ra món bánh gà lý tưởng. Điều quan trọng là phải có được một công thức làm thịt gà tuyệt hảo. Điều này đặc biệt quan trọng khi nói đến tỷ lệ thành phần thịt gà tươi có nhiều hay không và các loại gia vị khác mới có thể tạo ra được các miếng thịt gà chắc  mịn chất lượng và vị mặn ngọt vừa phải.</li>\r               <li>Nếu các thành phần không được kết hợp đúng cách, thành phẩm cuối cùng sẽ không đạt yêu cầu. Nhờ đặt cái tâm vào từng bước chế biến nhằm mang đến món ăn tốt nhất đến cho khách hàng. Bánh mì gà  đã vươn lên là thương hiệu bánh mì chả cá sợi hàng đầu trong lòng người tiêu dùng. </li>\r           </ul>     ","ingredient":"             <ul>\r                   <li>Bánh mì</li>\r   <li>Thịt gà</li>\r   <li>Chả lụa</li>\r   <li>Hành tím</li>\r   <li>Ớt xanh và ớt đỏ</li>\r   <li>Sốt cà chua </li>\r       </ul>","storageInstruction":"<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>","category":{"categoryId":1,"categoryName":"Bánh mì","imageUrl":null,"description":null}},"rating":5,"comment":"banh ngon qué 😁😀","reviewDate":1698426000000},{"reviewId":10009,"account":{"accountId":60201,"username":"nghiabanhmi","password":"$2a$10$uHG6qfCYsbSdHyIwkmpKaeL.Z8vNdOD5KDDPSXT6oX/u9XHH3h9RK","email":"tthanhnghia1411@gmail.com","fullName":"nghĩa bánh bèo hix hix","address":"Ở đâu còn lâu mới nói","addressDetail":"328 Ấp 1","phoneNumber":"0869945854","photo":"yzC20ne.gif","admin":true,"accountNonExpired":true,"credentialsNonExpired":true,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_ADMIN"}]},"product":{"productId":42,"productName":"Bánh mì không","description":"Bánh mì không ăn với bò kho ngon lắm nhe","price":3000.0,"detailDescription":" <p><strong>Bánh mì Không tại Softy Bakery:</strong></p>\n          <ul>\n<li>Bánh mì không có lớp vỏ mỏng, giòn, thường có màu vàng của bánh nướng – không quá đậm, chỉ hơi hoe vàng và hơi nứt. Bên dưới lớp vỏ giòn là phần ruột mềm và trắng nên có thể được mô tả vắn tắt là \"giòn vỏ mềm ruột.\" \n</li>\n<li>Bánh mì không có thể kết hợp với nhiều món ăn khác như sữa đặc, cà ri,... để tạo ra hương vị đặc trưng nhất, lớp vỏ giòn giòn và phần ruột mềm mại càng ăn càng cuốn.\n</li>\n  </ul>  ","ingredient":"  <ul>\n                  <li>Bột mì</li>\n                </ul>","storageInstruction":"<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>","category":{"categoryId":1,"categoryName":"Bánh mì","imageUrl":null,"description":null}},"rating":5,"comment":"banh mi ngon lam","reviewDate":1698512400000},{"reviewId":10010,"account":{"accountId":10001,"username":"admin","password":"$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.","email":"admin@gmail.com","fullName":"admin ngu","address":"Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu","addressDetail":"Bãi Sau","phoneNumber":"0123123123","photo":"www_tiengdong_com-anh-meme-meo-khoc.jpeg","admin":true,"accountNonExpired":true,"credentialsNonExpired":true,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_ADMIN"}]},"product":{"productId":1,"productName":"Bánh mì gà ngon dữ dằn lun hông dỡn","description":"Bánh mì gà ngon quá trời","price":12000.0,"detailDescription":"<p><strong>Bánh mì  Gà tại Softy Bakery:</strong></p>\r           <ul>\r           <li>  Bánh mì gà không còn xa lạ với người Việt Nam, đặc biệt là đối với người dân Sài Gòn và những tín đồ của món bánh mì. Tuy nhiên, bánh mì gà là điểm mới và tô thêm màu sắc cho món bánh mì đường phố.</li>\r             <li>Vừa có hương vị thơm ngon tuyệt hảo vừa cân bằng dinh dưỡng cho cơ thể. Bánh mì gà  là sự lựa chọn hoàn hảo cho bất kỳ bữa ăn nào trong ngày. Để làm ra món bánh gà lý tưởng. Điều quan trọng là phải có được một công thức làm thịt gà tuyệt hảo. Điều này đặc biệt quan trọng khi nói đến tỷ lệ thành phần thịt gà tươi có nhiều hay không và các loại gia vị khác mới có thể tạo ra được các miếng thịt gà chắc  mịn chất lượng và vị mặn ngọt vừa phải.</li>\r               <li>Nếu các thành phần không được kết hợp đúng cách, thành phẩm cuối cùng sẽ không đạt yêu cầu. Nhờ đặt cái tâm vào từng bước chế biến nhằm mang đến món ăn tốt nhất đến cho khách hàng. Bánh mì gà  đã vươn lên là thương hiệu bánh mì chả cá sợi hàng đầu trong lòng người tiêu dùng. </li>\r           </ul>     ","ingredient":"             <ul>\r                   <li>Bánh mì</li>\r   <li>Thịt gà</li>\r   <li>Chả lụa</li>\r   <li>Hành tím</li>\r   <li>Ớt xanh và ớt đỏ</li>\r   <li>Sốt cà chua </li>\r       </ul>","storageInstruction":"<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>","category":{"categoryId":1,"categoryName":"Bánh mì","imageUrl":null,"description":null}},"rating":5,"comment":null,"reviewDate":1698598800000},{"reviewId":10011,"account":{"accountId":10001,"username":"admin","password":"$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.","email":"admin@gmail.com","fullName":"admin ngu","address":"Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu","addressDetail":"Bãi Sau","phoneNumber":"0123123123","photo":"www_tiengdong_com-anh-meme-meo-khoc.jpeg","admin":true,"accountNonExpired":true,"credentialsNonExpired":true,"enabled":true,"accountNonLocked":true,"authorities":[{"authority":"ROLE_ADMIN"}]},"product":{"productId":4,"productName":"Bánh mì chà bông phô mai","description":"Bánh mì chà bông phô mai thơm ngonnnnnnnn","price":25000.0,"detailDescription":"  <p><strong>Bánh mì Chà Bông Phô Mai tại Softy Bakery:</strong></p>\n          <ul>\n          <li> \n          Bánh mì chà bông phô là một món ăn rất dễ dùng ,  giàu năng lượng cho bữa ăn “nhẹ nhàng” mà vẫn đầy đủ dưỡng chất. Bánh cũng có thể kết hợp với đồ ăn để tạo nên sự da dạng cho sở thích mỗi người.\n</li>\n  <li>\nBánh Mì Phô Mai Tan Chảy có lớp vỏ mịn màng, thơm đậm mùi sữa, sốt phô mai béo ngậy, có vị ngọt nhẹ, kết hợp với ruốc (chà bông) mặn đậm đà…hợp nhau đến lạ lùng. Khi tách đôi lớp bánh, phần nhân là sốt phô mai trắng đặc quánh chảy ra , chỉ cần cắn nhẹ lớp bánh xốp giòn tan hoà cùng sự mềm mại của lớp phô mai beo béo, thơm lừng sẽ khiến bạn phải suýt xoa hương vị đặc biệt của nhà Softy Bakery luôn là món ăn vặt luôn được yêu thích. \n </li>\n          </ul>  ","ingredient":"<ul>                 \n  <li>Bột mì</li>\n  <li>Sữa tươi không đường</li>\n  <li>Bơ lạt</li>\n  <li>Trứng gà</li>\n  <li>Đường</li>\n  <li>Muối</li>\n  <li>Men</li>\n<li>Bột bắp</li>\n<li>Kem whipping </li>\n<li>Bột gelatine </li>\n<li>Cà phê</li>\n\n                </ul>","storageInstruction":"<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>","category":{"categoryId":3,"categoryName":"Bánh mặn","imageUrl":null,"description":null}},"rating":4,"comment":"wtf sao lại có cafe","reviewDate":1698598800000}]
+[
+  {
+    "reviewId": 10001,
+    "account": {
+      "accountId": 60201,
+      "username": "nghiabanhmi",
+      "password": "$2a$10$uHG6qfCYsbSdHyIwkmpKaeL.Z8vNdOD5KDDPSXT6oX/u9XHH3h9RK",
+      "email": "tthanhnghia1411@gmail.com",
+      "fullName": "nghĩa bánh bèo hix hix",
+      "address": "Ở đâu còn lâu mới nói",
+      "addressDetail": "328 Ấp 1",
+      "phoneNumber": "0869945854",
+      "photo": "yzC20ne.gif",
+      "admin": true,
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "accountNonLocked": true,
+      "authorities": [{ "authority": "ROLE_ADMIN" }]
+    },
+    "product": {
+      "productId": 1,
+      "productName": "Bánh mì gà ngon dữ dằn lun hông dỡn",
+      "description": "Bánh mì gà ngon quá trời",
+      "price": 12000.0,
+      "detailDescription": "<p><strong>Bánh mì  Gà tại Softy Bakery:</strong></p>\r           <ul>\r           <li>  Bánh mì gà không còn xa lạ với người Việt Nam, đặc biệt là đối với người dân Sài Gòn và những tín đồ của món bánh mì. Tuy nhiên, bánh mì gà là điểm mới và tô thêm màu sắc cho món bánh mì đường phố.</li>\r             <li>Vừa có hương vị thơm ngon tuyệt hảo vừa cân bằng dinh dưỡng cho cơ thể. Bánh mì gà  là sự lựa chọn hoàn hảo cho bất kỳ bữa ăn nào trong ngày. Để làm ra món bánh gà lý tưởng. Điều quan trọng là phải có được một công thức làm thịt gà tuyệt hảo. Điều này đặc biệt quan trọng khi nói đến tỷ lệ thành phần thịt gà tươi có nhiều hay không và các loại gia vị khác mới có thể tạo ra được các miếng thịt gà chắc  mịn chất lượng và vị mặn ngọt vừa phải.</li>\r               <li>Nếu các thành phần không được kết hợp đúng cách, thành phẩm cuối cùng sẽ không đạt yêu cầu. Nhờ đặt cái tâm vào từng bước chế biến nhằm mang đến món ăn tốt nhất đến cho khách hàng. Bánh mì gà  đã vươn lên là thương hiệu bánh mì chả cá sợi hàng đầu trong lòng người tiêu dùng. </li>\r           </ul>     ",
+      "ingredient": "             <ul>\r                   <li>Bánh mì</li>\r   <li>Thịt gà</li>\r   <li>Chả lụa</li>\r   <li>Hành tím</li>\r   <li>Ớt xanh và ớt đỏ</li>\r   <li>Sốt cà chua </li>\r       </ul>",
+      "storageInstruction": "<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Bánh mì",
+        "imageUrl": null,
+        "description": null
+      }
+    },
+    "rating": 4,
+    "comment": "Bánh mì khá ngon đặc biệt là nước sốt bí kíp riêng của quán,\nRau thơm tươi ngon, tương ớt sa tế cay nhẹ phù hợp với mọi người\nBánh mì nóng giòn, bên trong còn có bánh tráng mỏng chiên giòn cảm giác rất khác với bánh mì Sài Gòn hay Bánh mì Hội An.\nThấy có trứng gà nhưng mình chưa kịp thưởng thức, giá trung bình 15k/ ổ\nCũng nên có thưởng thức :)",
+    "reviewDate": 1695229200000
+  },
+  {
+    "reviewId": 10002,
+    "account": {
+      "accountId": 60204,
+      "username": "kxuyen",
+      "password": "$2a$10$s0/N4fFdl71M3FZVuiqGY.RUDQN9LLLDs4yihaxLx5ighRulz6baW",
+      "email": "xuyenxuyen@gmail.com",
+      "fullName": "kxuyen",
+      "address": "Phường 05, Quận 11, Thành phố Hồ Chí Minh",
+      "addressDetail": "Kí túc xá Đại học Sư phạm - 351a Lạc Long Quân",
+      "phoneNumber": "0123123123",
+      "photo": "anh-meo-cute-de-thuong.jpg",
+      "admin": false,
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "accountNonLocked": true,
+      "authorities": [{ "authority": "ROLE_USER" }]
+    },
+    "product": {
+      "productId": 1,
+      "productName": "Bánh mì gà ngon dữ dằn lun hông dỡn",
+      "description": "Bánh mì gà ngon quá trời",
+      "price": 12000.0,
+      "detailDescription": "<p><strong>Bánh mì  Gà tại Softy Bakery:</strong></p>\r           <ul>\r           <li>  Bánh mì gà không còn xa lạ với người Việt Nam, đặc biệt là đối với người dân Sài Gòn và những tín đồ của món bánh mì. Tuy nhiên, bánh mì gà là điểm mới và tô thêm màu sắc cho món bánh mì đường phố.</li>\r             <li>Vừa có hương vị thơm ngon tuyệt hảo vừa cân bằng dinh dưỡng cho cơ thể. Bánh mì gà  là sự lựa chọn hoàn hảo cho bất kỳ bữa ăn nào trong ngày. Để làm ra món bánh gà lý tưởng. Điều quan trọng là phải có được một công thức làm thịt gà tuyệt hảo. Điều này đặc biệt quan trọng khi nói đến tỷ lệ thành phần thịt gà tươi có nhiều hay không và các loại gia vị khác mới có thể tạo ra được các miếng thịt gà chắc  mịn chất lượng và vị mặn ngọt vừa phải.</li>\r               <li>Nếu các thành phần không được kết hợp đúng cách, thành phẩm cuối cùng sẽ không đạt yêu cầu. Nhờ đặt cái tâm vào từng bước chế biến nhằm mang đến món ăn tốt nhất đến cho khách hàng. Bánh mì gà  đã vươn lên là thương hiệu bánh mì chả cá sợi hàng đầu trong lòng người tiêu dùng. </li>\r           </ul>     ",
+      "ingredient": "             <ul>\r                   <li>Bánh mì</li>\r   <li>Thịt gà</li>\r   <li>Chả lụa</li>\r   <li>Hành tím</li>\r   <li>Ớt xanh và ớt đỏ</li>\r   <li>Sốt cà chua </li>\r       </ul>",
+      "storageInstruction": "<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Bánh mì",
+        "imageUrl": null,
+        "description": null
+      }
+    },
+    "rating": 5,
+    "comment": "rất ngon nha cả nhà, bánh mỳ thơm ngon vỏ ngoài giòn, ruột bánh mỳ thơm đồ ăn rất ngon và hơn hết là thấy quầy hàng sạch sẽ vệ sinh tốt. tin tưởng",
+    "reviewDate": 1695229200000
+  },
+  {
+    "reviewId": 10003,
+    "account": {
+      "accountId": 60202,
+      "username": "cuongtt",
+      "password": "$2a$10$nEmaUKtXoETyncTd0w/zA.GpQGbErhGGrVKX7WF7eyAN0oNVPK.N6",
+      "email": "Cuongtt@gmail.com",
+      "fullName": "thạch tuấn cường",
+      "address": "Chợ Bình Thành, Nguyễn Thị Tú, Bình Tân",
+      "addressDetail": null,
+      "phoneNumber": "0355317961",
+      "photo": "cuong.jpg",
+      "admin": true,
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "accountNonLocked": true,
+      "authorities": [{ "authority": "ROLE_ADMIN" }]
+    },
+    "product": {
+      "productId": 42,
+      "productName": "Bánh mì không",
+      "description": "Bánh mì không ăn với bò kho ngon lắm nhe",
+      "price": 3000.0,
+      "detailDescription": " <p><strong>Bánh mì Không tại Softy Bakery:</strong></p>\n          <ul>\n<li>Bánh mì không có lớp vỏ mỏng, giòn, thường có màu vàng của bánh nướng – không quá đậm, chỉ hơi hoe vàng và hơi nứt. Bên dưới lớp vỏ giòn là phần ruột mềm và trắng nên có thể được mô tả vắn tắt là \"giòn vỏ mềm ruột.\" \n</li>\n<li>Bánh mì không có thể kết hợp với nhiều món ăn khác như sữa đặc, cà ri,... để tạo ra hương vị đặc trưng nhất, lớp vỏ giòn giòn và phần ruột mềm mại càng ăn càng cuốn.\n</li>\n  </ul>  ",
+      "ingredient": "  <ul>\n                  <li>Bột mì</li>\n                </ul>",
+      "storageInstruction": "<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Bánh mì",
+        "imageUrl": null,
+        "description": null
+      }
+    },
+    "rating": 5,
+    "comment": "Bánh mì ngon, mới ra lò cầm lên còn nóng hổi. Rất chất lượng nheee. Sẽ ghé lại shop một ngày gần nhất. (≧∇≦)ﾉ",
+    "reviewDate": 1695142800000
+  },
+  {
+    "reviewId": 10004,
+    "account": {
+      "accountId": 10001,
+      "username": "admin",
+      "password": "$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.",
+      "email": "admin@gmail.com",
+      "fullName": "admin ngu",
+      "address": "Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu",
+      "addressDetail": "Bãi Sau",
+      "phoneNumber": "0123123123",
+      "photo": "www_tiengdong_com-anh-meme-meo-khoc.jpeg",
+      "admin": true,
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "accountNonLocked": true,
+      "authorities": [{ "authority": "ROLE_ADMIN" }]
+    },
+    "product": {
+      "productId": 42,
+      "productName": "Bánh mì không",
+      "description": "Bánh mì không ăn với bò kho ngon lắm nhe",
+      "price": 3000.0,
+      "detailDescription": " <p><strong>Bánh mì Không tại Softy Bakery:</strong></p>\n          <ul>\n<li>Bánh mì không có lớp vỏ mỏng, giòn, thường có màu vàng của bánh nướng – không quá đậm, chỉ hơi hoe vàng và hơi nứt. Bên dưới lớp vỏ giòn là phần ruột mềm và trắng nên có thể được mô tả vắn tắt là \"giòn vỏ mềm ruột.\" \n</li>\n<li>Bánh mì không có thể kết hợp với nhiều món ăn khác như sữa đặc, cà ri,... để tạo ra hương vị đặc trưng nhất, lớp vỏ giòn giòn và phần ruột mềm mại càng ăn càng cuốn.\n</li>\n  </ul>  ",
+      "ingredient": "  <ul>\n                  <li>Bột mì</li>\n                </ul>",
+      "storageInstruction": "<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Bánh mì",
+        "imageUrl": null,
+        "description": null
+      }
+    },
+    "rating": 5,
+    "comment": "Trông rất bắt mắt 😍😍😍",
+    "reviewDate": 1695229200000
+  },
+  {
+    "reviewId": 10005,
+    "account": {
+      "accountId": 10001,
+      "username": "admin",
+      "password": "$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.",
+      "email": "admin@gmail.com",
+      "fullName": "admin ngu",
+      "address": "Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu",
+      "addressDetail": "Bãi Sau",
+      "phoneNumber": "0123123123",
+      "photo": "www_tiengdong_com-anh-meme-meo-khoc.jpeg",
+      "admin": true,
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "accountNonLocked": true,
+      "authorities": [{ "authority": "ROLE_ADMIN" }]
+    },
+    "product": {
+      "productId": 12,
+      "productName": "Herbal mocktail",
+      "description": "spectial dink",
+      "price": 79000.0,
+      "detailDescription": "<p><strong>'Herbal mocktail tại Softy Bakery:</strong></p>\n          <ul>\n <li> Nếu'Herbal mocktail quyến rũ bởi men cay, là sự hòa quyện tinh tế của rượu. Thì Mocktail lại khiến người ta say bởi hương vị ngọt ngào nhẹ nhàng của sự kết hợp giữa các loại nước uống sẵn có và trái cây tươi, là hương thơm đặc trưng của các loại trái tươi.  Vị ngọt ngào của của những miếng dâu tươi kết hợp với lát chanh chua mát, tạo nên một sự cân bằng hoàn hảo. \n  </li>\n <li>Được trang trí một lát chanh mỏng , trái dâu, bạc hà. Khi thưởng thức 'Herbal mocktail chắc chắn sẽ xua tan cơn nóng trong mùa hè, tạo một cảm giác mát lạnh và cực kỳ sảng khoái.\n </li>\n          </ul> ",
+      "ingredient": "<ul>                 \n  <li>Gừng tươi</li>\n  <li>Nước cốt chanh</li>\n  <li>Lá bạc hà</li>\n  <li>Zavia cola</li>\n  <li>Lát chanh</li>\n                </ul>",
+      "storageInstruction": "<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>",
+      "category": {
+        "categoryId": 5,
+        "categoryName": "Mocktail",
+        "imageUrl": null,
+        "description": null
+      }
+    },
+    "rating": 5,
+    "comment": "Mang đến ta hương vị của vùng nhiệt đới. ╰(*°▽°*)╯",
+    "reviewDate": 1695229200000
+  },
+  {
+    "reviewId": 10006,
+    "account": {
+      "accountId": 60206,
+      "username": "bemeonho",
+      "password": "$2a$10$hC6nDfCrxHIN66DO00zz1.EcYG8Xcx6a6obU8AHra1TRift0FpvV.",
+      "email": "bemeonhomituot@gmail.com",
+      "fullName": "bé mèo nhỏ mít ướt",
+      "address": "Xã Hưng Thành, Huyện Vĩnh Lợi, Tỉnh Bạc Liêu",
+      "addressDetail": "Chân cầu ông Giang",
+      "phoneNumber": "0654654654",
+      "photo": "meme-meo-khoc-20.jpg",
+      "admin": false,
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "accountNonLocked": true,
+      "authorities": [{ "authority": "ROLE_USER" }]
+    },
+    "product": {
+      "productId": 42,
+      "productName": "Bánh mì không",
+      "description": "Bánh mì không ăn với bò kho ngon lắm nhe",
+      "price": 3000.0,
+      "detailDescription": " <p><strong>Bánh mì Không tại Softy Bakery:</strong></p>\n          <ul>\n<li>Bánh mì không có lớp vỏ mỏng, giòn, thường có màu vàng của bánh nướng – không quá đậm, chỉ hơi hoe vàng và hơi nứt. Bên dưới lớp vỏ giòn là phần ruột mềm và trắng nên có thể được mô tả vắn tắt là \"giòn vỏ mềm ruột.\" \n</li>\n<li>Bánh mì không có thể kết hợp với nhiều món ăn khác như sữa đặc, cà ri,... để tạo ra hương vị đặc trưng nhất, lớp vỏ giòn giòn và phần ruột mềm mại càng ăn càng cuốn.\n</li>\n  </ul>  ",
+      "ingredient": "  <ul>\n                  <li>Bột mì</li>\n                </ul>",
+      "storageInstruction": "<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Bánh mì",
+        "imageUrl": null,
+        "description": null
+      }
+    },
+    "rating": 1,
+    "comment": "Ăn như khúc củi. 1* dằn mặt nha",
+    "reviewDate": 1695229200000
+  },
+  {
+    "reviewId": 10007,
+    "account": {
+      "accountId": 10001,
+      "username": "admin",
+      "password": "$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.",
+      "email": "admin@gmail.com",
+      "fullName": "admin ngu",
+      "address": "Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu",
+      "addressDetail": "Bãi Sau",
+      "phoneNumber": "0123123123",
+      "photo": "www_tiengdong_com-anh-meme-meo-khoc.jpeg",
+      "admin": true,
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "accountNonLocked": true,
+      "authorities": [{ "authority": "ROLE_ADMIN" }]
+    },
+    "product": {
+      "productId": 1,
+      "productName": "Bánh mì gà ngon dữ dằn lun hông dỡn",
+      "description": "Bánh mì gà ngon quá trời",
+      "price": 12000.0,
+      "detailDescription": "<p><strong>Bánh mì  Gà tại Softy Bakery:</strong></p>\r           <ul>\r           <li>  Bánh mì gà không còn xa lạ với người Việt Nam, đặc biệt là đối với người dân Sài Gòn và những tín đồ của món bánh mì. Tuy nhiên, bánh mì gà là điểm mới và tô thêm màu sắc cho món bánh mì đường phố.</li>\r             <li>Vừa có hương vị thơm ngon tuyệt hảo vừa cân bằng dinh dưỡng cho cơ thể. Bánh mì gà  là sự lựa chọn hoàn hảo cho bất kỳ bữa ăn nào trong ngày. Để làm ra món bánh gà lý tưởng. Điều quan trọng là phải có được một công thức làm thịt gà tuyệt hảo. Điều này đặc biệt quan trọng khi nói đến tỷ lệ thành phần thịt gà tươi có nhiều hay không và các loại gia vị khác mới có thể tạo ra được các miếng thịt gà chắc  mịn chất lượng và vị mặn ngọt vừa phải.</li>\r               <li>Nếu các thành phần không được kết hợp đúng cách, thành phẩm cuối cùng sẽ không đạt yêu cầu. Nhờ đặt cái tâm vào từng bước chế biến nhằm mang đến món ăn tốt nhất đến cho khách hàng. Bánh mì gà  đã vươn lên là thương hiệu bánh mì chả cá sợi hàng đầu trong lòng người tiêu dùng. </li>\r           </ul>     ",
+      "ingredient": "             <ul>\r                   <li>Bánh mì</li>\r   <li>Thịt gà</li>\r   <li>Chả lụa</li>\r   <li>Hành tím</li>\r   <li>Ớt xanh và ớt đỏ</li>\r   <li>Sốt cà chua </li>\r       </ul>",
+      "storageInstruction": "<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Bánh mì",
+        "imageUrl": null,
+        "description": null
+      }
+    },
+    "rating": 3,
+    "comment": "banh ngon qué 😁😀",
+    "reviewDate": 1698426000000
+  },
+  {
+    "reviewId": 10008,
+    "account": {
+      "accountId": 10001,
+      "username": "admin",
+      "password": "$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.",
+      "email": "admin@gmail.com",
+      "fullName": "admin ngu",
+      "address": "Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu",
+      "addressDetail": "Bãi Sau",
+      "phoneNumber": "0123123123",
+      "photo": "www_tiengdong_com-anh-meme-meo-khoc.jpeg",
+      "admin": true,
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "accountNonLocked": true,
+      "authorities": [{ "authority": "ROLE_ADMIN" }]
+    },
+    "product": {
+      "productId": 1,
+      "productName": "Bánh mì gà ngon dữ dằn lun hông dỡn",
+      "description": "Bánh mì gà ngon quá trời",
+      "price": 12000.0,
+      "detailDescription": "<p><strong>Bánh mì  Gà tại Softy Bakery:</strong></p>\r           <ul>\r           <li>  Bánh mì gà không còn xa lạ với người Việt Nam, đặc biệt là đối với người dân Sài Gòn và những tín đồ của món bánh mì. Tuy nhiên, bánh mì gà là điểm mới và tô thêm màu sắc cho món bánh mì đường phố.</li>\r             <li>Vừa có hương vị thơm ngon tuyệt hảo vừa cân bằng dinh dưỡng cho cơ thể. Bánh mì gà  là sự lựa chọn hoàn hảo cho bất kỳ bữa ăn nào trong ngày. Để làm ra món bánh gà lý tưởng. Điều quan trọng là phải có được một công thức làm thịt gà tuyệt hảo. Điều này đặc biệt quan trọng khi nói đến tỷ lệ thành phần thịt gà tươi có nhiều hay không và các loại gia vị khác mới có thể tạo ra được các miếng thịt gà chắc  mịn chất lượng và vị mặn ngọt vừa phải.</li>\r               <li>Nếu các thành phần không được kết hợp đúng cách, thành phẩm cuối cùng sẽ không đạt yêu cầu. Nhờ đặt cái tâm vào từng bước chế biến nhằm mang đến món ăn tốt nhất đến cho khách hàng. Bánh mì gà  đã vươn lên là thương hiệu bánh mì chả cá sợi hàng đầu trong lòng người tiêu dùng. </li>\r           </ul>     ",
+      "ingredient": "             <ul>\r                   <li>Bánh mì</li>\r   <li>Thịt gà</li>\r   <li>Chả lụa</li>\r   <li>Hành tím</li>\r   <li>Ớt xanh và ớt đỏ</li>\r   <li>Sốt cà chua </li>\r       </ul>",
+      "storageInstruction": "<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Bánh mì",
+        "imageUrl": null,
+        "description": null
+      }
+    },
+    "rating": 5,
+    "comment": "banh ngon qué 😁😀",
+    "reviewDate": 1698426000000
+  },
+  {
+    "reviewId": 10009,
+    "account": {
+      "accountId": 60201,
+      "username": "nghiabanhmi",
+      "password": "$2a$10$uHG6qfCYsbSdHyIwkmpKaeL.Z8vNdOD5KDDPSXT6oX/u9XHH3h9RK",
+      "email": "tthanhnghia1411@gmail.com",
+      "fullName": "nghĩa bánh bèo hix hix",
+      "address": "Ở đâu còn lâu mới nói",
+      "addressDetail": "328 Ấp 1",
+      "phoneNumber": "0869945854",
+      "photo": "yzC20ne.gif",
+      "admin": true,
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "accountNonLocked": true,
+      "authorities": [{ "authority": "ROLE_ADMIN" }]
+    },
+    "product": {
+      "productId": 42,
+      "productName": "Bánh mì không",
+      "description": "Bánh mì không ăn với bò kho ngon lắm nhe",
+      "price": 3000.0,
+      "detailDescription": " <p><strong>Bánh mì Không tại Softy Bakery:</strong></p>\n          <ul>\n<li>Bánh mì không có lớp vỏ mỏng, giòn, thường có màu vàng của bánh nướng – không quá đậm, chỉ hơi hoe vàng và hơi nứt. Bên dưới lớp vỏ giòn là phần ruột mềm và trắng nên có thể được mô tả vắn tắt là \"giòn vỏ mềm ruột.\" \n</li>\n<li>Bánh mì không có thể kết hợp với nhiều món ăn khác như sữa đặc, cà ri,... để tạo ra hương vị đặc trưng nhất, lớp vỏ giòn giòn và phần ruột mềm mại càng ăn càng cuốn.\n</li>\n  </ul>  ",
+      "ingredient": "  <ul>\n                  <li>Bột mì</li>\n                </ul>",
+      "storageInstruction": "<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Bánh mì",
+        "imageUrl": null,
+        "description": null
+      }
+    },
+    "rating": 5,
+    "comment": "banh mi ngon lam",
+    "reviewDate": 1698512400000
+  },
+  {
+    "reviewId": 10010,
+    "account": {
+      "accountId": 10001,
+      "username": "admin",
+      "password": "$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.",
+      "email": "admin@gmail.com",
+      "fullName": "admin ngu",
+      "address": "Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu",
+      "addressDetail": "Bãi Sau",
+      "phoneNumber": "0123123123",
+      "photo": "www_tiengdong_com-anh-meme-meo-khoc.jpeg",
+      "admin": true,
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "accountNonLocked": true,
+      "authorities": [{ "authority": "ROLE_ADMIN" }]
+    },
+    "product": {
+      "productId": 1,
+      "productName": "Bánh mì gà ngon dữ dằn lun hông dỡn",
+      "description": "Bánh mì gà ngon quá trời",
+      "price": 12000.0,
+      "detailDescription": "<p><strong>Bánh mì  Gà tại Softy Bakery:</strong></p>\r           <ul>\r           <li>  Bánh mì gà không còn xa lạ với người Việt Nam, đặc biệt là đối với người dân Sài Gòn và những tín đồ của món bánh mì. Tuy nhiên, bánh mì gà là điểm mới và tô thêm màu sắc cho món bánh mì đường phố.</li>\r             <li>Vừa có hương vị thơm ngon tuyệt hảo vừa cân bằng dinh dưỡng cho cơ thể. Bánh mì gà  là sự lựa chọn hoàn hảo cho bất kỳ bữa ăn nào trong ngày. Để làm ra món bánh gà lý tưởng. Điều quan trọng là phải có được một công thức làm thịt gà tuyệt hảo. Điều này đặc biệt quan trọng khi nói đến tỷ lệ thành phần thịt gà tươi có nhiều hay không và các loại gia vị khác mới có thể tạo ra được các miếng thịt gà chắc  mịn chất lượng và vị mặn ngọt vừa phải.</li>\r               <li>Nếu các thành phần không được kết hợp đúng cách, thành phẩm cuối cùng sẽ không đạt yêu cầu. Nhờ đặt cái tâm vào từng bước chế biến nhằm mang đến món ăn tốt nhất đến cho khách hàng. Bánh mì gà  đã vươn lên là thương hiệu bánh mì chả cá sợi hàng đầu trong lòng người tiêu dùng. </li>\r           </ul>     ",
+      "ingredient": "             <ul>\r                   <li>Bánh mì</li>\r   <li>Thịt gà</li>\r   <li>Chả lụa</li>\r   <li>Hành tím</li>\r   <li>Ớt xanh và ớt đỏ</li>\r   <li>Sốt cà chua </li>\r       </ul>",
+      "storageInstruction": "<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>",
+      "category": {
+        "categoryId": 1,
+        "categoryName": "Bánh mì",
+        "imageUrl": null,
+        "description": null
+      }
+    },
+    "rating": 5,
+    "comment": null,
+    "reviewDate": 1698598800000
+  },
+  {
+    "reviewId": 10011,
+    "account": {
+      "accountId": 10001,
+      "username": "admin",
+      "password": "$2a$10$7ntPZ1TTJSXmuqnL2E4NYuDbw9P7mL8R7QxOsBWtw1jLhjCyqyD9.",
+      "email": "admin@gmail.com",
+      "fullName": "admin ngu",
+      "address": "Phường Thắng Tam, Thành phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu",
+      "addressDetail": "Bãi Sau",
+      "phoneNumber": "0123123123",
+      "photo": "www_tiengdong_com-anh-meme-meo-khoc.jpeg",
+      "admin": true,
+      "accountNonExpired": true,
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "accountNonLocked": true,
+      "authorities": [{ "authority": "ROLE_ADMIN" }]
+    },
+    "product": {
+      "productId": 4,
+      "productName": "Bánh mì chà bông phô mai",
+      "description": "Bánh mì chà bông phô mai thơm ngonnnnnnnn",
+      "price": 25000.0,
+      "detailDescription": "  <p><strong>Bánh mì Chà Bông Phô Mai tại Softy Bakery:</strong></p>\n          <ul>\n          <li> \n          Bánh mì chà bông phô là một món ăn rất dễ dùng ,  giàu năng lượng cho bữa ăn “nhẹ nhàng” mà vẫn đầy đủ dưỡng chất. Bánh cũng có thể kết hợp với đồ ăn để tạo nên sự da dạng cho sở thích mỗi người.\n</li>\n  <li>\nBánh Mì Phô Mai Tan Chảy có lớp vỏ mịn màng, thơm đậm mùi sữa, sốt phô mai béo ngậy, có vị ngọt nhẹ, kết hợp với ruốc (chà bông) mặn đậm đà…hợp nhau đến lạ lùng. Khi tách đôi lớp bánh, phần nhân là sốt phô mai trắng đặc quánh chảy ra , chỉ cần cắn nhẹ lớp bánh xốp giòn tan hoà cùng sự mềm mại của lớp phô mai beo béo, thơm lừng sẽ khiến bạn phải suýt xoa hương vị đặc biệt của nhà Softy Bakery luôn là món ăn vặt luôn được yêu thích. \n </li>\n          </ul>  ",
+      "ingredient": "<ul>                 \n  <li>Bột mì</li>\n  <li>Sữa tươi không đường</li>\n  <li>Bơ lạt</li>\n  <li>Trứng gà</li>\n  <li>Đường</li>\n  <li>Muối</li>\n  <li>Men</li>\n<li>Bột bắp</li>\n<li>Kem whipping </li>\n<li>Bột gelatine </li>\n<li>Cà phê</li>\n\n                </ul>",
+      "storageInstruction": "<ul>\n               <li>Hạn sử dụng: Sản phẩm tại Softy Bakery thường có hạn sử dụng ngắn hạn để đảm bảo chất lượng và vệ sinh. Khi lưu trữ, nên chú ý đọc và tuân thủ hạn sử dụng để đảm bảo thực phẩm vẫn an toàn và ngon miệng.</li>\n               <li>Bảo quản tại tủ lạnh (nếu cần): Nếu sản phẩm yêu cầu lưu trữ trong tủ lạnh, đảm bảo đặt chúng ở phần lạnh và tuân thủ nhiệt độ được đề xuất để tránh làm thay đổi chất lượng và hương vị.</li>\n               </ul>",
+      "category": {
+        "categoryId": 3,
+        "categoryName": "Bánh mặn",
+        "imageUrl": null,
+        "description": null
+      }
+    },
+    "rating": 4,
+    "comment": "wtf sao lại có cafe",
+    "reviewDate": 1698598800000
+  }
+]

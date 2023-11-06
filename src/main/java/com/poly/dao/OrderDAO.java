@@ -1,24 +1,11 @@
 package com.poly.dao;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
-import com.poly.entities.Order;
+import com.poly.models.Order;
 
-public interface OrderDAO extends JpaRepository<Order, Integer> {
-	@Query("SELECT o.orderId FROM Order o ORDER BY o.orderId DESC LIMIT 1")
-    Integer findTopOrderId();
-	
-	@Query("SELECT o.orderId FROM Order o ORDER BY o.orderId DESC LIMIT 1")
-    Integer getAccountIdByOrderId();
-	
-	@Override
-	@Query("SELECT o FROM Order o ORDER BY o.orderDate DESC")
-	List<Order> findAll();
-
-	@Query("SELECT o FROM Order o WHERE account.accountId = ?1")
-	List<Order> findOrderByAccountId(int accountId);
+@Repository
+public interface OrderDAO extends JpaRepository<Order,Integer>{
+    
 }
-  
