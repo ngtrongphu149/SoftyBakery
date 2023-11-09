@@ -22,11 +22,14 @@ public class SecurityConfig {
 	public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
 		http
 				.csrf(csrf -> csrf.disable())
-				.authorizeRequests(authorizeRequests -> authorizeRequests
+				.authorizeRequests((authorizeRequests) -> authorizeRequests
+						// .requestMatchers("/cart", "/order", "/rest/cart/add/**", "/profile", "/profile/edit")
+						// .authenticated()
+						// .requestMatchers("/home", "/about", "/service", "/contact", "/rest/**").permitAll()
+						// .requestMatchers("/admin/**").hasRole("ADMIN"))
 						.requestMatchers("/cart", "/order", "/rest/cart/add/**", "/profile", "/profile/edit")
 						.authenticated()
-						.requestMatchers("/home", "/about", "/service", "/contact", "/rest/**").permitAll()
-						.requestMatchers("/admin/**").hasRole("ADMIN"))
+						.requestMatchers("/home", "/about", "/service", "/contact", "/rest/**","/admin/**").permitAll())
 				.formLogin(form -> form
 						.loginPage("/login")
 						.loginProcessingUrl("/login")

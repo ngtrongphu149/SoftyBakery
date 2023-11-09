@@ -7,8 +7,6 @@ import lombok.Data;
 import java.util.Date;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 @Table(name = "Orders")
 @Data
@@ -38,7 +36,6 @@ public class Order {
     @Column(name = "status")
     private String status;
 
-    @OneToMany
-    @JoinColumn(name = "orders")
-    List<OrderItem> orderItems;
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems;
 }

@@ -23,6 +23,8 @@ public class Comment {
     @JoinColumn(name = "productid")
     private Product product;
 
+    
+
     @Column(name = "rating")
     private int rating;
 

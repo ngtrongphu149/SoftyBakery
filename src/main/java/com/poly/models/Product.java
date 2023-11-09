@@ -40,14 +40,13 @@ public class Product {
     @JoinColumn(name = "categoryid")
     private Category category;
 
+    @OneToMany(mappedBy = "product")
+    private List<SpecialOption> specialOptions;
+
+    @OneToMany(mappedBy = "product")
+    private List<ProductImage> productImages;
+    
     @Column(name = "isavailable")
     private boolean isAvailable;
 
-    @OneToMany
-    @JoinColumn(name = "product")
-    List<SpecialOption> specialOptions;
-
-    @OneToMany
-    @JoinColumn(name = "product")
-    List<ProductImage> productImages;
 }

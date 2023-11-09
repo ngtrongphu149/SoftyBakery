@@ -1,7 +1,6 @@
 package com.poly.models;
 
 import jakarta.persistence.*;
-
 import lombok.Data;
 
 import java.sql.Date;
@@ -9,22 +8,19 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.poly.dto.RoleEnum;
 
-import com.poly.models.AccountRole;
-import com.poly.models.Review;
-import com.poly.models.Comment;
-import com.poly.models.Order;
-
-
+@Configuration
 @Entity
-@Table(name = "Accounts", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
+@Table(name = "Accounts")
 @Data
-public class Account  implements UserDetails{
+public class Account implements UserDetails {
     @Id
     @Column(name = "username")
     private String username;
@@ -60,42 +56,59 @@ public class Account  implements UserDetails{
     private String reasonBanned;
 
     @OneToMany(mappedBy = "account")
+    @JsonIgnore
     private List<Order> orders;
-    
+
     @OneToMany(mappedBy = "account")
+    @JsonIgnore
     private List<Review> reviews;
 
     @OneToMany(mappedBy = "account")
+    @JsonIgnore
     private List<Comment> comments;
-
-    @OneToMany(mappedBy = "account")
-    private List<AccountRole> accountRoles;
-    
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> list = new ArrayList<>();
+        list.add(new SimpleGrantedAuthority("ROLE_USER"));
+        list.add(new SimpleGrantedAuthority("ROLE_MANAGER"));
         list.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        list.add(new SimpleGrantedAuthority("ROLE_SUPERADMIN"));
         return list;
     }
 
     @Override
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    @JsonIgnore
     public boolean isAccountNonExpired() {
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isAccountNonLocked() {
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
     @Override
+    @JsonIgnore
     public boolean isEnabled() {
         return true;
     }
 }
+

@@ -15,7 +15,8 @@ public class Review {
     @Column(name = "reviewid")
     private int reviewId;
 
-    @Column(name = "username")
+    @ManyToOne
+    @JoinColumn(name = "username")
     private Account account;
 
     @ManyToOne

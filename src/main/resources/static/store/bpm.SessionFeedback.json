@@ -1,0 +1,2363 @@
+[{
+  "_id": {
+    "$oid": "64dc89041c6ec27ab119fbd4"
+  },
+  "sessionId": "df57b5e5-3c0e-11ee-8471-01cb741",
+  "contract": "sgfdn0092",
+  "email": "HanhTTM19@fpt.com",
+  "score": 0.5,
+  "comment": "",
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64dc91881c6ec27ab119fbfa"
+  },
+  "sessionId": "539fa326-3c13-11ee-8471-69b6ffc",
+  "contract": "SGFDN0092",
+  "email": "thangnd47@fpt.com",
+  "score": 3.5,
+  "comment": "Tool đỉnh cao nha (troll đó)",
+  "createdAt": {
+    "$date": "2023-08-16T09:06:16.473Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64dc91d61c6ec27ab119fbfb"
+  },
+  "sessionId": "9aa147b9-3c13-11ee-8471-bdd6d60",
+  "contract": "HUAAB6909",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "chưa ok",
+  "createdAt": {
+    "$date": "2023-08-16T09:07:34.135Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64dd9a691c6ec27ab119fc28"
+  },
+  "sessionId": "ba218235-3cb1-11ee-8471-f34189b",
+  "contract": "HUAAB1541",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-17T03:56:25.913Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64ddab671c6ec27ab119fc30"
+  },
+  "sessionId": "df3be83c-3cbb-11ee-8471-a3415bf",
+  "contract": "HPH007800",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 1,
+  "comment": "rất chung chung ko chỉ ra lỗi",
+  "createdAt": {
+    "$date": "2023-08-17T05:08:55.819Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64ddae561c6ec27ab119fc33"
+  },
+  "sessionId": "9ee6fc1e-3cbc-11ee-8471-cf17317",
+  "contract": "HPAAB0724",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 2,
+  "comment": "cần chỉ ra lỗi gì.mới đưa ra hướng dẫn\ntư vấn gói cước nhưung hệ thống ko báo nhà kh sử dụng bao nhiêu thiết bị,lưu lương bao nhiêu",
+  "createdAt": {
+    "$date": "2023-08-17T05:21:26.572Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64ddaed31c6ec27ab119fc34"
+  },
+  "sessionId": "9ee6fc1e-3cbc-11ee-8471-cf17317",
+  "contract": "HPFD40553",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 2,
+  "comment": "nên chỉ ra lỗi gì đó mới hướng dẫn ping , tracert",
+  "createdAt": {
+    "$date": "2023-08-17T05:23:31.772Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64ddb07f1c6ec27ab119fc36"
+  },
+  "sessionId": "41dd517f-3cbe-11ee-8471-f5cb56a",
+  "contract": "HPAAC9717",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 2,
+  "comment": "không hiện bao cáo modem kh sd \nkhông hiện dòng kịch bản cấu hình wifi test hợp đồng khác có",
+  "createdAt": {
+    "$date": "2023-08-17T05:30:39.692Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64ddc3271c6ec27ab119fc38"
+  },
+  "sessionId": "1a515cfb-3cb9-11ee-8471-1196054",
+  "contract": "SGFDN0092",
+  "email": "HanhTTM19@fpt.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-17T06:50:15.590Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64ddcbf01c6ec27ab119fc4a"
+  },
+  "sessionId": "5de6fdc7-3ccf-11ee-8471-bf9d181",
+  "contract": "SGFDN0092",
+  "email": "HanhTTM19@fpt.com",
+  "score": 5,
+  "comment": "tyutb fyg ff",
+  "createdAt": {
+    "$date": "2023-08-17T07:27:44.425Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64ddd7141c6ec27ab119fc52"
+  },
+  "sessionId": "05c4910e-3cd6-11ee-8471-6317296",
+  "contract": "HUFD51935",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-17T08:15:16.102Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64ddd7771c6ec27ab119fc54"
+  },
+  "sessionId": "4a1a4f7f-3cd6-11ee-8471-63a54d8",
+  "contract": "HUFD51386",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "ok",
+  "createdAt": {
+    "$date": "2023-08-17T08:16:55.805Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64dddcd91c6ec27ab119fc58"
+  },
+  "sessionId": "10d46011-3cd8-11ee-8471-9fd55f4",
+  "contract": "SGFDN0092",
+  "email": "HanhTTM19@fpt.com",
+  "score": 5,
+  "comment": "we gqe qể",
+  "createdAt": {
+    "$date": "2023-08-17T08:39:53.631Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64df2d651c6ec27ab119fd39"
+  },
+  "sessionId": "974bc8ee-3d9d-11ee-8471-f7b0e31",
+  "contract": "SGFDN0092",
+  "email": "HanhTTM19@fpt.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-18T08:35:49.337Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2bea91c6ec27ab119fd5b"
+  },
+  "sessionId": "a82abaf2-3fbf-11ee-8471-6bd58b2",
+  "contract": "SGFDN0092",
+  "email": "thangnd47@fpt.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T01:32:25.196Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2c2a61c6ec27ab119fd69"
+  },
+  "sessionId": "f1c44ba3-3fc3-11ee-8471-c5a7b62",
+  "contract": "SGFDN0092",
+  "email": "thangnd47@fpt.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T01:49:26.157Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2d7ed1c6ec27ab119fd96"
+  },
+  "sessionId": "18f7ff4e-3fcf-11ee-8471-8be01a1",
+  "contract": "SGFDN0092",
+  "email": "thangnd47@fpt.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T03:20:13.438Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2dad31c6ec27ab119fda0"
+  },
+  "sessionId": "8881214f-3fd2-11ee-8471-61f7946",
+  "contract": "SGFDN0092",
+  "email": "thangnd47@fpt.com",
+  "score": 4.5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T03:32:35.898Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2df2a1c6ec27ab119fdb2"
+  },
+  "sessionId": "68484520-3fd3-11ee-8471-49eb512",
+  "contract": "HPFD22498",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 2.5,
+  "comment": "Chưa hữu ích vì chưa đạt mong đợi, thông tin hãn chung chung chưa có gì đặc biệt, giao diện màu hơi cơ bản chưa có điểm nhấn \nĐề xuất có thể show pass wifi",
+  "createdAt": {
+    "$date": "2023-08-21T03:51:06.578Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2eb371c6ec27ab119fdde"
+  },
+  "sessionId": "f08ab0f8-3fdc-11ee-8471-a5bf321",
+  "contract": "HPAAB0449",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T04:42:31.428Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2ebd41c6ec27ab119fde3"
+  },
+  "sessionId": "2c614b79-3fdd-11ee-8471-71cd18e",
+  "contract": "HPD057852",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 4,
+  "comment": "khá đủ thông tin",
+  "createdAt": {
+    "$date": "2023-08-21T04:45:08.909Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2ee011c6ec27ab119fdf0"
+  },
+  "sessionId": "33d2b37c-3fde-11ee-8471-8ff85e5",
+  "contract": "LCDN00001",
+  "email": "Thinhdl@vienthongtin.com",
+  "score": 0,
+  "comment": "MD bật wifi bật mà AI ghi nhận Wifi đang tắt :(",
+  "createdAt": {
+    "$date": "2023-08-21T04:54:25.006Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2ee321c6ec27ab119fdf2"
+  },
+  "sessionId": "2577c63b-3fde-11ee-8471-494fd37",
+  "contract": "HPFD84805",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "chưa biết cường độ sóng máy kh kết nối như Doctor T cũ",
+  "createdAt": {
+    "$date": "2023-08-21T04:55:14.292Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2eeec1c6ec27ab119fdf4"
+  },
+  "sessionId": "f6a82c4e-3fde-11ee-8471-296e189",
+  "contract": "HPD045758",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "hệ thống báo modem đang tắt wifi mà sóng wifi nhà kh vẫn bật nên kiểm tra lại",
+  "createdAt": {
+    "$date": "2023-08-21T04:58:20.402Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2ef2d1c6ec27ab119fdf5"
+  },
+  "sessionId": "d4eff88d-3fde-11ee-8471-87847d3",
+  "contract": "LCFDN0002",
+  "email": "Thinhdl@vienthongtin.com",
+  "score": 0,
+  "comment": "ok :)",
+  "createdAt": {
+    "$date": "2023-08-21T04:59:25.518Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2f0271c6ec27ab119fdf7"
+  },
+  "sessionId": "c779344f-3fdf-11ee-8471-c765f3b",
+  "contract": "HPFD63146",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T05:03:35.779Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2f2b41c6ec27ab119fdfa"
+  },
+  "sessionId": "d0dde0d1-3fe0-11ee-8471-c1f6bce",
+  "contract": "HPAAE1500",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "Sử dụng Wifi Man kiểm tra Công suất thu tại vị trí khách hàng sử dụng\nHiện cty đang hướng dẫn sử dụng  Wifi Analyzer để test sóng wifi",
+  "createdAt": {
+    "$date": "2023-08-21T05:14:28.420Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e2f3871c6ec27ab119fdfc"
+  },
+  "sessionId": "d0524d32-3fe1-11ee-8471-ffda468",
+  "contract": "HPAAE1500",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T05:17:59.316Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e3064e1c6ec27ab119fdfe"
+  },
+  "sessionId": "e2a06ca3-3fec-11ee-8471-c9fc5be",
+  "contract": "LCFD20441",
+  "email": "Thinhdl@vienthongtin.com",
+  "score": 0,
+  "comment": "AI ghi nhận không chính xác, wifi nhà KH đang enable nhưng lại ghi nhận là wifi đang tắt",
+  "createdAt": {
+    "$date": "2023-08-21T06:38:06.869Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e307c41c6ec27ab119fe03"
+  },
+  "sessionId": "eb022814-3fed-11ee-8471-6906511",
+  "contract": "SGFDN0092",
+  "email": "thangnd47@fpt.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T06:44:20.650Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e308d11c6ec27ab119fe04"
+  },
+  "sessionId": "fc2228c5-3fed-11ee-8471-05d58ae",
+  "contract": "HPAAG1378",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "modem 1800c sóng wifi 1 2.4ghz đang tắt nhưng hệ thống báo đang bật",
+  "createdAt": {
+    "$date": "2023-08-21T06:48:49.515Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e309b81c6ec27ab119fe07"
+  },
+  "sessionId": "e7f91156-3fee-11ee-8471-2be1ae9",
+  "contract": "HPAAG1376",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T06:52:40.374Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e30ac01c6ec27ab119fe0a"
+  },
+  "sessionId": "63a427e8-3fef-11ee-8471-bfa7183",
+  "contract": "HPAAG1818",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T06:57:04.192Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e30ccd1c6ec27ab119fe0d"
+  },
+  "sessionId": "c1f7b04b-3ff0-11ee-8471-5d419dc",
+  "contract": "HPD055397",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:05:49.769Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e30d5c1c6ec27ab119fe12"
+  },
+  "sessionId": "55592e4c-3ff1-11ee-8471-555a5e7",
+  "contract": "HPAAF0627",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:08:12.067Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e30e331c6ec27ab119fe16"
+  },
+  "sessionId": "8702cdcd-3ff1-11ee-8471-e9e34fe",
+  "contract": "HPFD25351",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:11:47.346Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e3101b1c6ec27ab119fe18"
+  },
+  "sessionId": "e9c3c26e-3ff2-11ee-8471-6beb0ff",
+  "contract": "HPAAC8204",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:19:55.717Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e310cb1c6ec27ab119fe1b"
+  },
+  "sessionId": "57bcd5f0-3ff3-11ee-8471-edf2226",
+  "contract": "HPAAG1378",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:22:51.519Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e311ad1c6ec27ab119fe1e"
+  },
+  "sessionId": "d3729ae2-3ff3-11ee-8471-afaa51f",
+  "contract": "HPFD85057",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:26:37.419Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e312a41c6ec27ab119fe24"
+  },
+  "sessionId": "1ac98b63-3ff4-11ee-8471-d526704",
+  "contract": "HPFD83127",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:30:44.989Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e3131c1c6ec27ab119fe26"
+  },
+  "sessionId": "b2e36154-3ff4-11ee-8471-4b5db44",
+  "contract": "HPFD75844",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:32:44.386Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e313bb1c6ec27ab119fe28"
+  },
+  "sessionId": "f84eae75-3ff4-11ee-8471-d505d82",
+  "contract": "HPFD40537",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:35:23.792Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e314401c6ec27ab119fe2b"
+  },
+  "sessionId": "65cdaff7-3ff5-11ee-8471-094d778",
+  "contract": "HPAAF4627",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:37:36.998Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e314ca1c6ec27ab119fe2d"
+  },
+  "sessionId": "ad609808-3ff5-11ee-8471-e3da458",
+  "contract": "HPAAF7206",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:39:54.887Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e3152e1c6ec27ab119fe2f"
+  },
+  "sessionId": "04011b89-3ff6-11ee-8471-cbe174c",
+  "contract": "HPFD45740",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:41:34.016Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e315a41c6ec27ab119fe31"
+  },
+  "sessionId": "3cc8c85a-3ff6-11ee-8471-0d60750",
+  "contract": "HPAAF8317",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:43:32.837Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e3160e1c6ec27ab119fe33"
+  },
+  "sessionId": "7490df7b-3ff6-11ee-8471-61f6449",
+  "contract": "HPAAF6002",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:45:18.239Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e316fc1c6ec27ab119fe3a"
+  },
+  "sessionId": "d125e46c-3ff6-11ee-8471-01ddbdb",
+  "contract": "HPAAF7660",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:49:16.958Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e317691c6ec27ab119fe3c"
+  },
+  "sessionId": "470b51bd-3ff7-11ee-8471-5fbb0a9",
+  "contract": "HPAAF7660",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T07:51:05.124Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e319d91c6ec27ab119fe42"
+  },
+  "sessionId": "5bab5c01-3ff8-11ee-8471-27ccd71",
+  "contract": "HPFD89910",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 1,
+  "comment": "suy hao -30.46 mà doctor T báo ko phát hiện bất thường gì",
+  "createdAt": {
+    "$date": "2023-08-21T08:01:29.167Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e339e61c6ec27ab119fe92"
+  },
+  "sessionId": "bd180561-400b-11ee-8471-2797fd2",
+  "contract": "HPFD62910",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "modem khởi động 8 ngày liền mà vẫn báo bình thường.ko có hướng dẫn tắt mở thiết bị",
+  "createdAt": {
+    "$date": "2023-08-21T10:18:14.389Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e33b131c6ec27ab119fe97"
+  },
+  "sessionId": "9a0c2880-400b-11ee-8471-bfb0996",
+  "contract": "SGFDN0092",
+  "email": "thangnd47@fpt.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T10:23:15.685Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e33b211c6ec27ab119fe98"
+  },
+  "sessionId": "580ebc83-400c-11ee-8471-f54d74f",
+  "contract": "HPH031527",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "modem đã khởi động 14 ngày mà ko có cảnh báo khởi động modem",
+  "createdAt": {
+    "$date": "2023-08-21T10:23:29.253Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e33c6b1c6ec27ab119fe9c"
+  },
+  "sessionId": "4a2427d6-400d-11ee-8471-e9755a0",
+  "contract": "HPFD56915",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "modem đã khởi động 26 ngày cần 1 thông báo hướng dẫn tắt mở",
+  "createdAt": {
+    "$date": "2023-08-21T10:28:59.817Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e33e9a1c6ec27ab119fea3"
+  },
+  "sessionId": "9aa3581c-400e-11ee-8471-c75b8b3",
+  "contract": "HPFD01814",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "modem đã khởi động liên tục 27 ngày cần 1 hướng dẫn tắt mở",
+  "createdAt": {
+    "$date": "2023-08-21T10:38:18.307Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e341001c6ec27ab119fea9"
+  },
+  "sessionId": "17ea00d1-4010-11ee-8471-133edb0",
+  "contract": "QNFD90592",
+  "email": "DucNH8@vienthongtin.com",
+  "score": 4,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T10:48:32.923Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e3415f1c6ec27ab119feab"
+  },
+  "sessionId": "5033cb12-4010-11ee-8471-0f15149",
+  "contract": "QNAAE3758",
+  "email": "DucNH8@vienthongtin.com",
+  "score": 4,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T10:50:07.937Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e3423e1c6ec27ab119fead"
+  },
+  "sessionId": "8ccbb9c3-4010-11ee-8471-3b44192",
+  "contract": "QNFD41404",
+  "email": "DucNH8@vienthongtin.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T10:53:50.057Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e342ad1c6ec27ab119feaf"
+  },
+  "sessionId": "0b935294-4011-11ee-8471-a77876e",
+  "contract": "QND031180",
+  "email": "DucNH8@vienthongtin.com",
+  "score": 4.5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T10:55:41.989Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e343131c6ec27ab119feb1"
+  },
+  "sessionId": "5146a535-4011-11ee-8471-8b65a88",
+  "contract": "QNFD45665",
+  "email": "DucNH8@vienthongtin.com",
+  "score": 4,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-21T10:57:23.603Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e45ef6be36c079940cad0c"
+  },
+  "sessionId": "73b91ce0-40ba-11ee-a088-f374467",
+  "contract": "HNH953426",
+  "email": "DungKT@vienthongtin.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-22T07:08:38.718Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e45f6fbe36c079940cad0f"
+  },
+  "sessionId": "c88380d1-40ba-11ee-a088-f58255e",
+  "contract": "HNH426413",
+  "email": "DungKT@vienthongtin.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-22T07:10:39.554Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e45ffebe36c079940cad11"
+  },
+  "sessionId": "19f7dbf2-40bb-11ee-a088-75fef1f",
+  "contract": "HNABE5793",
+  "email": "DungKT@vienthongtin.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-22T07:13:02.465Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e460c2be36c079940cad13"
+  },
+  "sessionId": "74e54b63-40bb-11ee-a088-1741079",
+  "contract": "HNH226041",
+  "email": "DungKT@vienthongtin.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-22T07:16:18.004Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e57623e14f4d7e9383db83"
+  },
+  "sessionId": "b3683200-4160-11ee-b63c-1f4b509",
+  "contract": "HNABL7103",
+  "email": "DatNT27@vienthongtin.com",
+  "score": 3,
+  "comment": "hdan xli lỗi reset OSP, chọn chưa khắc phục được => hiện màn hình lỗi uncaught runtime errors => phải chọn đã khắc phục mới hoàn thành",
+  "createdAt": {
+    "$date": "2023-08-23T02:59:47.996Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e57703e14f4d7e9383db86"
+  },
+  "sessionId": "30422ba2-4161-11ee-b63c-e930e3c",
+  "contract": "HNH886620",
+  "email": "DatNT27@vienthongtin.com",
+  "score": 3,
+  "comment": "lỗi tương tự như phản ánh với hđ HNABL7103",
+  "createdAt": {
+    "$date": "2023-08-23T03:03:31.365Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e57797e14f4d7e9383db88"
+  },
+  "sessionId": "a9681df3-4161-11ee-b63c-fd50efe",
+  "contract": "HND493715",
+  "email": "DatNT27@vienthongtin.com",
+  "score": 1,
+  "comment": "lỗi tool, các hđ đều phải reset OSP, mặc dù lỗi k lquan",
+  "createdAt": {
+    "$date": "2023-08-23T03:05:59.426Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e577e7e14f4d7e9383db8a"
+  },
+  "sessionId": "044d9e24-4162-11ee-b63c-75f4d44",
+  "contract": "HNH432019",
+  "email": "DatNT27@vienthongtin.com",
+  "score": 1,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T03:07:19.634Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e57e8ee14f4d7e9383db8f"
+  },
+  "sessionId": "ee3a6298-4165-11ee-b63c-9b00dcc",
+  "contract": "HNH322126",
+  "email": "DatNT27@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T03:35:42.631Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e57ef8e14f4d7e9383db91"
+  },
+  "sessionId": "38510f59-4166-11ee-b63c-078ab17",
+  "contract": "HNH688430",
+  "email": "DucLH@vienthongtin.com",
+  "score": 3,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T03:37:28.461Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e57ff4e14f4d7e9383db93"
+  },
+  "sessionId": "6710fc6a-4166-11ee-b63c-8d7bf34",
+  "contract": "HNAAU2670",
+  "email": "DucLH@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T03:41:40.357Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58040e14f4d7e9383db95"
+  },
+  "sessionId": "fa54e04b-4166-11ee-b63c-2fc2ccd",
+  "contract": "HNH440835",
+  "email": "DucLH@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T03:42:56.146Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e580b1e14f4d7e9383db97"
+  },
+  "sessionId": "2791138c-4167-11ee-b63c-c322c73",
+  "contract": "HNH715738",
+  "email": "DucLH@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T03:44:49.101Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e5812de14f4d7e9383db99"
+  },
+  "sessionId": "6b2d941d-4167-11ee-b63c-1915278",
+  "contract": "HNH472050",
+  "email": "DucLH@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T03:46:53.846Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58464e14f4d7e9383db9b"
+  },
+  "sessionId": "ba37cd0e-4167-11ee-b63c-4f8a370",
+  "contract": "HNABP8288",
+  "email": "DucLH@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:00:36.231Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e584c2e14f4d7e9383db9d"
+  },
+  "sessionId": "9ff3a3ef-4169-11ee-b63c-e3e9b01",
+  "contract": "HNAAP3472",
+  "email": "DucLH@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:02:10.091Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e584f7e14f4d7e9383db9f"
+  },
+  "sessionId": "d73ee9f0-4169-11ee-b63c-cb47a52",
+  "contract": "HNABP3048",
+  "email": "DucLH@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:03:03.702Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e5853ce14f4d7e9383dba2"
+  },
+  "sessionId": "fc0c25e2-4169-11ee-b63c-43359cf",
+  "contract": "HNAAR3184",
+  "email": "DucLH@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:04:12.360Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e5857ae14f4d7e9383dba4"
+  },
+  "sessionId": "20514613-416a-11ee-b63c-e9c3756",
+  "contract": "HNAAQ6441",
+  "email": "DucLH@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:05:14.488Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58787e14f4d7e9383dba7"
+  },
+  "sessionId": "5657e1a5-416b-11ee-b63c-ef833a5",
+  "contract": "HNAAQ6441",
+  "email": "DucLH@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:13:59.075Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58802e14f4d7e9383dba9"
+  },
+  "sessionId": "887c7d86-416b-11ee-b63c-332d391",
+  "contract": "HNH487108",
+  "email": "KhanhNN4@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:16:02.138Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58a48e14f4d7e9383dbab"
+  },
+  "sessionId": "cb210987-416b-11ee-b63c-87f78b9",
+  "contract": "HNABA2346",
+  "email": "KhanhNN4@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:25:44.570Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58a96e14f4d7e9383dbad"
+  },
+  "sessionId": "2277c838-416d-11ee-b63c-878c01d",
+  "contract": "HNJ155571",
+  "email": "KhanhNN4@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:27:02.395Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58af3e14f4d7e9383dbb0"
+  },
+  "sessionId": "56a2463a-416d-11ee-b63c-9f60821",
+  "contract": "HNH397034",
+  "email": "KhanhNN4@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:28:35.957Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58b3be14f4d7e9383dbb2"
+  },
+  "sessionId": "88bb706b-416d-11ee-b63c-a5c7bc1",
+  "contract": "HNJ155571",
+  "email": "KhanhNN4@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:29:47.567Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58b72e14f4d7e9383dbb4"
+  },
+  "sessionId": "b3404bdc-416d-11ee-b63c-4bea657",
+  "contract": "HNAAW8663",
+  "email": "KhanhNN4@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:30:42.052Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58befe14f4d7e9383dbb6"
+  },
+  "sessionId": "e2499dfd-416d-11ee-b63c-bb4f3a7",
+  "contract": "HNH212507",
+  "email": "TaiND3@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:32:47.119Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58c30e14f4d7e9383dbb9"
+  },
+  "sessionId": "250e351f-416e-11ee-b63c-a157f0d",
+  "contract": "HNH907489",
+  "email": "TaiND3@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:33:52.587Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58e83e14f4d7e9383dbbb"
+  },
+  "sessionId": "45471be0-416e-11ee-b63c-359a9a8",
+  "contract": "HNABB7590",
+  "email": "TaiND3@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:43:47.088Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58ebbe14f4d7e9383dbbd"
+  },
+  "sessionId": "a8a47791-416f-11ee-b63c-3587df8",
+  "contract": "HNABD3681",
+  "email": "TaiND3@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:44:43.610Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58ef1e14f4d7e9383dbbf"
+  },
+  "sessionId": "c9bd3702-416f-11ee-b63c-0707667",
+  "contract": "HNABF5786",
+  "email": "TaiND3@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:45:37.837Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58f5be14f4d7e9383dbc3"
+  },
+  "sessionId": "005b2605-4170-11ee-b63c-215867b",
+  "contract": "HNH800076",
+  "email": "Truongdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:47:23.652Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e58fa0e14f4d7e9383dbc5"
+  },
+  "sessionId": "28eb0f46-4170-11ee-b63c-698ba2b",
+  "contract": "HNH688381",
+  "email": "Truongdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:48:32.179Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e59000e14f4d7e9383dbc7"
+  },
+  "sessionId": "62f52727-4170-11ee-b63c-85771f3",
+  "contract": "HNH529058",
+  "email": "VanDT1@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:50:08.322Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e59032e14f4d7e9383dbc9"
+  },
+  "sessionId": "8b328398-4170-11ee-b63c-33deecb",
+  "contract": "HNABN5684",
+  "email": "VanDT1@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:50:58.774Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e59078e14f4d7e9383dbcb"
+  },
+  "sessionId": "a92a05d9-4170-11ee-b63c-eddbafb",
+  "contract": "HNABN5684",
+  "email": "VanDT1@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-23T04:52:08.688Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e6e888e14f4d7e9383dbe9"
+  },
+  "sessionId": "a26b6790-423d-11ee-b63c-47fa884",
+  "contract": "HPAAF8317",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "tự nhiên hướng dẫn reset osp mà ko cho lý do cụ thể",
+  "createdAt": {
+    "$date": "2023-08-24T05:20:08.999Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e6ea2ee14f4d7e9383dbeb"
+  },
+  "sessionId": "71148681-423e-11ee-b63c-ed96284",
+  "contract": "HPAAA9338",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 2,
+  "comment": "Kịch bản Reset OSP trên inside ko hiểu tại sao hướng dẫn reset",
+  "createdAt": {
+    "$date": "2023-08-24T05:27:10.565Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e6eab4e14f4d7e9383dbed"
+  },
+  "sessionId": "f05016d2-423e-11ee-b63c-0ff5bca",
+  "contract": "HPD081818",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "Kịch bản Reset OSP trên inside tại sao lại reset",
+  "createdAt": {
+    "$date": "2023-08-24T05:29:24.539Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e867cfe14f4d7e9383dc49"
+  },
+  "sessionId": "283253c6-4322-11ee-b63c-b97464c",
+  "contract": "HUAAA4002",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T08:35:27.217Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e86871e14f4d7e9383dc4c"
+  },
+  "sessionId": "8ee00869-4322-11ee-b63c-8de1826",
+  "contract": "HUFD50570",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T08:38:09.782Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e868ede14f4d7e9383dc4e"
+  },
+  "sessionId": "c4e2a1ca-4322-11ee-b63c-a5374a4",
+  "contract": "HUD033620",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T08:40:13.789Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e8693fe14f4d7e9383dc50"
+  },
+  "sessionId": "0da68fcb-4323-11ee-b63c-e981da5",
+  "contract": "HUD020630",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T08:41:35.324Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e869a7e14f4d7e9383dc52"
+  },
+  "sessionId": "39a64b6c-4323-11ee-b63c-3f40873",
+  "contract": "HUFD37577",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T08:43:19.278Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e86a01e14f4d7e9383dc55"
+  },
+  "sessionId": "7a23b1ae-4323-11ee-b63c-fdffedd",
+  "contract": "HUFD44922",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T08:44:49.420Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e86a56e14f4d7e9383dc57"
+  },
+  "sessionId": "ad30b1bf-4323-11ee-b63c-950ad20",
+  "contract": "HUFD11654",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T08:46:14.006Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e86b1ee14f4d7e9383dc5a"
+  },
+  "sessionId": "22c036e1-4324-11ee-b63c-398de91",
+  "contract": "HUFD52461",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T08:49:34.626Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e86b9ce14f4d7e9383dc5c"
+  },
+  "sessionId": "57acf372-4324-11ee-b63c-47b6822",
+  "contract": "HUFD20928",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T08:51:40.517Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e86c36e14f4d7e9383dc5f"
+  },
+  "sessionId": "d6c0fe94-4324-11ee-b63c-ff0fbfb",
+  "contract": "HUAAA2555",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T08:54:14.678Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e86d5de14f4d7e9383dc63"
+  },
+  "sessionId": "85a41cd7-4325-11ee-b63c-edbbb37",
+  "contract": "HUFD30701",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T08:59:09.979Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e86dc6e14f4d7e9383dc65"
+  },
+  "sessionId": "bc063b58-4325-11ee-b63c-47d911b",
+  "contract": "HUFD51418",
+  "email": "huyth@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-25T09:00:54.276Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e9889c1fb1067d147c1c63"
+  },
+  "sessionId": "47b3225b-43ce-11ee-94f0-0bf372b",
+  "contract": "HPD015944",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 2.5,
+  "comment": "kh suy hao -26 mà ko thấy hệ thống báo lỗi",
+  "createdAt": {
+    "$date": "2023-08-26T05:07:40.753Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e989bf1fb1067d147c1c65"
+  },
+  "sessionId": "947b5a8c-43ce-11ee-94f0-e16144e",
+  "contract": "HPD080730",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:12:31.873Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e98a2a1fb1067d147c1c67"
+  },
+  "sessionId": "33dfa4fd-43cf-11ee-94f0-551ac97",
+  "contract": "HPFD36754",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:14:18.647Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e98b491fb1067d147c1c6a"
+  },
+  "sessionId": "cc1df2df-43cf-11ee-94f0-43fd2f9",
+  "contract": "HPH007588",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "mục hướng dẫn sử lý lỗi khá chung chung ko phu hợp",
+  "createdAt": {
+    "$date": "2023-08-26T05:19:05.908Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e98d471fb1067d147c1c6c"
+  },
+  "sessionId": "6ed6bf80-43d0-11ee-94f0-358884e",
+  "contract": "HPD083381",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 3,
+  "comment": "modem kh đang sử dụng mới thay 1800GZ nhưng hệ thống vẫn nhận ac1000f trên ứng dụng",
+  "createdAt": {
+    "$date": "2023-08-26T05:27:35.422Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e98dc81fb1067d147c1c6e"
+  },
+  "sessionId": "5f2e9c51-43d1-11ee-94f0-3935688",
+  "contract": "HPD080009",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:29:44.136Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e98e441fb1067d147c1c70"
+  },
+  "sessionId": "a39f0eb2-43d1-11ee-94f0-7b5ab46",
+  "contract": "HPAAG2352",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:31:48.269Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e98e961fb1067d147c1c72"
+  },
+  "sessionId": "de9a8b73-43d1-11ee-94f0-9b7bcaf",
+  "contract": "HPAAC3046",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:33:10.541Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e98f8f1fb1067d147c1c76"
+  },
+  "sessionId": "72e94fa6-43d2-11ee-94f0-614cca4",
+  "contract": "HPAAA5883",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:37:19.772Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e98fe51fb1067d147c1c78"
+  },
+  "sessionId": "ab384a07-43d2-11ee-94f0-0194331",
+  "contract": "HPAAB2231",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:38:45.155Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e990c21fb1067d147c1c7b"
+  },
+  "sessionId": "369ca559-43d3-11ee-94f0-655959c",
+  "contract": "HPD079358",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:42:26.190Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e990f61fb1067d147c1c7d"
+  },
+  "sessionId": "5d48b36a-43d3-11ee-94f0-ab7b3a3",
+  "contract": "HPD080011",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:43:18.070Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e991471fb1067d147c1c7f"
+  },
+  "sessionId": "7dedf08b-43d3-11ee-94f0-ed84372",
+  "contract": "HPH026032",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:44:39.366Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e9919f1fb1067d147c1c81"
+  },
+  "sessionId": "abb4144c-43d3-11ee-94f0-998e106",
+  "contract": "HPFD00951",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:46:07.390Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e992601fb1067d147c1c83"
+  },
+  "sessionId": "04e506ad-43d4-11ee-94f0-45166ca",
+  "contract": "HPAAE7623",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:49:20.708Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e993201fb1067d147c1c85"
+  },
+  "sessionId": "670e1d8e-43d4-11ee-94f0-4347553",
+  "contract": "HPFD65590",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:52:32.358Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e9937c1fb1067d147c1c87"
+  },
+  "sessionId": "c6369e9f-43d4-11ee-94f0-bdb3e93",
+  "contract": "HPFD16291",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:54:04.637Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e993f01fb1067d147c1c89"
+  },
+  "sessionId": "fa095fb0-43d4-11ee-94f0-198a7e0",
+  "contract": "HPFD15738",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:56:00.449Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e9943b1fb1067d147c1c8b"
+  },
+  "sessionId": "3f3cace1-43d5-11ee-94f0-1574f99",
+  "contract": "HPFD83430",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:57:15.613Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e994881fb1067d147c1c8d"
+  },
+  "sessionId": "6b966f62-43d5-11ee-94f0-6108f1f",
+  "contract": "HPFD24988",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T05:58:32.280Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e994f11fb1067d147c1c8f"
+  },
+  "sessionId": "991a5a03-43d5-11ee-94f0-4393a07",
+  "contract": "HPFD24988",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:00:17.658Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e9953a1fb1067d147c1c91"
+  },
+  "sessionId": "dc0df064-43d5-11ee-94f0-5bf0345",
+  "contract": "HPFD27225",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:01:30.600Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e995891fb1067d147c1c93"
+  },
+  "sessionId": "03c46995-43d6-11ee-94f0-c92f8a3",
+  "contract": "HPFD29032",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:02:49.369Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e995e01fb1067d147c1c95"
+  },
+  "sessionId": "335ed826-43d6-11ee-94f0-15d31b8",
+  "contract": "HPFD29621",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:04:16.008Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e996421fb1067d147c1c97"
+  },
+  "sessionId": "66768697-43d6-11ee-94f0-e5dc356",
+  "contract": "HPFD42281",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:05:54.314Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e996e81fb1067d147c1c99"
+  },
+  "sessionId": "a11eda48-43d6-11ee-94f0-bf4973a",
+  "contract": "HPFD42281",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:08:40.201Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e997be1fb1067d147c1c9b"
+  },
+  "sessionId": "03f680a9-43d7-11ee-94f0-3d8b7f0",
+  "contract": "HPAAE8664",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:12:14.186Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e9981c1fb1067d147c1c9d"
+  },
+  "sessionId": "86de01fa-43d7-11ee-94f0-8f08254",
+  "contract": "HPFD99168",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:13:48.668Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e998c01fb1067d147c1c9f"
+  },
+  "sessionId": "c1dcb30b-43d7-11ee-94f0-4126353",
+  "contract": "HPH001934",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 2,
+  "comment": "KH suy hao -24.64 nhưng lại hướng dẫn Cấu hình tối ưu kênh sóng wifi 2.4GHz",
+  "createdAt": {
+    "$date": "2023-08-26T06:16:32.296Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e999231fb1067d147c1ca1"
+  },
+  "sessionId": "2216cb2c-43d8-11ee-94f0-852ed54",
+  "contract": "HPFD87643",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:18:11.172Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e9996f1fb1067d147c1ca3"
+  },
+  "sessionId": "5886a54d-43d8-11ee-94f0-4fcd6d4",
+  "contract": "HPH022337",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:19:27.315Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e999a61fb1067d147c1ca5"
+  },
+  "sessionId": "8567721e-43d8-11ee-94f0-7db246f",
+  "contract": "HPAAF1941",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:20:22.957Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e99a181fb1067d147c1ca7"
+  },
+  "sessionId": "a8daea6f-43d8-11ee-94f0-d94bbfa",
+  "contract": "HPFD44827",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:22:16.726Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e99b731fb1067d147c1ca9"
+  },
+  "sessionId": "ed2f7060-43d8-11ee-94f0-dfadefb",
+  "contract": "HPFD19320",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:28:03.569Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e99be51fb1067d147c1cab"
+  },
+  "sessionId": "bbc2bd61-43d9-11ee-94f0-8b98b7e",
+  "contract": "HPFD44617",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "thiếu hướng dẫn tắt mở thiết bị khi modem đã chạy 9day",
+  "createdAt": {
+    "$date": "2023-08-26T06:29:57.281Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64e99c321fb1067d147c1cad"
+  },
+  "sessionId": "fd469722-43d9-11ee-94f0-6752156",
+  "contract": "HPFD20598",
+  "email": "Namdv2@vienthongtin.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-26T06:31:14.063Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64ebf54d1fb1067d147c1cb1"
+  },
+  "sessionId": "00f2c405-453f-11ee-94f0-551e1fb",
+  "contract": "HNH047876",
+  "email": "DungKT@vienthongtin.com",
+  "score": 0,
+  "comment": "5 *",
+  "createdAt": {
+    "$date": "2023-08-28T01:15:57.119Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64ec43be1fb1067d147c1cbc"
+  },
+  "sessionId": "1010643f-456f-11ee-94f0-7339aaf",
+  "contract": "SGH807204",
+  "email": "phuongnam.hiennm1@fpt.net",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-28T06:50:38.813Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64ed451b1fb1067d147c1cec"
+  },
+  "sessionId": "296f8147-4608-11ee-94f0-cf90758",
+  "contract": "HNH345690",
+  "email": "KienPV3@vienthongtin.com",
+  "score": 0,
+  "comment": "modem rg3 có 1 band, mà kết quả phân tích có điểm đánh giá của sóng 5ghz. các a check cải tiến cho chuẩn xác hơn",
+  "createdAt": {
+    "$date": "2023-08-29T01:08:43.592Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64eecfa41fb1067d147c1de5"
+  },
+  "sessionId": "6beee731-46f3-11ee-94f0-79c6a80",
+  "contract": "HNAAP4730",
+  "email": "DungKT@vienthongtin.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-30T05:12:04.238Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64eed01c1fb1067d147c1de7"
+  },
+  "sessionId": "c50043a2-46f3-11ee-94f0-2303d01",
+  "contract": "HNH244113",
+  "email": "DungKT@vienthongtin.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-08-30T05:14:04.956Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64f935a11fb1067d147c1f57"
+  },
+  "sessionId": "4ce2ebfe-4d26-11ee-94f0-39b3c85",
+  "contract": "HNAAS6248",
+  "email": "DungTT6@vienthongtin.com",
+  "score": 4.5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-09-07T02:29:53.509Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64f936191fb1067d147c1f59"
+  },
+  "sessionId": "729e587f-4d26-11ee-94f0-9b9ea9e",
+  "contract": "HNAAW9448",
+  "email": "DungTT6@vienthongtin.com",
+  "score": 4.5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-09-07T02:31:53.876Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "64fbc3291fb1067d147c1f86"
+  },
+  "sessionId": "ac613595-4eab-11ee-94f0-4915933",
+  "contract": "HNH613439",
+  "email": "DungKT@vienthongtin.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-09-09T00:58:17.356Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "650a9ff534e1a86f4c9eab86"
+  },
+  "sessionId": "cfae8847-5786-11ee-9a27-9dd6aea",
+  "contract": "SGFDN0092",
+  "email": "HanhTTM19@fpt.com",
+  "score": 5,
+  "comment": "Quá tuyệt vời ^^",
+  "createdAt": {
+    "$date": "2023-09-20T07:32:05.652Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "651147384cce3b17c7a9741e"
+  },
+  "sessionId": "397f55fc-5b7d-11ee-91e7-a34b5d5",
+  "contract": "LCAAA8044",
+  "email": "Thinhdl@vienthongtin.com",
+  "score": 0,
+  "comment": "Hợp đồng này có biến động suy hao rất lớn trong 1 khoảng thời gian Doctor T ko quét ra được nguyên nhân lỗi. trong 30p suy hao đang -19 có thể lên -30 mất kn.\ncác lần kết nối hợp đồng này cũng không ổn định, lâu nhất chỉ hơn 1h là rớt kn. Doctor T cũng không phân tích được phần này",
+  "createdAt": {
+    "$date": "2023-09-25T08:39:20.737Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "651d0c45839913222a59537e"
+  },
+  "sessionId": "91255fae-6282-11ee-b16a-79fed0b",
+  "contract": "SGH212351",
+  "email": "HanhTTM19@fpt.com",
+  "score": 5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-10-04T06:55:01.028Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "651d2c70839913222a59539b"
+  },
+  "sessionId": "6164c56a-6294-11ee-b16a-f9acff7",
+  "contract": "SGD130670",
+  "email": "HanhTTM19@fpt.com",
+  "score": 4,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-10-04T09:12:16.653Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "653b16a075379274f3095190"
+  },
+  "sessionId": "ac2fe798-746a-11ee-af13-35cd2b6",
+  "contract": "SGFDN0092",
+  "email": "HanhTTM19@fpt.com",
+  "score": 2.5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-10-27T01:47:12.571Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "653b186875379274f3095195"
+  },
+  "sessionId": "b45ab48c-746b-11ee-af13-7942062",
+  "contract": "SGFDN0092",
+  "email": "HanhTTM19@fpt.com",
+  "score": 3.5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-10-27T01:54:48.658Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "653b1b9a75379274f309519b"
+  },
+  "sessionId": "b1a65811-746d-11ee-af13-394d025",
+  "contract": "SGH549346",
+  "email": "HanhTTM19@fpt.com",
+  "score": 4,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-10-27T02:08:26.144Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "653b1bb475379274f309519d"
+  },
+  "sessionId": "bb83d382-746d-11ee-af13-a3af46b",
+  "contract": "SGH549346",
+  "email": "HanhTTM19@fpt.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-10-27T02:08:52.400Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "653b1dce75379274f30951a1"
+  },
+  "sessionId": "df534e85-746d-11ee-af13-2ffaf01",
+  "contract": "SGFDN0092",
+  "email": "HanhTTM19@fpt.com",
+  "score": 4,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-10-27T02:17:50.889Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "653b1f5575379274f30951a4"
+  },
+  "sessionId": "0b00fd16-746f-11ee-af13-5920e96",
+  "contract": "SGABL1727",
+  "email": "HanhTTM19@fpt.com",
+  "score": 0.5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-10-27T02:24:21.768Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "653b2914f2c847273df05660"
+  },
+  "sessionId": "5df3055b-7474-11ee-9f17-d78df8e",
+  "contract": "SGFDN0092",
+  "email": "HanhTTM19@fpt.com",
+  "score": 0,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-10-27T03:05:56.266Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "653f2e0759fcb224cf4b82cb"
+  },
+  "sessionId": "071c3b99-76db-11ee-b546-d32d1c1",
+  "contract": "SGH549346",
+  "email": "HanhTTM19@fpt.com",
+  "score": 4.5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-10-30T04:16:07.594Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "653f2e9659fcb224cf4b82cd"
+  },
+  "sessionId": "11aab78a-76db-11ee-b546-a780fdd",
+  "contract": "SGFDN0092",
+  "email": "HanhTTM19@fpt.com",
+  "score": 2.5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-10-30T04:18:30.032Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+},
+{
+  "_id": {
+    "$oid": "6549b3ff59fcb224cf4b8304"
+  },
+  "sessionId": "a65974f0-7d20-11ee-b546-35920b9",
+  "contract": "SGAAS4489",
+  "email": "HanhTTM19@fpt.com",
+  "score": 0.5,
+  "comment": "",
+  "createdAt": {
+    "$date": "2023-11-07T03:50:23.008Z"
+  },
+  "_class": "com.camunda.core.model.SessionFeedbackModel"
+}]
