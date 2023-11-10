@@ -36,6 +36,6 @@ public class Order {
     @Column(name = "status")
     private String status;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private List<OrderItem> orderItems;
 }

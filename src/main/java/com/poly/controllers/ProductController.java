@@ -40,8 +40,6 @@ public class ProductController {
 
 	@GetMapping("/product/detail/{id}")
 	public String product_detail(@PathVariable("id") int id, Model model) {
-
-		model.addAttribute("piList", piDAO.findByProductId(id));
 		model.addAttribute("product", pDAO.getById(id));
 		return "product-detail";
 	}

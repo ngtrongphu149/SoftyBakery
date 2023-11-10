@@ -1,10 +1,11 @@
-package com.poly.controllers;
+package com.poly.restcontrollers;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,6 +16,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellValue;
@@ -26,21 +32,24 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.poly.dao.*;
+import com.poly.dto.RoleEnum;
 import com.poly.models.*;
 import com.poly.services.*;
 import com.poly.utils.*;
 
-@Controller
+@RestController
+@CrossOrigin(origins = "*")
 public class Test {
 	@Autowired
 	CategoryDAO cDAO;
@@ -64,13 +73,11 @@ public class Test {
 	JsonReaderUtil jsonReaderUtil;
 	ObjectMapper objectMapper = new ObjectMapper();
 
-	@GetMapping("/test")
-	public String test(Model model) throws IOException {
-		List<ProductImage> productImages = piDAO.findByProductId(1);
-		productImages.forEach((i) -> System.out.println(i.getImageUrl()));
-		return "test";
+	@GetMapping("/okay")
+	public String test(Model model) {
+		setPassword();
+		return "meo meo meo meo";
 	}
-
 
 	public Account getAccountAuth() {
 		return accountService.getAccountAuth();
@@ -95,9 +102,20 @@ public class Test {
 
 	public void setPassword() {
 		for (Account a : aDAO.findAll()) {
-			a.setPassword(PasswordUtil.encode("123"));
+			a.setBanned(false);
+			a.setReasonBanned("");
+
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+			// Sử dụng formatter để parse LocalDate
+			LocalDate localDate = LocalDate.parse("2000-01-01", formatter);
+
+			// Chuyển đổi LocalDate thành Date
+			Date dateOfBirth = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+
+			a.setBirthDay(dateOfBirth);
 			aDAO.save(a);
+			System.out.println("nghia ngu");
 		}
-		System.out.println("nghia ngu");
 	}
 }

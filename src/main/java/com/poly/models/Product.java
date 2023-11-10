@@ -40,10 +40,10 @@ public class Product {
     @JoinColumn(name = "categoryid")
     private Category category;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private List<SpecialOption> specialOptions;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private List<ProductImage> productImages;
     
     @Column(name = "isavailable")

@@ -17,7 +17,7 @@ public class Category {
     private String categoryName;
 
     @Column(name = "imageurl")
-    private String imageURL;
+    private String imageUrl;
 
     @Column(name = "description")
     private String description;

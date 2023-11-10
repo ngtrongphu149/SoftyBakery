@@ -119,7 +119,6 @@ public class OrderRestController {
     		    try {
     		        List<String> imageUrlList = pDAO.getImageUrlByProductId(oi.getProduct().getProductId());
     		        if (!imageUrlList.isEmpty()) {
-    		        	pDTO.setImageUrl(imageUrlList.get(0));
     		        	oi.setProduct(pDTO.getProduct());
     		        }
     		    } catch (IndexOutOfBoundsException e) {
@@ -139,7 +138,6 @@ public class OrderRestController {
     		    try {
     		        List<String> imageUrlList = pDAO.getImageUrlByProductId(oi.getProduct().getProductId());
     		        if (!imageUrlList.isEmpty()) {
-    		        	pDTO.setImageUrl(imageUrlList.get(0));
     		        	oi.setProduct(pDTO.getProduct());
     		        }
     		    } catch (IndexOutOfBoundsException e) {

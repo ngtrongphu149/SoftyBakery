@@ -43,11 +43,9 @@ public class AdminController {
 	
 	@GetMapping("/admin/pi/{id}")
 	public String index(@PathVariable(name = "id", required = false) int id, Model model) {
-		List<ProductImage> piList = piDAO.findByProductId(id);
-		Product p = pDAO.getById(id);
+		Product p = pDAO.findById(id).orElse(null);
 		
 		model.addAttribute("p",p);
-		model.addAttribute("piList", piList);
 		return "admin/admin-product-image";
 	}
 	@GetMapping("/admin/pi/delete/{id}")

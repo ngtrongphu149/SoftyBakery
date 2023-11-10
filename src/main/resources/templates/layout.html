@@ -116,7 +116,7 @@
 	            <a href="#" class="dropdown nav-item nav-link" data-bs-toggle="dropdown">
 	            	<div class="dropdown-toggle">
 						<span ng-bind="userInfo.fullName" class="nav-item" style="margin-right: 10px;"></span>
-						<img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar" ng-style="{'border': userInfo.admin ? '4px solid #74b9ff' : 'none'}">
+						<img ng-src="/images/accountPhoto/{{userInfo.photo}}" class="circle-avatar" ng-style="{'border': userInfo.role == 'ROLE_ADMIN' ? '4px solid #74b9ff' : 'none'}">
 					</div>
 					
 	            </a>

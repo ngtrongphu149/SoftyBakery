@@ -30,7 +30,6 @@ public class CartRestController {
 		synchronized (cart) {
 	        List<ProductDTO> pDTOList = new ArrayList<>();
 	        for (ProductDTO p : cart.getItems().values()) {
-	            p.setImageUrl(pDAO.getImageUrlByProductId(p.getProduct().getProductId()).get(0));
 	            pDTOList.add(p);
 	        }
 	        return ResponseEntity.ok(pDTOList);

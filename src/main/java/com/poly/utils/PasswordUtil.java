@@ -1,16 +1,18 @@
 package com.poly.utils;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class PasswordUtil {
-    @Autowired public static PasswordEncoder passwordEncoder;
+    public static PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
     public static String encode(CharSequence rawPassword) {
-        return passwordEncoder.encode(rawPassword);
+        return passwordEncoder().encode(rawPassword);
     }
 
     public static boolean matches(CharSequence rawPassword, String encodedPassword) {
-        return passwordEncoder.matches(rawPassword, encodedPassword);
+        return passwordEncoder().matches(rawPassword, encodedPassword);
     }
 
 }

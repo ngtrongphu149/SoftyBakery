@@ -9,6 +9,4 @@ import com.poly.models.Product;
 import com.poly.models.ProductImage;
 
 public interface ProductImageDAO extends JpaRepository<ProductImage, Integer> {
-	@Query("SELECT pi FROM ProductImage pi WHERE pi.product = ?1")
-	List<ProductImage> findByProductId(int productId);
 }

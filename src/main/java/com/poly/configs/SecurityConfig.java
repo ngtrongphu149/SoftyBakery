@@ -1,7 +1,5 @@
 package com.poly.configs;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,7 +12,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.client.RestTemplate;
 
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -23,13 +20,15 @@ public class SecurityConfig {
 		http
 				.csrf(csrf -> csrf.disable())
 				.authorizeRequests((authorizeRequests) -> authorizeRequests
-						// .requestMatchers("/cart", "/order", "/rest/cart/add/**", "/profile", "/profile/edit")
+						// .requestMatchers("/cart", "/order", "/rest/cart/add/**", "/profile",
+						// "/profile/edit")
 						// .authenticated()
-						// .requestMatchers("/home", "/about", "/service", "/contact", "/rest/**").permitAll()
+						// .requestMatchers("/home", "/about", "/service", "/contact",
+						// "/rest/**").permitAll()
 						// .requestMatchers("/admin/**").hasRole("ADMIN"))
-						.requestMatchers("/cart", "/order", "/rest/cart/add/**", "/profile", "/profile/edit")
-						.authenticated()
-						.requestMatchers("/home", "/about", "/service", "/contact", "/rest/**","/admin/**").permitAll())
+						.requestMatchers("/home", "/about", "/service", "/contact", "/rest/**", "/admin/**", "/cart",
+								"/order", "/rest/cart/add/**", "/profile", "/profile/edit")
+						.permitAll())
 				.formLogin(form -> form
 						.loginPage("/login")
 						.loginProcessingUrl("/login")
@@ -55,4 +54,9 @@ public class SecurityConfig {
 		}
 		return uDetail;
 	}
+	
+	@Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 }

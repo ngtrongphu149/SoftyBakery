@@ -9,6 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ProductDTO{
 	private Product product;
-	private String imageUrl = "";
 	private int quantity = 1;
 }

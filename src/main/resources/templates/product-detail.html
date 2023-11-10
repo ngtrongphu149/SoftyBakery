@@ -15,11 +15,15 @@
     .product-description >li {
         margin-left: 20px;
     }
+    .des > li::before {
+    content: "\A\A\A\A\A";
+    white-space: pre;
+}
 </style>
 </head>
 
 <body style="background-color: #FDF5EB;" ng-app="app" ng-controller="ProductController">
-  <div th:insert="~{layout :: spinner}"></div>
+  <!-- <div th:insert="~{layout :: spinner}"></div> -->
   <div th:insert="~{layout :: topbar}"></div>
   <div th:insert="~{layout :: navbarProduct}"></div>
   <!-- Page Header Start -->
@@ -45,13 +49,13 @@
     <div class="row">
       <div class="col-md-1" style="margin-top: 45px;">
         <div class="images">
-            <img th:each="imageUrl: ${piList}" class="img-thumbnail" th:src="@{/images/{imageUrl} (imageUrl = ${imageUrl})}"
+            <img th:each="productImage : ${product.productImages}" class="img-thumbnail" th:src="@{'/images/'+${productImage.imageUrl}}"
             ng-click="setImgData($event)">
         </div>
       </div>
       <div class="col-md-6">
         <div style="display: flex; justify-content: center; align-items: center;">
-          <img ng-src="{{imageClick ? imageClick : ''}}" th:src="@{/images/{imageUrl} (imageUrl = ${piList[0]})}"
+          <img ng-src="{{imageClick ? imageClick : ''}}" th:src="@{/images/{imageUrl} (imageUrl = ${product.productImages[0].imageUrl})}"
               style="border-radius: 20px; border:5px solid white; max-height: 600px; max-width: 100%;"
           >
       </div>
@@ -72,7 +76,7 @@
           <div class="tab-pane" id="mota">
             <div class="product-description">
               <div id="showmore" class="container position-relative">
-                <div class="d-flex flex-column" th:utext="${product.detailDescription}">
+                <div class="d-flex flex-column" th:utext="${product.description}" class="des">
                   
                 </div>
               </div>
@@ -84,7 +88,7 @@
                 <div class="product-description">
                   <div id="showmore" class="container position-relative">
                     <strong class=" text-secondary">Thành phần</strong>
-                    <div th:utext="${product.ingredient}">
+                    <div th:utext="${product.ingredient}" class="des">
                     </div>
                   </div>
                 </div>
@@ -96,7 +100,7 @@
             <div class="row border-0 g-0 rounded shadow-sm">
               <div class="product-storageInstruction">
                 <strong class=" text-secondary">Hướng dẫn bảo quản</strong>
-                <div th:utext="${product.storageInstruction}">
+                <div th:utext="${product.storageInstruction}" class="des">
                 </div>
               </div>
             </div>
@@ -116,7 +120,7 @@
         </span>
         <br>
         <span class="fw-light">Mô tả:
-          <span th:text="${product.description}"></span>
+          <span th:text="${product.subDescription}"></span>
         </span>
         <br>
         <div class="product-hotline mt-2">

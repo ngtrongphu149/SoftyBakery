@@ -25,7 +25,7 @@ public class CartServiceImplement implements CartService {
     public void add(Integer id) {
         if (!map.containsKey(id)) {
             ProductDTO dto = new ProductDTO();
-            dto.setProduct(pDAO.getById(id));
+            dto.setProduct(pDAO.findById(id).orElse(null));
             map.put(id, dto);
         } else {
             update(id, "plus");

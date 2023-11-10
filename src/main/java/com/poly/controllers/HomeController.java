@@ -3,6 +3,9 @@
 
 package com.poly.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.poly.dao.AccountDAO;
 import com.poly.dao.CategoryDAO;
 import com.poly.dao.ProductDAO;
+import com.poly.models.Category;
 import com.poly.services.AccountService;
 
 
@@ -30,8 +34,13 @@ public class HomeController {
     }
     @RequestMapping("/home")
     public String index(Model model) {
-    	
-    	model.addAttribute("c", cDAO.findAll());
+    	List<Category> categories = new ArrayList<>();
+		cDAO.findAll().stream().forEach((c) -> {
+			// c = cDAO.getById(c.getCategoryId());
+			c.setImageUrl(pDAO.getProductByCategory(c.getCategoryId()).get(0).getProductImages().get(0).getImageUrl());
+			categories.add(c);
+		});
+    	model.addAttribute("c", categories);
     	model.addAttribute("count", pDAO.count());
     	model.addAttribute("p", pDAO.findAll());
     	printUserInfo();

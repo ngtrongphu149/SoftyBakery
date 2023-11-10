@@ -25,13 +25,13 @@ public class CategoryRestController {
 		return ResponseEntity.ok(cDAO.findAll());
 	}
 	
-	@GetMapping("{id}")
-	public ResponseEntity<Category> findById(@PathVariable("id") String id) {
-		Optional<Category> optional = cDAO.findById(Integer.parseInt(id));
-		if(!optional.isPresent()) {
+	@GetMapping("/{id}")
+	public ResponseEntity<Category> findById(@PathVariable("id") int id) {
+		Category category = cDAO.findById(id).orElse(null);
+		if(category==null) {
 			return ResponseEntity.notFound().build();
 		}
-		return ResponseEntity.ok(optional.get());
+		return ResponseEntity.ok(category);
 	}
 	@PostMapping()
 	public ResponseEntity<Category> post(Category category) {
