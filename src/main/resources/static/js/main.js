@@ -305,7 +305,7 @@ app.controller('ProductController', function ($scope, $http, $filter, $location,
 			$scope.cartLength = resp.data.length;
 			updateCartLocalStorage();
 		});
-	}
+	} 
 
 	$scope.modifyCart = function (id, method) {
 		$http.get(`${host}/cart/${method}/${id}`).then(function () {
