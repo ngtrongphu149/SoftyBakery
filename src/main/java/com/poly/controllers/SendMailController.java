@@ -1,6 +1,3 @@
-
-
-
 package com.poly.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +50,6 @@ public ResponseEntity<String> sendPassword(@RequestParam String username) {
         MailInfo mail = new MailInfo();
         mail.setTo(account.getEmail());
         mail.setSubject("Your Password Recovery");
-
         StringBuilder bodyBuilder = new StringBuilder();
         bodyBuilder.append("<p>Mật khẩu của bạn là:</p>");
         bodyBuilder.append("<h4>").append(account.getPassword()).append("</h4>");

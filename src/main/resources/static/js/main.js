@@ -624,7 +624,36 @@ app.controller('AdminOrderController', function ($scope, $http) {
 	$scope.loadAll();
 });
 
-
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+app.controller('AdminAccountController', function ($scope, $http,$filter) {
+	$scope.accounts = [];
+	$scope.form = {};
+	$scope.temporarySearchText = ''; 
+	$scope.loadAll = function () {
+		const url = `${host}/account`;
+		$http.get(url).then(resp => {
+			$scope.accounts = resp.data;
+			console.log(resp.data);	
+		});
+		$scope.search = function () {
+            $scope.searchText = $scope.temporarySearchText;
+        };
+	}
+	$scope.filterOptions = 'all'; 
+        $scope.filterCondition = function(account) {
+            // Áp dụng điều kiện cho filterCondition
+            if ($scope.filterOptions === 'activity') {
+                return !account.account.isBanned;
+            } else if ($scope.filterOptions === 'blocker') {
+				return account.account.banned;
+            } else {
+                return true; // Hiển thị tất cả nếu là 'all'
+            }
+        };
+	
+	$scope.loadAll();
+});
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 app.controller('TopBarController', function ($interval, $scope) {
 	$scope.date = new Date();
 

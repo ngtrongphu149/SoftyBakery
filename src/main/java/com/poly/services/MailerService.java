@@ -10,4 +10,6 @@ public interface MailerService {
 	
 	void queue(MailInfo mail);
 	void queue(String to, String subject, String body);
+
+	void sendMailContact(String to, String subject, String body, String mesage);
 }

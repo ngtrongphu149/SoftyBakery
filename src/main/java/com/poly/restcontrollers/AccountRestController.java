@@ -1,6 +1,8 @@
 package com.poly.restcontrollers;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.poly.dao.AccountDAO;
+import com.poly.dto.AccountDTO;
+import com.poly.dto.ProductDTO;
 import com.poly.models.Account;
 import com.poly.services.AccountService;
 import com.poly.utils.PasswordUtil;
@@ -21,46 +25,55 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/rest/user")
+@RequestMapping("/rest/account")
 public class AccountRestController {
     @Autowired
     AccountDAO aDAO;
 	@Autowired
 	AccountService accountService;
-
 	ObjectMapper ObjectMapper = new ObjectMapper();
-	
-    private Account userInfo = new Account();
-	
-    @GetMapping
-    public ResponseEntity<Account> user() {
-    	userInfo = getAccountAuth();
-        if (userInfo != null) {
-        	userInfo = getAccountAuth();
-        	return ResponseEntity.ok(userInfo);
-        } else {
-            return null;
-        }
-    }
-	@GetMapping("/findAll")
-	public String FindAll() throws IOException {
-		return ObjectMapper.writeValueAsString(aDAO.findAll());
-	}
-	@GetMapping("/find/{username}")
-	public Account findByUsername(@PathVariable("username") String username) {
-		return aDAO.findById(username).orElse(null);
-	}
+    // private Account userInfo = new Account();
+    // @GetMapping
+    // public ResponseEntity<Account> user() {
+    // 	userInfo = getAccountAuth();
+    //     if (userInfo != null) {
+    //     	userInfo = getAccountAuth();
+    //     	return ResponseEntity.ok(userInfo);
+    //     } else {
+    //         return null;
+    //     }
+    // }
+	// @GetMapping("/findAll")
+	// public String FindAll() throws IOException {
+	// 	return ObjectMapper.writeValueAsString(aDAO.findAll());
+	// }
+	// @GetMapping("/find/{username}")
+	// public Account findByUsername(@PathVariable("username") String username) {
+	// 	return aDAO.findById(username).orElse(null);
+	// }
 
-	@PutMapping()
-	public ResponseEntity<Account> editProfile(Model model,@RequestBody Account user) {
-		user.setPassword(PasswordUtil.encode(user.getPassword()));
-		aDAO.save(user);
-		return ResponseEntity.ok(user);
-	}
+	// @PutMapping()
+	// public ResponseEntity<Account> editProfile(Model model,@RequestBody Account user) {
+	// 	user.setPassword(PasswordUtil.encode(user.getPassword()));
+	// 	aDAO.save(user);
+	// 	return ResponseEntity.ok(user);
+	// }
 
 
-	public Account getAccountAuth() {
-		return accountService.getAccountAuth();
+	// public Account getAccountAuth() {
+	// 	return accountService.getAccountAuth();
+	// }
+	@GetMapping
+	public ResponseEntity<List<AccountDTO>> page() {
+		List<AccountDTO> aDTOs = aDAO.findAll().stream()
+				.map(a -> {
+					AccountDTO aDTO = new AccountDTO();
+						aDTO.setAccount(a);
+					return aDTO;
+				})
+				.collect(Collectors.toList());
+
+		return ResponseEntity.ok(aDTOs);
 	}
 }
 

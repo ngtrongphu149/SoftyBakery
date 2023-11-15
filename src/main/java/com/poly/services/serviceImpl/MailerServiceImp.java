@@ -84,5 +84,10 @@ public class MailerServiceImp  implements MailerService{
 			}
 		}
 	}
+
+	@Override
+	public void sendMailContact(String to, String subject, String body, String mesage) {
+		
+	}
 	
 }
