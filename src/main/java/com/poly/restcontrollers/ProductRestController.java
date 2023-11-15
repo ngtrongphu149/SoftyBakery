@@ -37,18 +37,12 @@ public class ProductRestController {
 	@Autowired
 	ProductService productService;
 	
-	ObjectMapper ObjectMapper = new ObjectMapper();
-
 	@GetMapping
 	public ResponseEntity<List<ProductDTO>> page() {
 		List<ProductDTO> pDTOs = pDAO.findAll().stream()
 				.map(p -> {
 					ProductDTO pDTO = new ProductDTO();
-					// List<String> imageUrlList = pDAO.getImageUrlByProductId(p.getProductId());
-					// if (!imageUrlList.isEmpty()) {
 						pDTO.setProduct(p);
-						// pDTO.setImageUrl(imageUrlList.get(0));
-					// }
 					return pDTO;
 				})
 				.collect(Collectors.toList());
@@ -58,7 +52,7 @@ public class ProductRestController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Product> findById(@PathVariable("id") int id) {
-		return ResponseEntity.ok(pDAO.getById(id));
+		return ResponseEntity.ok(pDAO.findById(id).orElse(null));
 	}
 
 	@GetMapping("/c/{categoryId}")
@@ -72,7 +66,7 @@ public class ProductRestController {
 		return ResponseEntity.ok(productService.add(product));
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping()
 	public ResponseEntity<Product> put(@RequestBody Product product) {
 		return ResponseEntity.ok(productService.update(product));
 	}

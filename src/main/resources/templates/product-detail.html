@@ -16,9 +16,9 @@
         margin-left: 20px;
     }
     .des > li::before {
-    content: "\A\A\A\A\A";
-    white-space: pre;
-}
+    content: "meo meo meo meo";
+  }
+
 </style>
 </head>
 
@@ -63,26 +63,24 @@
 
       <ul class="nav nav-tabs border-0">
           <li class="nav-item nav-info mt-2 ms-2">
-            <a class="nav-link" data-bs-toggle="tab" href="#mota"> Mô Tả Sản Phẩm </a>
+            <a class="nav-link active" data-bs-toggle="tab" href="#mota"> Mô Tả Sản Phẩm </a>
           </li>
           <li class="nav-item nav-info mt-2 ms-2">
-            <a class="nav-link active" data-bs-toggle="tab" href="#thongtin">Thành phần</a>
+            <a class="nav-link" data-bs-toggle="tab" href="#thongtin">Thành phần</a>
           </li>
           <li class="nav-item nav-info mt-2 ms-2">
             <a class="nav-link" data-bs-toggle="tab" href="#baoquan">Hướng dẫn bảo quản</a>
           </li>
         </ul>
         <div class="tab-content">
-          <div class="tab-pane" id="mota">
+          <div class="tab-pane active" id="mota">
             <div class="product-description">
               <div id="showmore" class="container position-relative">
-                <div class="d-flex flex-column" th:utext="${product.description}" class="des">
-                  
-                </div>
+                <div class="d-flex flex-column des" th:utext="${product.description}"></div>
               </div>
             </div>
           </div>
-          <div class="tab-pane active" id="thongtin">
+          <div class="tab-pane" id="thongtin">
             <div class="row border-0 g-0 rounded shadow-sm">
               <div class="product-ingredient">
                 <div class="product-description">

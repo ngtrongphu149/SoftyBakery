@@ -14,33 +14,34 @@ import com.poly.models.Account;
 import com.poly.models.Order;
 import com.poly.models.OrderItem;
 import com.poly.services.AccountService;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/rest/order")
 public class OrderRestController {
-	@Autowired
-	CategoryDAO cDAO;
-	@Autowired
-	ProductDAO pDAO;
-	@Autowired
-	ProductImageDAO piDAO;
-	@Autowired
-	OrderDAO oDAO;
-	@Autowired
-	OrderItemDAO oiDAO;
-	@Autowired
-	AccountDAO aDAO;
-	@Autowired
+    @Autowired
+    CategoryDAO cDAO;
+    @Autowired
+    ProductDAO pDAO;
+    @Autowired
+    ProductImageDAO piDAO;
+    @Autowired
+    OrderDAO oDAO;
+    @Autowired
+    OrderItemDAO oiDAO;
+    @Autowired
+    AccountDAO aDAO;
+    @Autowired
     AccountService accountService;
-	
+
     @GetMapping
     public ResponseEntity<List<OrderDTO>> findAll() {
-    	List<OrderDTO> orders = new ArrayList<>();
-    	for (Order o : oDAO.findAll()) {
-		    OrderDTO oDTO = new OrderDTO(o);
-		    oDTO.setAccount(o.getAccount());
-		    orders.add(oDTO);
-		}
+        List<OrderDTO> orders = new ArrayList<>();
+        for (Order o : oDAO.findAll()) {
+            OrderDTO oDTO = new OrderDTO(o);
+            oDTO.setAccount(o.getAccount());
+            orders.add(oDTO);
+        }
         return ResponseEntity.ok(orders);
     }
 
@@ -57,9 +58,9 @@ public class OrderRestController {
 
     @PostMapping
     public ResponseEntity<Order> createOrder(@RequestBody Order order) {
-        if (order.getOrderId()==0) {
+        if (order.getOrderId() == 0) {
             return ResponseEntity.badRequest().build();
-        }        
+        }
         Order createdOrder = oDAO.save(order);
         return ResponseEntity.ok(createdOrder);
     }
@@ -84,71 +85,48 @@ public class OrderRestController {
         oDAO.deleteById(id);
         return ResponseEntity.ok().build();
     }
-    @PutMapping("/{id}/updateStatus")
-    public ResponseEntity<Order> updateOrderStatus(@PathVariable Integer id) {
-        Optional<Order> optionalOrder = oDAO.findById(id);
-        if (!optionalOrder.isPresent()) {
-            return ResponseEntity.notFound().build();
-        }
-        
-        Order order = optionalOrder.get();
-        String currentStatus = order.getStatus();
-        OrderStatus newStatus;
-        
-        if (OrderStatus.DANG_CHO.getValue().equals(currentStatus)) {
-            newStatus = OrderStatus.DA_GIAO;
-        } else if (OrderStatus.DA_GIAO.getValue().equals(currentStatus)) {
-            newStatus = OrderStatus.DA_HUY;
-        } else if (OrderStatus.DA_HUY.getValue().equals(currentStatus)) {
-            newStatus = OrderStatus.DANG_CHO;
-        } else {
-            return ResponseEntity.badRequest().build();
-        }
-        
-        order.setStatus(newStatus.getValue());
-        Order updatedOrder = oDAO.save(order);
-        return ResponseEntity.ok(updatedOrder);
-    }
+
     @GetMapping("/detail/{orderId}")
     public ResponseEntity<List<OrderItem>> getOrderItemByOrderId(@PathVariable("orderId") int orderId) {
-    		List<OrderItem> oiList = new ArrayList<>(); 
-    		for(OrderItem oi : oiDAO.getOrderItemByOrderId(orderId)) {
-    			ProductDTO pDTO = new ProductDTO();
-                pDTO.setProduct(oi.getProduct());
-    		    
-    		    try {
-    		        List<String> imageUrlList = pDAO.getImageUrlByProductId(oi.getProduct().getProductId());
-    		        if (!imageUrlList.isEmpty()) {
-    		        	oi.setProduct(pDTO.getProduct());
-    		        }
-    		    } catch (IndexOutOfBoundsException e) {
-    		        e.printStackTrace();
-    		    }
-    			oiList.add(oi);
-    	}
-    	return ResponseEntity.ok(oiList);
+        List<OrderItem> oiList = new ArrayList<>();
+        for (OrderItem oi : oiDAO.getOrderItemByOrderId(orderId)) {
+            ProductDTO pDTO = new ProductDTO();
+            pDTO.setProduct(oi.getProduct());
+
+            try {
+                List<String> imageUrlList = pDAO.getImageUrlByProductId(oi.getProduct().getProductId());
+                if (!imageUrlList.isEmpty()) {
+                    oi.setProduct(pDTO.getProduct());
+                }
+            } catch (IndexOutOfBoundsException e) {
+                e.printStackTrace();
+            }
+            oiList.add(oi);
+        }
+        return ResponseEntity.ok(oiList);
     }
+
     @GetMapping("/delete/{orderId}")
     public ResponseEntity<List<OrderItem>> removeOrderById(@PathVariable("orderId") int orderId) {
-    		List<OrderItem> oiList = new ArrayList<>(); 
-    		for(OrderItem oi : oiDAO.getOrderItemByOrderId(orderId)) {
-    			ProductDTO pDTO = new ProductDTO();
-                pDTO.setProduct(oi.getProduct());
-    		    
-    		    try {
-    		        List<String> imageUrlList = pDAO.getImageUrlByProductId(oi.getProduct().getProductId());
-    		        if (!imageUrlList.isEmpty()) {
-    		        	oi.setProduct(pDTO.getProduct());
-    		        }
-    		    } catch (IndexOutOfBoundsException e) {
-    		        e.printStackTrace();
-    		    }
-    			oiList.add(oi);
-    	}
-    	return ResponseEntity.ok(oiList);
+        List<OrderItem> oiList = new ArrayList<>();
+        for (OrderItem oi : oiDAO.getOrderItemByOrderId(orderId)) {
+            ProductDTO pDTO = new ProductDTO();
+            pDTO.setProduct(oi.getProduct());
+
+            try {
+                List<String> imageUrlList = pDAO.getImageUrlByProductId(oi.getProduct().getProductId());
+                if (!imageUrlList.isEmpty()) {
+                    oi.setProduct(pDTO.getProduct());
+                }
+            } catch (IndexOutOfBoundsException e) {
+                e.printStackTrace();
+            }
+            oiList.add(oi);
+        }
+        return ResponseEntity.ok(oiList);
     }
-    
+
     public Account getAccountAuth() {
-		return accountService.getAccountAuth();
-	}
+        return accountService.getAccountAuth();
+    }
 }

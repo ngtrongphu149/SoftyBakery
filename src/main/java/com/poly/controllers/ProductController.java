@@ -34,13 +34,13 @@ public class ProductController {
 
 	@GetMapping("/product/")
 	public String product(Model model) {
-		model.addAttribute("message", "Cart is empty, let's take a look at some products!");
+		// model.addAttribute("message", "Cart is empty, let's take a look at some products!");
 		return "product";
 	}
 
 	@GetMapping("/product/detail/{id}")
 	public String product_detail(@PathVariable("id") int id, Model model) {
-		model.addAttribute("product", pDAO.getById(id));
+		model.addAttribute("product", pDAO.findById(id).get());
 		return "product-detail";
 	}
 

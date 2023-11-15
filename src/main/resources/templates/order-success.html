@@ -13,7 +13,7 @@
 </head>
 
 <body ng-app="app" ng-controller="OrderController">
-	<div th:insert="~{layout :: spinner}"></div>
+	<!-- <div th:insert="~{layout :: spinner}"></div> -->
 	<div th:insert="~{layout :: topbar}"></div>
 	<div th:insert="~{layout :: navbar}"></div>
 	<!-- Page Header Start -->
@@ -79,9 +79,9 @@
 					</div>
 					<div class="col">
 						<p th:text="${o.orderId}"></p>
-						<p th:text="${#numbers.formatDecimal(o.totalAmount, 0, 'COMMA', 0, 'POINT')+' ₫'}"></p>
-						<p th:text="${o.address}"></p>
-						<p th:text="${o.status}"></p>
+						<p th:text="${#numbers.formatDecimal(order.totalAmount, 0, 'COMMA', 0, 'POINT')+' ₫'}"></p>
+						<p th:text="${order.address}"></p>
+						<p th:text="${order.status}"></p>
 					</div>
 				</div>
 			</div>
@@ -135,10 +135,10 @@
 					</div>
 
 					<div><Strong>Mã đơn hàng:</Strong>
-						<p th:text="${o.orderId}"></p>
+						<p th:text="${order.orderId}"></p>
 					</div>
 					<div> <strong>Tổng: </strong>
-						<p th:text="${#numbers.formatDecimal(o.totalAmount, 0, 'COMMA', 0, 'POINT')+' ₫'}"></p>
+						<p th:text="${#numbers.formatDecimal(totalAmount, 0, 'COMMA', 0, 'POINT')+' ₫'}"></p>
 					</div>
 				</div>
 			</div>

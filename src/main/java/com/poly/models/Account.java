@@ -3,8 +3,8 @@ package com.poly.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.Date;
-
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -61,5 +61,4 @@ public class Account {
     @JsonIgnore
     @OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
     private List<Comment> comments;
-    
 }

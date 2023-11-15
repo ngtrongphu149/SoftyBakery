@@ -19,6 +19,7 @@ import com.poly.dao.AccountDAO;
 import com.poly.dao.CategoryDAO;
 import com.poly.dao.ProductDAO;
 import com.poly.models.Category;
+import com.poly.models.Product;
 import com.poly.services.AccountService;
 
 
@@ -36,8 +37,9 @@ public class HomeController {
     public String index(Model model) {
     	List<Category> categories = new ArrayList<>();
 		cDAO.findAll().stream().forEach((c) -> {
-			// c = cDAO.getById(c.getCategoryId());
-			c.setImageUrl(pDAO.getProductByCategory(c.getCategoryId()).get(0).getProductImages().get(0).getImageUrl());
+			if(pDAO.getProductByCategory(c.getCategoryId()).size()!=0) {
+				c.setImageUrl(pDAO.getProductByCategory(c.getCategoryId()).get(0).getProductImages().get(0).getImageUrl());	
+			}
 			categories.add(c);
 		});
     	model.addAttribute("c", categories);
@@ -63,9 +65,9 @@ public class HomeController {
 	public String contact() {
 		return "contact";
 	}
-	@GetMapping("/error")
-    public String error() {
-        return "404";
-    }
+	// @GetMapping("/error")
+    // public String error() {
+    //     return "404";
+    // }
 }
 

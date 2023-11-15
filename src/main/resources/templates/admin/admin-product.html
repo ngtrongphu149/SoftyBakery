@@ -1,116 +1,218 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	xmlns:th="http://www.thymeleaf.org" lang="vi">
-<head>
-<meta charset="utf-8">
-<title>Products - Softy Bakery</title>
-<th:block th:insert="~{layout :: css-link}"></th:block>
-<style>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.thymeleaf.org"
+  lang="vi"
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>Products - Softy Bakery</title>
+    <th:block th:insert="~{layout :: css-link}"></th:block>
+    <style>
+      .container label {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body ng-app="app" ng-controller="AdminProductController">
+    <div th:insert="~{layout :: spinner}"></div>
+    <div th:insert="~{layout :: navbar}"></div>
+    <!-- Page Header Start -->
+    <div
+      class="container-fluid page-header py-6 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container text-center pt-5 pb-3">
+        <h1 class="display-4 text-white animated slideInDown mb-3">Products</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Pages</a>
+            </li>
+            <li class="breadcrumb-item text-primary active" aria-current="page">
+              Products
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+    <!-- Admin Product Start -->
+    <div class="container" style="margin-top: 50px">
+      <form
+        method="post"
+        id="formProduct"
+        name="formProduct"
+        enctype="multipart/form-data"
+        style="padding-top: 180px"
+      >
+        <div class="row">
+          <div class="col-4 square-image">
+            <img
+              ng-if="form.productImages[0].imageUrl"
+              ng-src="/images/{{form.productImages[0].imageUrl}}"
+              alt="Product Image"
+              style="
+                max-width: 100%;
+                max-height: 100%;
+                border-radius: 20px;
+                border: 4px solid white;
+              "
+            />
+          </div>
+          <div class="col-8">
+            <label class="form-label"
+              >Name
+              <span ng-if="form.productId"
+                >( Id: <strong>{{form.productId}}</strong> )</span
+              ></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              ng-model="form.productName"
+            />
 
-</style>
-</head>
-<body ng-app="app" ng-controller="AdminProductController">
-	<div th:insert="~{layout :: spinner}"></div>
-	<div th:insert="~{layout :: adminNavbar}"></div>
-	<!-- Page Header Start -->
-	<div class="container-fluid page-header py-6 wow fadeIn"
-		data-wow-delay="0.1s">
-		<div class="container text-center pt-5 pb-3">
-			<h1 class="display-4 text-white animated slideInDown mb-3">Products</h1>
-			<nav aria-label="breadcrumb animated slideInDown">
-				<ol class="breadcrumb justify-content-center mb-0">
-					<li class="breadcrumb-item"><a class="text-white" href="#">Home</a>
-					</li>
-					<li class="breadcrumb-item"><a class="text-white" href="#">Pages</a>
-					</li>
-					<li class="breadcrumb-item text-primary active" aria-current="page">Products</li>
-				</ol>
-			</nav>
-		</div>
-	</div>
-	<!-- Page Header End -->
-	<!-- Admin Product Start -->
-	<div class="container" style="margin-top:50px;">
-            <form method="post" id="formProduct" name="formProduct" enctype="multipart/form-data" style="padding-top:180px;">
-				<div class="row mb-3">
-				    <div class="col-lg-4 col-md-12">
-				        <div class="square-image mb-3">
-				            <img ng-if="form.imageUrl" ng-src="/images/{{form.imageUrl}}" alt="Product Image" style="max-width: 100%; max-height: 100%; border-radius: 20px;">
-				        </div>
-				    </div>
-				    <div class="col-lg-8 col-md-12">
-				        <label class="form-label">Name <span>( Id: <strong>{{form.product.productId}}</strong> )</span></label>
-				        <input type="text" class="form-control" ng-model="form.product.productName">
-				        
-				        <br/>
-				        <label class="form-label">Price</label>
-				        <input type="text" class="form-control" ng-model="form.product.price">
-				        
-				        <br/>
-				        <label class="form-label">Category</label>
-				        <select class="form-control" ng-model="form.product.category.categoryId"
-				                ng-options="c.categoryId as (c.categoryName + ' - ' + c.categoryId) for c in category">
-				            <option value="">-- Select Category --</option>
-				        </select>
-				        
-				        <br/>
-				        <label for="textarea1" class="form-label">Description</label>
-				        <textarea class="form-control" id="textarea1" rows="6" ng-model="form.product.description"></textarea>
-				    </div>
-				</div>
-                
-                <div class="d-flex flex-row-reverse">
-                	<div class="btn-group">
-		                <button ng-click="save('add')" class="btn btn-outline-success">Add</button>
-		                <button ng-click="save('update')" class="btn btn-outline-primary">Update</button>
-		                <button ng-click="delete(form.productId)" class="btn btn-outline-danger">Delete</button>
-		                <button ng-click="reset()" class="btn btn-outline-warning">Reset</button>
-	                </div>
-				</div>
-				<input type="hidden" class="form-control" ng-model="form.productId" ng-value="form.productId" disabled="disabled">
-            </form>
-            <br />
-            <hr />
-            <br />
-            <table class="table table-hover">
-                <thead>
-                    <tr class="bg-primary text-white">
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Image</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                        <th>#</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="p in products">
-                        <td>{{p.product.productId}}</td>
-                        <td>{{p.product.productName}}</td>
-                        <td>
-                        	<img ng-src="/images/{{p.imageUrl}}" style="height:60px;">
-                        </td>
-                        <td>{{p.product.description}}</td>
-                        <td>{{p.product.price | vndCurrency}}</td>
-                        <td>{{p.product.category.categoryId+' - '+p.product.category.categoryName}}</td>
-                        <td>
-							<div style="display: flex; align-items: center;">
-								<button ng-click="loadForm(p.product.productId)" class="btn btn-link" target="formProduct">
-									<i class="fa fa-pen"></i>
-								</button>
-								<a href="/admin/pi/{{p.product.productId}}" class="ml-2"><i class="fa fa-file-image"></i></a>
-							</div>
-						</td>
-						
-                    </tr>
-                </tbody>
-            </table>
+            <div class="row" style="margin-top: 10px">
+              <div class="col">
+                <label class="form-label">Price</label>
+                <input type="text" class="form-control" ng-model="form.price" />
+              </div>
+              <div class="col">
+                <label class="form-label">Quantity In Storage</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  ng-model="form.quantityInStorage"
+                />
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 10px">
+              <div class="col">
+                <label class="form-label">Category</label>
+                <select
+                  class="form-control"
+                  ng-model="form.category.categoryId"
+                  ng-options="c.categoryId as (c.categoryName + ' - ' + c.categoryId) for c in category"
+                >
+                  <option value="">-- Select Category --</option>
+                </select>
+              </div>
+              <div class="col">
+                <label class="form-label">Sub Description</label>
+                <input class="form-control" ng-model="form.subDescription" />
+              </div>
+            </div>
+          </div>
         </div>
-	<!-- Admin Product End -->
-	<div th:insert="~{layout :: footer}"></div>
-	<div th:insert="~{layout :: copyright}"></div>
-	<div th:insert="~{layout :: backtotop}"></div>
-	<div th:insert="~{layout :: js-link}"></div>
-</body>
+        <div class="row">
+          <div class="col">
+            <label class="form-label">Ingredient</label>
+            <textarea
+              class="form-control"
+              rows="8"
+              ng-model="form.ingredient"
+            ></textarea>
+          </div>
+          <div class="col">
+            <label class="form-label">Storage Instruction</label>
+            <textarea
+              class="form-control"
+              rows="8"
+              ng-model="form.storageInstruction"
+            ></textarea>
+          </div>
+        </div>
+        <label class="form-label">Description</label>
+        <textarea
+          class="form-control"
+          rows="8"
+          ng-model="form.description"
+        ></textarea>
+        <br />
+
+        <div class="d-flex flex-row-reverse">
+          <div class="btn-group">
+            <button ng-click="save('Add')" class="btn btn-outline-success">
+              Add
+            </button>
+            <button ng-click="save('Update')" class="btn btn-outline-primary">
+              Update
+            </button>
+            <button
+              ng-click="delete(form.productId)"
+              class="btn btn-outline-danger"
+            >
+              Delete
+            </button>
+            <button ng-click="reset()" class="btn btn-outline-warning">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <input type="hidden" ng-model="form.productId" />
+      </form>
+
+      <br />
+      <hr />
+      <br />
+
+      <table class="table table-hover">
+        <thead>
+          <tr class="bg-primary text-white">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>#</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="p in products">
+            <td>{{p.product.productId}}</td>
+            <td>{{p.product.productName}}</td>
+            <td>
+              <img
+                ng-src="/images/{{p.product.productImages[0].imageUrl}}"
+                style="height: 60px"
+              />
+            </td>
+            <td>{{p.product.subDescription}}</td>
+            <td>{{p.product.price | vndCurrency}}</td>
+            <td>
+              {{p.product.category.categoryId+' -
+              '+p.product.category.categoryName}}
+            </td>
+            <td>
+              <div style="display: flex; align-items: center">
+                <button
+                  ng-click="loadForm(p.product)"
+                  class="btn btn-link"
+                  target="formProduct"
+                >
+                  <i class="fa fa-pen"></i>
+                </button>
+                <a href="/admin/pi/{{p.product.productId}}" class="ml-2"
+                  ><i class="fa fa-file-image"></i
+                ></a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Admin Product End -->
+    <div th:insert="~{layout :: footer}"></div>
+    <div th:insert="~{layout :: copyright}"></div>
+    <div th:insert="~{layout :: backtotop}"></div>
+    <div th:insert="~{layout :: js-link}"></div>
+  </body>
 </html>

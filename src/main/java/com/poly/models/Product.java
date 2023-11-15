@@ -2,6 +2,8 @@ package com.poly.models;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 
 import lombok.Data;
@@ -40,10 +42,12 @@ public class Product {
     @JoinColumn(name = "categoryid")
     private Category category;
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+    @OneToMany(mappedBy = "product")
     private List<SpecialOption> specialOptions;
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+    @OneToMany(mappedBy = "product")
     private List<ProductImage> productImages;
     
     @Column(name = "isavailable")

@@ -10,7 +10,7 @@ public interface CartService {
 
 	void remove(Integer id);
 
-	void update(Integer id, String qty);
+	void update(Integer id, String modify);
 
 	void clear();
 
