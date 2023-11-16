@@ -9,45 +9,44 @@ import org.springframework.web.context.annotation.SessionScope;
 
 import com.poly.dao.ProductDAO;
 import com.poly.dto.ProductDTO;
+import com.poly.models.Product;
 import com.poly.services.CartService;
 import com.poly.utils.LocalStorageUtil;
-
 
 @Service
 @SessionScope
 public class CartServiceImplement implements CartService {
-	@Autowired LocalStorageUtil lsService;
-	@Autowired ProductDAO pDAO;
-	
-	Map<Integer, ProductDTO> map = new HashMap<>();
-	
+    @Autowired
+    LocalStorageUtil lsService;
+    @Autowired
+    ProductDAO pDAO;
+
+    Map<Integer, ProductDTO> map = new HashMap<>();
     @Override
     public void add(Integer id) {
         if (!map.containsKey(id)) {
-            ProductDTO dto = new ProductDTO();
-            dto.setProduct(pDAO.findById(id).orElse(null));
-            map.put(id, dto);
+            Product product = pDAO.findById(id).get();
+            map.put(id, new ProductDTO(product, 1));
         } else {
             update(id, "plus");
         }
     }
 
     @Override
-    public void remove(Integer id) {
-        map.remove(id);
-    }
-
-    @Override
-    public void update(Integer id, String qty) {
+    public void update(Integer id, String modify) {
         ProductDTO item = map.get(id);
         if (item != null) {
-            if ("dis".equals(qty) && item.getQuantity() > 1) {
+            if ("dis".equals(modify) && item.getQuantity() > 1) {
                 item.setQuantity(item.getQuantity() - 1);
-            } else if ("plus".equals(qty) && item.getQuantity() < 10) {
+            } else if ("plus".equals(modify) && item.getQuantity() < 10) {
                 item.setQuantity(item.getQuantity() + 1);
             }
         }
+    }
 
+    @Override
+    public void remove(Integer id) {
+        map.remove(id);
     }
 
     @Override
@@ -75,4 +74,3 @@ public class CartServiceImplement implements CartService {
         return map.get(id);
     }
 }
-    

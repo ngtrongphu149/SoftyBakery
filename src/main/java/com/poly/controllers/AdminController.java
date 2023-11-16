@@ -49,16 +49,15 @@ public class AdminController {
 	
 	@GetMapping("/admin/pi/{id}")
 	public String index(@PathVariable(name = "id", required = false) int id, Model model) {
-		Product p = pDAO.findById(id).orElse(null);
+		Product product = pDAO.findById(id).orElse(null);
 		
-		model.addAttribute("p",p);
+		model.addAttribute("product",product);
 		return "admin/admin-product-image";
 	}
 	@GetMapping("/admin/pi/delete/{id}")
 	public String delete_product_image(@PathVariable("id") int id, Model model) {
-		Product p = piDAO.getById(id).getProduct();
+		Product p = piDAO.findById(id).get().getProduct();
 		piDAO.deleteById(id);
-		
 		return "redirect:/admin/pi/" + p.getProductId();
 	}
 	@PostMapping("/admin/pi/{id}")
@@ -82,6 +81,11 @@ public class AdminController {
 			e.printStackTrace();
 		}
 		return "redirect:/admin/pi/" + id;
+	}
+
+	@GetMapping("/manage/coupon")
+	public String manage_coupon() {
+		return "manage/coupon";
 	}
 	
 	

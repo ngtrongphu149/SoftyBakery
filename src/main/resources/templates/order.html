@@ -7,7 +7,7 @@
 <th:block th:insert="~{layout :: css-link}"></th:block>
 </head>
 <body ng-app="app" ng-controller="OrderController">
-	<div th:insert="~{layout :: spinner}"></div>
+	<!-- <div th:insert="~{layout :: spinner}"></div> -->
 	<div th:insert="~{layout :: topbar}"></div>
 	<div th:insert="~{layout :: navbar}"></div>
 	<!-- Page Header Start -->
@@ -47,12 +47,12 @@
 								class="list-group-item d-flex justify-content-between lh-condensed"
 								th:each="c : ${cart}">
 								<div>
-									<h6 class="my-0" th:text="${c.productName}"></h6>
+									<h6 class="my-0" th:text="${c.product.productName}"></h6>
 									<small class="text-muted"><span
-										th:text="${#numbers.formatDecimal(c.price, 0, 'COMMA', 0, 'POINT')+' ₫'}"></span>
+										th:text="${#numbers.formatDecimal(c.product.price, 0, 'COMMA', 0, 'POINT')+' ₫'}"></span>
 										x <span th:text="${c.quantity}"></span></small>
 								</div>
-								<span th:text="${#numbers.formatDecimal(c.price * c.quantity, 0, 'COMMA', 0, 'POINT')+' ₫'}"></span>
+								<span th:text="${#numbers.formatDecimal(c.product.price * c.quantity, 0, 'COMMA', 0, 'POINT')+' ₫'}"></span>
 							</li>
 							<li class="list-group-item d-flex justify-content-between">
 								<span>Tổng thành tiền</span> 
@@ -112,13 +112,8 @@
 						Order Now
 					</button>
 				</div>
-				<input type="hidden" th:field="*{accountId}">
 				<input type="hidden" th:field="*{username}">
-				<input type="hidden" th:field="*{photo}">
-				<input type="hidden" th:field="*{admin}">
-				
-
-				
+				<input type="hidden" th:field="*{photo}">												
 		</form>
 
 	<!-- Order End -->

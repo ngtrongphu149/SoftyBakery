@@ -103,6 +103,7 @@
 			<version>6.3.1.Final</version>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-oauth2-client</artifactId>
     <version>2.3.3.RELEASE</version>
@@ -117,6 +118,12 @@
     <artifactId>spring-security-oauth2-jose</artifactId>
     <version>5.3.4.RELEASE</version>
 </dependency>
+=======
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.15.3</version>
+		</dependency>
+>>>>>>> 57fc63ab02aacdc4187f7d2ccc9f6e031fb48dda
 	</dependencies>
 
 

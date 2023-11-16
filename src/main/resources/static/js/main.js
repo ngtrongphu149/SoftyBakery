@@ -112,6 +112,23 @@ app.filter('dateFilter', function ($filter) {
 		return '';
 	};
 });
+
+app.filter('dateTimeLocalFilter', function ($filter) {
+	return function (input) {
+		if (input) {
+			var date = new Date(input);
+			return $filter('date')(date, 'yyyy-MM-ddTHH:mm:ss');
+		}
+		return '';
+	};
+});
+app.filter('toTimeStamp', function () {
+	return function (dateTimeLocalString) {
+		var date = new Date(dateTimeLocalString);
+		var timestamp = date.getTime();
+		return timestamp;
+	};
+});
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 app.controller('ProductController', function ($scope, $http, $filter, $location, $routeParams) {
 	// product
@@ -270,9 +287,7 @@ app.controller('ProductController', function ($scope, $http, $filter, $location,
 	$scope.postReview = function () {
 		$scope.formReview.rating = $scope.rating;
 		const url = `${host}/review/${$scope.selectedProductId}`;
-		$http.post(url, $scope.formReview, {
-			headers: { 'Content-Type': 'application/json' }
-		}).then(function (response) {
+		$http.post(url, $scope.formReview).then(function (response) {
 			$scope.reviewList += response.data;
 			$scope.loadReviews();
 		});
@@ -304,10 +319,12 @@ app.controller('ProductController', function ($scope, $http, $filter, $location,
 			$scope.cart = resp.data;
 			$scope.cartLength = resp.data.length;
 			updateCartLocalStorage();
+			// console.log($scope.cart);
 		});
-	} 
+	}
 
 	$scope.modifyCart = function (id, method) {
+		// console.log(`${host}/cart/${method}/${id}`);
 		$http.get(`${host}/cart/${method}/${id}`).then(function () {
 			$scope.loadAllCart();
 		});
@@ -326,8 +343,8 @@ app.controller('ProductController', function ($scope, $http, $filter, $location,
 	};
 
 	$scope.getAmountCart = function () {
-		return $scope.cart.reduce(function (total, product) {
-			return total + product.price * product.quantity;
+		return $scope.cart.reduce(function (total, cart) {
+			return total + cart.product.price * cart.quantity;
 		}, 0);
 	};
 
@@ -375,22 +392,22 @@ app.controller('UserController', function ($scope, $http) {
 	const urlUser = `${host}/user`;
 
 	function getUser() {
-		var url = `${host}/user`;
+		var url = urlUser;
 		$http.get(url).then(resp => {
 			if (resp.data != null) {
 				$scope.userInfo = resp.data;
-				$scope.form.accountId = $scope.userInfo.accountId;
-				$scope.form.username = $scope.userInfo.username;
-				$scope.form.password = $scope.userInfo.password;
-				$scope.form.email = $scope.userInfo.email;
-				$scope.form.fullName = resp.data.fullName;
-				$scope.form.address = $scope.userInfo.address;
-				$scope.form.addressDetail = $scope.userInfo.addressDetail;
-				$scope.form.phoneNumber = $scope.userInfo.phoneNumber;
-				$scope.form.photo = $scope.userInfo.photo;
-				$scope.form.admin = $scope.userInfo.admin;
+				// $scope.form.accountId = $scope.userInfo.accountId;
+				// $scope.form.username = $scope.userInfo.username;
+				// $scope.form.password = $scope.userInfo.password;
+				// $scope.form.email = $scope.userInfo.email;
+				// $scope.form.fullName = resp.data.fullName;
+				// $scope.form.address = $scope.userInfo.address;
+				// $scope.form.addressDetail = $scope.userInfo.addressDetail;
+				// $scope.form.phoneNumber = $scope.userInfo.phoneNumber;
+				// $scope.form.photo = $scope.userInfo.photo;
+				// $scope.form.admin = $scope.userInfo.admin;
+				$scope.form = resp.data;
 			}
-
 		})
 	}
 	$scope.putUser = function () {
@@ -488,77 +505,45 @@ app.controller('AdminProductController', function ($scope, $http) {
 
 	$scope.reset = function () {
 		var product = {};
-		topProductId();
 		product.price = 0;
-		$scope.form.product = product;
-		$scope.form.imageUrl = "";
+		$scope.form = product;
 	}
 
-	$scope.add = function () {
-		var formProduct = $scope.form.product;
-		const url = `${host}/product`;
-		if (formProduct != null) {
-			$http.post(url, formProduct).then(() => {
-				console.log("Save sản phẩm thành công!");
+	$scope.save = function (method) {
+		var url = `${host}/product`;
+		if(method==="Add") {
+			$http.post(url, $scope.form).then( () => {
 				$scope.loadAll();
-			}).catch(function (error) {
-				console.error("Lỗi khi save sản phẩm:", error);
+				$scope.reset();
 			});
 		}
-	}
-	$scope.update = function () {
-		var formProduct = $scope.form.product;
-		const url = `${host}/product/${formProduct.productId}`;
-		if (formProduct != null) {
-			$http.put(url, formProduct).then(() => {
-				console.log("Save sản phẩm thành công!");
+		if(method==="Update") {
+			$http.put(url, $scope.form).then( () => {
 				$scope.loadAll();
-			}).catch(function (error) {
-				console.error("Lỗi khi save sản phẩm:", error);
+				$scope.reset();
 			});
 		}
+		
 	}
-
 
 	$scope.delete = function (productId) {
 		const url = `${host}/product/${productId}`;
-		$http.delete(url).then(function () {
-			console.log("Xóa sản phẩm thành công!");
+		$http.delete(url).then( () => {
 			$scope.loadAll();
 			$scope.reset();
-		}).catch(function (error) {
-			console.error("Lỗi khi xóa sản phẩm:", error);
 		});
 	}
 
-	function find(productId) {
-		var products = [];
-		products = $scope.products;
-		for (var i = 0; i < products.length; i++) {
-			if (products[i].product.productId == productId) return products[i];
+	$scope.loadForm = function (product) {
+		if (!product) {
+			$scope.form.price = parseFloat($scope.form.price) || 0;
+			$scope.scrollToForm();
 		}
-	};
-
-	$scope.loadForm = function (productId) {
-		const product = find(productId);
 		if (product) {
 			$scope.form = angular.copy(product);
 			$scope.form.price = parseFloat($scope.form.price) || 0;
-
 			$scope.scrollToForm();
-		} else {
-			$scope.form = {};
 		}
-	};
-
-
-
-	function topProductId() {
-		var url = `${host}/product/top`;
-		var temp = 0;
-		$http.get(url).then(resp => {
-			$scope.form.product.productId = resp.data;
-		});
 	};
 	$scope.scrollToForm = function () {
 		var formElement = document.getElementById('formProduct');
@@ -732,4 +717,39 @@ app.controller('TopBarController', function ($interval, $scope) {
 		$scope.date = new Date();
 	}, 1000);
 })
+
+app.controller('CouponController', function ($http, $scope, $filter) {
+	var url = `${host}/coupon`;
+
+	$scope.coupons = [];
+	$scope.form = {};
+
+	$scope.loadAll = function () {
+		$http.get(url).then(resp => {
+			$scope.coupons = resp.data;
+		});
+	}
+	$scope.add = function () {
+		$scope.form.couponId = 0;
+		$http.post(url, $scope.form).then(() => $scope.loadAll());
+	}
+	$scope.update = function () {
+		$http.put(url, $scope.form).then(() => $scope.loadAll());
+	}
+
+	$scope.delete = function (id) {
+		$http.delete(url + '/' + id).then(() => $scope.loadAll()).then(() => $scope.reset());
+	}
+	$scope.loadForm = function (coupon) {
+		coupon.startDate = new Date(coupon.startDate);
+		coupon.endDate = new Date(coupon.endDate);
+		$scope.form = angular.copy(coupon);
+	};
+
+	$scope.reset = function () {
+		$scope.form = {};
+	}
+	//khởi tạo dữ liệu ban đầu
+	$scope.loadAll();
+});
 
