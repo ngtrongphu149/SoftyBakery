@@ -37,7 +37,10 @@ public class AdminController {
 		
 		return "admin/admin-order";
 	}
-
+	@GetMapping("/admin/account")
+	public String admin_bandAccount(Model model) {	
+		return "admin/admin-account";
+	}
 	
 	
 	
