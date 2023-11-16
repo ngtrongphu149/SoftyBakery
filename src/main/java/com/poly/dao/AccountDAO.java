@@ -10,4 +10,6 @@ public interface AccountDAO extends JpaRepository<Account, String> {
 	Account getByEmail(String email);
 	@Query("SELECT a FROM Account a WHERE a.username = ?1")
     Account getByUsername(String username);
+    @Query("DELETE FROM Account a WHERE a.username = ?1")
+    void deleteByUsername(String username);
 }
