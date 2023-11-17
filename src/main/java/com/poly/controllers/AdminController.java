@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.poly.dao.AccountDAO;
 import com.poly.dao.CategoryDAO;
 import com.poly.dao.ProductDAO;
 import com.poly.dao.ProductImageDAO;
@@ -24,9 +25,11 @@ import com.poly.models.ProductImage;
 
 @Controller
 public class AdminController {
+
 	@Autowired ProductDAO pDAO;
 	@Autowired CategoryDAO cDAO;
 	@Autowired ProductImageDAO piDAO;
+	@Autowired AccountDAO aDao;
 	
 	@GetMapping("/admin/product")
 	public String admin_product(Model model) {
@@ -37,7 +40,11 @@ public class AdminController {
 		
 		return "admin/admin-order";
 	}
+<<<<<<< HEAD
 	@GetMapping("/admin/account")
+=======
+		@GetMapping("/admin/account")
+>>>>>>> 9107b44f7865bc2b6c0edeecd1263c5b8a424223
 	public String admin_bandAccount(Model model) {	
 		return "admin/admin-account";
 	}

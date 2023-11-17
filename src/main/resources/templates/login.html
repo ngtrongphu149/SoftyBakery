@@ -53,7 +53,10 @@
                 </div>
                 <div class="row">
 	                <div class="col">
-	                	<p class="mb-4 text-light">Forgot your password? <a href="/home">Click here</a>. </p>
+	                	<p class="mb-4 text-light">
+                      Forgot your password? <a href="javascript:void(0);" id="forgotPasswordLink" onclick="forgotPassword()">Click here</a>.
+                  </p>
+                  
 	                </div>
 	                <div class="col" style="text-align: right;">
 	                	<p class="mb-4"><a href="/register">Sign up</a></p>
@@ -65,6 +68,10 @@
                 <div class="col-12 text-center">
                   <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Login</button>
                 </div>
+                <div class="col-12 text-center">
+                  <a class="btn btn-outline-danger rounded-pill py-3 px-5 bi bi-google" type="submit" href="#">  Login with Google</a>
+                </div>
+                
               </div>
             <!-- end form login -->
           </div>
@@ -81,5 +88,27 @@
     <div th:insert="~{layout :: footer}"></div>
     <div th:insert="~{layout :: copyright}"></div>
 	<div th:insert="~{layout :: js-link}"></div>
+  <script>
+    function forgotPassword() {
+        // Get the username directly from the input field
+        var username = document.getElementById('username').value;
+        if (username) {
+            var url = '/forgotPassWord?username=' + encodeURIComponent(username);
+
+            fetch(url, { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Bắt đầu khôi phục mật khẩu. Kiểm tra email của bạn để được hướng dẫn thêm');
+                    } else {
+                        alert('Tài khoản không tồn tại. Vui lòng Đăng ký hoặc thử lại.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Đã xảy ra lỗi không mong muốn. Vui lòng thử lại sau.');
+                });
+        }
+    }
+</script>
   </body>
 </html>

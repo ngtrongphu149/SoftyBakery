@@ -24,17 +24,17 @@
                         <p class="text-center mb-4">The contact form is currently inactive. Get a functional and working
                             contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little
                             code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                        <form>
+                        <form action="/contactMail" method="post">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="text" class="form-control" name="email" id="email"  placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
@@ -63,8 +63,6 @@
         </div>
         <!-- Contact End -->
 
-
-<<<<<<< HEAD
     <!-- Google Map Start -->
     <div class="container-xxl py-6 px-0 wow fadeInUp" data-wow-delay="0.1s">
         <iframe class="w-100 mb-n2" style="height: 450px;"
@@ -72,7 +70,6 @@
             frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.443661349611!2d106.6278284!3d10.8538211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752bee0b0ef9e5%3A0x5b4da59e47aa97a8!2zQ8O0bmcgVmnDqm4gUGjhuqduIE3hu4FtIFF1YW5nIFRydW5n!5e0!3m2!1svi!2s!4v1698159715259!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-=======
         <!-- Google Map Start -->
         <div class="container-xxl py-6 px-0 wow fadeInUp" data-wow-delay="0.1s">
             <iframe
@@ -80,7 +77,7 @@
                 width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
->>>>>>> 27a41e11226b549cd18e23647d8af64000a79101
+
     </div>
     <!-- Google Map End -->
 

@@ -608,6 +608,11 @@ app.controller('AdminOrderController', function ($scope, $http) {
 	}
 	$scope.loadAll();
 });
+<<<<<<< HEAD
+=======
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -ACCOUNT ADMIN- - - - - - - - - - - - - - - - - - - - 
+>>>>>>> 9107b44f7865bc2b6c0edeecd1263c5b8a424223
 app.controller('AdminAccountController', function ($scope, $http) {
 	$scope.accounts = [];
 	$scope.form = {};
@@ -706,7 +711,12 @@ app.controller('AdminAccountController', function ($scope, $http) {
 	$scope.reset();
 	$scope.loadAll();
   });
+<<<<<<< HEAD
 
+=======
+  
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+>>>>>>> 9107b44f7865bc2b6c0edeecd1263c5b8a424223
 app.controller('TopBarController', function ($interval, $scope) {
 	$scope.date = new Date();
 
